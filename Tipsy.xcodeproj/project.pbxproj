@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BC22A46B4800E1BD02 /* AppDelegate.swift */; };
-		371D16BF22A46B4800E1BD02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BE22A46B4800E1BD02 /* ViewController.swift */; };
+		371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BE22A46B4800E1BD02 /* TipViewController.swift */; };
 		371D16C222A46B4800E1BD02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371D16C022A46B4800E1BD02 /* Main.storyboard */; };
 		371D16C422A46B4800E1BD02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371D16C322A46B4800E1BD02 /* Assets.xcassets */; };
 		371D16C722A46B4800E1BD02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */; };
+		371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */; };
+		371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */; };
+		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		371D16B922A46B4800E1BD02 /* tipTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D16BC22A46B4800E1BD02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		371D16BE22A46B4800E1BD02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		371D16BE22A46B4800E1BD02 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		371D16C122A46B4800E1BD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		371D16C322A46B4800E1BD02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		371D16C622A46B4800E1BD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		371D16C822A46B4800E1BD02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
+		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				371D16BC22A46B4800E1BD02 /* AppDelegate.swift */,
-				371D16BE22A46B4800E1BD02 /* ViewController.swift */,
+				371D16BE22A46B4800E1BD02 /* TipViewController.swift */,
+				371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */,
+				371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */,
+				3789064222A78AF80000C75A /* AlertViewController.swift */,
 				371D16C022A46B4800E1BD02 /* Main.storyboard */,
 				371D16C322A46B4800E1BD02 /* Assets.xcassets */,
 				371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */,
@@ -99,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 371D16B422A46B4800E1BD02 /* Build configuration list for PBXProject "tipTester" */;
+			buildConfigurationList = 371D16B422A46B4800E1BD02 /* Build configuration list for PBXProject "Tipsy" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -135,7 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371D16BF22A46B4800E1BD02 /* ViewController.swift in Sources */,
+				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
+				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
+				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
+				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,7 +329,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		371D16B422A46B4800E1BD02 /* Build configuration list for PBXProject "tipTester" */ = {
+		371D16B422A46B4800E1BD02 /* Build configuration list for PBXProject "Tipsy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				371D16C922A46B4800E1BD02 /* Debug */,
