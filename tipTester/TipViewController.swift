@@ -27,12 +27,20 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		switch sender.selectedSegmentIndex {
 		case 0:
 			tipTextField.text = "2"
+			let generator = UISelectionFeedbackGenerator()
+			generator.selectionChanged()
 		case 1:
 			tipTextField.text = "15"
+			let generator = UISelectionFeedbackGenerator()
+			generator.selectionChanged()
 		case 2:
 			tipTextField.text = "20"
+			let generator = UISelectionFeedbackGenerator()
+			generator.selectionChanged()
 		case 3:
 			tipTextField.text = "25"
+			let generator = UISelectionFeedbackGenerator()
+			generator.selectionChanged()
 		default:
 			emojiSegControl.selectedSegmentIndex = -1
 		}
@@ -40,6 +48,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	
 	
 	@IBAction func tipCalcButtonTapped(_ sender: Any) {
+		let generator = UIImpactFeedbackGenerator(style: .light)
+		generator.prepare()
+		generator.impactOccurred()
 		guard let totalStrInput = totalTextField.text, !totalStrInput.isEmpty else {
 			totalErrorLabel.text = "You must enter a total"
 			return
@@ -62,6 +73,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		clearButton.tintColor = UIColor.black
 		totalOutputLabel.text = "$0.00"
 		tipOutputLabel.text = "$0.00"
+		let generator = UISelectionFeedbackGenerator()
+		generator.selectionChanged()
 	}
 	
 	
