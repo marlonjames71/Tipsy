@@ -25,6 +25,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	
 	
 	@IBAction func emojiTipAmount(_ sender: UISegmentedControl) {
+		tipErrorLabel.text = nil
 		switch sender.selectedSegmentIndex {
 		case 0:
 			tipTextField.text = "2"
