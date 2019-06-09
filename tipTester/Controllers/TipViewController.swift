@@ -90,12 +90,16 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		clearButton.layer.borderColor = UIColor(red: 0.94, green: 0.09, blue: 0.35, alpha: 1).cgColor
 		clearButton.tintColor = UIColor(red: 0.94, green: 0.09, blue: 0.35, alpha: 1)
 	}
+	@IBAction func tipFieldDidChange(_ sender: UITextField) {
+		tipErrorLabel.text = ""
+	}
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		view.layer.backgroundColor = UIColor(red: 0.66, green: 0.73, blue: 0.78, alpha: 1.00).cgColor
 		logic = CalculatorLogic()
-		calcButton.backgroundColor = UIColor(red: 0.35, green: 0.82, blue: 0.77, alpha: 1.00)
+		calcButton.backgroundColor = UIColor(red: 0.11, green: 0.60, blue: 0.91, alpha: 1.00)
 		calcButton.layer.cornerRadius = 20.0
 		calcButton.tintColor = UIColor.white
 		totalOutputView.layer.cornerRadius = 12.0
