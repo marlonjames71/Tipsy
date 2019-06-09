@@ -15,6 +15,7 @@
 		371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */; };
 		371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */; };
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
+		37F3D41E22ACD431006BA05D /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3D41D22ACD431006BA05D /* TextFieldStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		37F3D41D22ACD431006BA05D /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +63,33 @@
 			isa = PBXGroup;
 			children = (
 				371D16BC22A46B4800E1BD02 /* AppDelegate.swift */,
-				371D16BE22A46B4800E1BD02 /* TipViewController.swift */,
-				371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */,
-				371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */,
-				3789064222A78AF80000C75A /* AlertViewController.swift */,
+				37F3D41D22ACD431006BA05D /* TextFieldStyle.swift */,
+				37F3D41C22ACD3F5006BA05D /* Controllers */,
+				37F3D41B22ACD3E2006BA05D /* Modeal */,
 				371D16C022A46B4800E1BD02 /* Main.storyboard */,
 				371D16C322A46B4800E1BD02 /* Assets.xcassets */,
 				371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */,
 				371D16C822A46B4800E1BD02 /* Info.plist */,
 			);
 			path = tipTester;
+			sourceTree = "<group>";
+		};
+		37F3D41B22ACD3E2006BA05D /* Modeal */ = {
+			isa = PBXGroup;
+			children = (
+				371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */,
+				371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */,
+			);
+			path = Modeal;
+			sourceTree = "<group>";
+		};
+		37F3D41C22ACD3F5006BA05D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				371D16BE22A46B4800E1BD02 /* TipViewController.swift */,
+				3789064222A78AF80000C75A /* AlertViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +166,7 @@
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
+				37F3D41E22ACD431006BA05D /* TextFieldStyle.swift in Sources */,
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 			);

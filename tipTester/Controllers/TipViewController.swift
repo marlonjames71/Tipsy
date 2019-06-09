@@ -23,6 +23,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet var clearButton: UIButton!
 	@IBOutlet var emojiSegControl: UISegmentedControl!
 	
+	
 	@IBAction func emojiTipAmount(_ sender: UISegmentedControl) {
 		switch sender.selectedSegmentIndex {
 		case 0:
