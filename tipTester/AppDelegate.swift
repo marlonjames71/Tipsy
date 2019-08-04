@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: Add functionality to share app
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

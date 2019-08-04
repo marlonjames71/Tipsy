@@ -11,18 +11,61 @@ import UIKit
 class TipViewController: UIViewController, UITextFieldDelegate {
 
 	var logic: CalculatorLogic?
-	
-	@IBOutlet var totalTextField: UITextField!
-	@IBOutlet var totalErrorLabel: UILabel!
+//	var cardViewController: CardViewController!
+
+	@IBOutlet var totalBillTextField: UITextField!
+	@IBOutlet var totalBillErrorLabel: UILabel!
 	@IBOutlet var tipTextField: UITextField!
 	@IBOutlet var tipErrorLabel: UILabel!
 	@IBOutlet var calcButton: UIButton!
-	@IBOutlet var totalOutputView: UIView!
 	@IBOutlet var tipOutputLabel: UILabel!
 	@IBOutlet var totalOutputLabel: UILabel!
-	@IBOutlet var clearButton: UIButton!
+	@IBOutlet var resetButton: UIButton!
 	@IBOutlet var emojiSegControl: UISegmentedControl!
-	
+	@IBOutlet var totalInputView: UIView!
+	@IBOutlet weak var dollarSymbol: UILabel!
+	@IBOutlet weak var percentSymbol: UILabel!
+	@IBOutlet weak var billAmountLabel: UILabel!
+	@IBOutlet weak var tipPercentLabel: UILabel!
+	@IBOutlet weak var quickTipLabel: UILabel!
+	@IBOutlet weak var tipAmountLabel: UILabel!
+	@IBOutlet weak var totalWithTipLabel: UILabel!
+	@IBOutlet weak var firstEmoji: UIButton!
+	@IBOutlet weak var secondEmoji: UIButton!
+	@IBOutlet weak var thirdEmoji: UIButton!
+	@IBOutlet weak var fourthEmoji: UIButton!
+
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		logic = CalculatorLogic()
+		totalBillTextField.delegate = self
+		tipTextField.delegate = self
+		setUpUI()
+	}
+
+	@IBAction func firstEmojiTapped(_ sender: UIButton) {
+		tipTextField.text = "2"
+		let generator = UISelectionFeedbackGenerator()
+		generator.selectionChanged()
+	}
+	@IBAction func secondEmojiTapped(_ sender: UIButton) {
+		tipTextField.text = "15"
+		let generator = UISelectionFeedbackGenerator()
+		generator.selectionChanged()
+	}
+	@IBAction func thirdEmojiTapped(_ sender: UIButton) {
+		tipTextField.text = "20"
+		let generator = UISelectionFeedbackGenerator()
+		generator.selectionChanged()
+	}
+	@IBAction func fourthEmojiTapped(_ sender: UIButton) {
+		tipTextField.text = "25"
+		let generator = UISelectionFeedbackGenerator()
+		generator.selectionChanged()
+	}
+
+
 	
 	@IBAction func emojiTipAmount(_ sender: UISegmentedControl) {
 		tipErrorLabel.text = nil
@@ -53,8 +96,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		let generator = UIImpactFeedbackGenerator(style: .light)
 		generator.prepare()
 		generator.impactOccurred()
-		guard let totalStrInput = totalTextField.text, !totalStrInput.isEmpty else {
-			totalErrorLabel.text = "You must enter a total"
+		guard let totalStrInput = totalBillTextField.text, !totalStrInput.isEmpty else {
+			totalBillErrorLabel.text = "You must enter a total"
 			return
 		}
 		guard let tipPercentStrInput = tipTextField.text, !tipPercentStrInput.isEmpty else {
@@ -71,8 +114,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBAction func clearButtonTapped(_ sender: UIButton) {
 		clear()
-		clearButton.layer.borderColor = UIColor.black.cgColor
-		clearButton.tintColor = UIColor.black
+		resetButton.layer.borderColor = UIColor.black.cgColor
+		resetButton.tintColor = UIColor.black
 		totalOutputLabel.text = "$0.00"
 		tipOutputLabel.text = "$0.00"
 		let generator = UISelectionFeedbackGenerator()
@@ -86,31 +129,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		totalString = totalString.filter { legalChar.contains($0) }
 		guard let totalInt = Int(totalString) else { return }
 		sender.text = String.formattedPrice(with: totalInt)
-		totalErrorLabel.text = ""
-		clearButton.layer.borderColor = UIColor(red: 0.94, green: 0.09, blue: 0.35, alpha: 1).cgColor
-		clearButton.tintColor = UIColor(red: 0.94, green: 0.09, blue: 0.35, alpha: 1)
+		totalBillErrorLabel.text = ""
+		resetButton.layer.borderColor = UIColor(red: 0.94, green: 0.09, blue: 0.35, alpha: 1).cgColor
+		resetButton.tintColor = UIColor(red: 0.94, green: 0.09, blue: 0.35, alpha: 1)
 	}
 	@IBAction func tipFieldDidChange(_ sender: UITextField) {
 		tipErrorLabel.text = ""
-	}
-	
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		view.layer.backgroundColor = UIColor(red: 0.66, green: 0.73, blue: 0.78, alpha: 1.00).cgColor
-		logic = CalculatorLogic()
-		calcButton.backgroundColor = UIColor(red: 0.11, green: 0.60, blue: 0.91, alpha: 1.00)
-		calcButton.layer.cornerRadius = 20.0
-		calcButton.tintColor = UIColor.white
-		totalOutputView.layer.cornerRadius = 12.0
-		clearButton.layer.borderWidth = 2
-		clearButton.layer.borderColor = UIColor.black.cgColor
-		clearButton.tintColor = UIColor.black
-		clearButton.layer.cornerRadius = 10
-		emojiSegControl.selectedSegmentIndex = -1
-		emojiSegControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for:.selected)
-		totalTextField.delegate = self
-		tipTextField.delegate = self
 	}
 	
 	
@@ -120,12 +144,34 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	
 	
 	func clear() {
-		totalTextField.text = nil
+		totalBillTextField.text = nil
 		tipTextField.text = nil
 		totalOutputLabel.text = nil
 		tipOutputLabel.text = nil
 		emojiSegControl.selectedSegmentIndex = -1
 	}
+
+
+	private func setUpUI() {
+		view.layer.backgroundColor = UIColor(red: 0.66, green: 0.73, blue: 0.78, alpha: 1.00).cgColor
+		calcButton.backgroundColor = UIColor(red: 0.11, green: 0.60, blue: 0.91, alpha: 1.00)
+		calcButton.layer.cornerRadius = 20.0
+		calcButton.tintColor = UIColor.white
+		resetButton.layer.borderWidth = 2
+		resetButton.layer.borderColor = UIColor.black.cgColor
+		resetButton.tintColor = UIColor.black
+		resetButton.layer.cornerRadius = 10
+		emojiSegControl.selectedSegmentIndex = -1
+		emojiSegControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for:.selected)
+		totalInputView.backgroundColor = .clear
+//		totalBillTextField
+
+		totalInputView.layer.borderWidth = 2
+		totalInputView.layer.borderColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
+		totalInputView.layer.cornerRadius = 20
+	}
+
+
 }
 
 

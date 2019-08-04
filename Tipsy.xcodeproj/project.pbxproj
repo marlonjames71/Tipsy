@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370CE30322AF3B8800B66EDA /* PaddingTextField.swift */; };
 		371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BC22A46B4800E1BD02 /* AppDelegate.swift */; };
 		371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BE22A46B4800E1BD02 /* TipViewController.swift */; };
 		371D16C222A46B4800E1BD02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371D16C022A46B4800E1BD02 /* Main.storyboard */; };
@@ -15,10 +16,12 @@
 		371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */; };
 		371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */; };
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
-		37F3D41E22ACD431006BA05D /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3D41D22ACD431006BA05D /* TextFieldStyle.swift */; };
+		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
+		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370CE30322AF3B8800B66EDA /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		371D16B922A46B4800E1BD02 /* tipTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D16BC22A46B4800E1BD02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		371D16BE22A46B4800E1BD02 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +32,8 @@
 		371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
-		37F3D41D22ACD431006BA05D /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				371D16BC22A46B4800E1BD02 /* AppDelegate.swift */,
-				37F3D41D22ACD431006BA05D /* TextFieldStyle.swift */,
+				370CE30322AF3B8800B66EDA /* PaddingTextField.swift */,
+				37B9A36D22F52B9A00BB774B /* StoryBoards */,
+				37B9A36E22F52BA900BB774B /* Views */,
 				37F3D41C22ACD3F5006BA05D /* Controllers */,
-				37F3D41B22ACD3E2006BA05D /* Modeal */,
-				371D16C022A46B4800E1BD02 /* Main.storyboard */,
+				37F3D41B22ACD3E2006BA05D /* Model */,
+				37B9A37122F624FD00BB774B /* Resources */,
 				371D16C322A46B4800E1BD02 /* Assets.xcassets */,
 				371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */,
 				371D16C822A46B4800E1BD02 /* Info.plist */,
@@ -74,13 +80,37 @@
 			path = tipTester;
 			sourceTree = "<group>";
 		};
-		37F3D41B22ACD3E2006BA05D /* Modeal */ = {
+		37B9A36D22F52B9A00BB774B /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				371D16C022A46B4800E1BD02 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		37B9A36E22F52BA900BB774B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37B9A36B22F4EE2500BB774B /* CustomTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37B9A37122F624FD00BB774B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				37B9A36F22F624F500BB774B /* Colors.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		37F3D41B22ACD3E2006BA05D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */,
 				371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */,
 			);
-			path = Modeal;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		37F3D41C22ACD3F5006BA05D /* Controllers */ = {
@@ -163,12 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */,
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
+				370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
-				37F3D41E22ACD431006BA05D /* TextFieldStyle.swift in Sources */,
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
+				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
