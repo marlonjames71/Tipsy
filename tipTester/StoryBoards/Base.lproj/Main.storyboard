@@ -50,11 +50,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaR-4w-sLh">
                                 <rect key="frame" x="40" y="162" width="214" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-hv-mPW" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-hv-mPW" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
                                         <rect key="frame" x="21.666666666666671" y="0.0" width="192.33333333333331" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="insetX">
                                                 <real key="value" value="8"/>
@@ -63,6 +63,9 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="totalDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="reB-Ec-KeV"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-eA-dzy">
                                         <rect key="frame" x="7.9999999999999991" y="9.9999999999999982" width="10.666666666666664" height="20.333333333333329"/>
@@ -85,11 +88,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy0-18-3rM">
                                 <rect key="frame" x="266" y="162" width="108" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-VM-bLN" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-VM-bLN" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
                                         <rect key="frame" x="25" y="0.0" width="83" height="40"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="insetX">
                                                 <real key="value" value="8"/>
@@ -98,6 +101,9 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tipFieldDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ie2-Cb-4hh"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-xl-eUN">
                                         <rect key="frame" x="8" y="9.9999999999999982" width="14" height="20.333333333333329"/>
@@ -234,11 +240,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ4-Zf-sIJ">
                                 <rect key="frame" x="185" y="604" width="44" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Reset">
-                                    <color key="titleColor" red="0.39358989389999999" green="0.42206794069999998" blue="0.43992456899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Reset"/>
                                 <connections>
-                                    <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UF8-Ju-XuI"/>
+                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O0A-6E-baD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV6-35-Ffh">
@@ -302,7 +306,7 @@
                         <outlet property="fourthEmoji" destination="gJo-1F-hEA" id="PwC-Vu-ZCx"/>
                         <outlet property="percentSymbol" destination="ErJ-xl-eUN" id="ieN-lP-ZLa"/>
                         <outlet property="quickTipLabel" destination="jGN-gX-IR4" id="Q91-Ql-S4E"/>
-                        <outlet property="resetButton" destination="hQ4-Zf-sIJ" id="QoZ-hj-COy"/>
+                        <outlet property="resetButton" destination="hQ4-Zf-sIJ" id="tei-f4-dcc"/>
                         <outlet property="secondEmoji" destination="uXc-NR-yI2" id="qIE-0o-Las"/>
                         <outlet property="thirdEmoji" destination="7C1-rN-L3N" id="URj-ia-roT"/>
                         <outlet property="tipAmountLabel" destination="wV6-35-Ffh" id="nle-24-8xf"/>
@@ -310,7 +314,9 @@
                         <outlet property="tipInputView" destination="dy0-18-3rM" id="B4g-uw-Keo"/>
                         <outlet property="tipOutputLabel" destination="8W3-9N-jNr" id="hCo-Ou-hVZ"/>
                         <outlet property="tipPercentLabel" destination="QxC-bl-Iqa" id="7aa-VS-szm"/>
+                        <outlet property="tipTextField" destination="FcE-VM-bLN" id="tTa-Pu-7bL"/>
                         <outlet property="totalBillErrorLabel" destination="vuZ-Co-MLv" id="3S2-nq-5Qs"/>
+                        <outlet property="totalBillTextField" destination="nnV-hv-mPW" id="YS8-1k-Sdl"/>
                         <outlet property="totalInputView" destination="iaR-4w-sLh" id="jgA-Xc-xxR"/>
                         <outlet property="totalOutputLabel" destination="1UV-c0-RGd" id="91u-Am-j81"/>
                         <outlet property="totalWithTipLabel" destination="wr3-L0-AF9" id="pb0-Qs-6bH"/>
