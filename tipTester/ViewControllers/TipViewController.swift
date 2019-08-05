@@ -11,8 +11,10 @@ import UIKit
 class TipViewController: UIViewController, UITextFieldDelegate {
 
 	var logic: CalculatorLogic?
+	var previousTip: String?
 //	var cardViewController: CardViewController!
 
+	@IBOutlet weak var tipsyTitleLabel: UILabel!
 	@IBOutlet var totalBillTextField: UITextField!
 	@IBOutlet var totalBillErrorLabel: UILabel!
 	@IBOutlet var tipTextField: UITextField!
@@ -31,10 +33,21 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var tipAmountLabel: UILabel!
 	@IBOutlet weak var totalWithTipLabel: UILabel!
 	@IBOutlet weak var firstEmoji: UIButton!
+	@IBOutlet weak var twoPercentLabel: UILabel!
 	@IBOutlet weak var secondEmoji: UIButton!
+	@IBOutlet weak var fifteenPercentLabel: UILabel!
 	@IBOutlet weak var thirdEmoji: UIButton!
+	@IBOutlet weak var twentyPercentLabel: UILabel!
 	@IBOutlet weak var fourthEmoji: UIButton!
+	@IBOutlet weak var twentyFivePercentLabel: UILabel!
+	@IBOutlet weak var emojiStackView: UIStackView!
+	@IBOutlet weak var settingsButton: UIButton!
 
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.navigationController?.isNavigationBarHidden = true
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,26 +55,30 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		logic = CalculatorLogic()
 		totalBillTextField.delegate = self
 		tipTextField.delegate = self
-		setUpUI()
+		setUpLightUI()
 		updateResetButtonTextColor()
+	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		navigationController?.isNavigationBarHidden = false
 	}
 
 	@IBAction func firstEmojiTapped(_ sender: UIButton) {
 		tipTextField.text = "2"
-//		tipCalcButtonTapped()
-		tipValueChanged()
+		emojiCalculate()
 	}
 	@IBAction func secondEmojiTapped(_ sender: UIButton) {
 		tipTextField.text = "15"
-		tipValueChanged()
+		emojiCalculate()
 	}
 	@IBAction func thirdEmojiTapped(_ sender: UIButton) {
 		tipTextField.text = "20"
-		tipValueChanged()
+		emojiCalculate()
 	}
 	@IBAction func fourthEmojiTapped(_ sender: UIButton) {
 		tipTextField.text = "25"
-		tipValueChanged()
+		emojiCalculate()
 	}
 
 
@@ -93,6 +110,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	private func tipValueChanged() {
+		tipErrorLabel.isHidden = true
 		updateResetButtonTextColor()
 		resetTaptic()
 	}
@@ -121,19 +139,13 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		updateResetButtonTextColor()
 	}
 
-//	@IBAction func totalFieldDidChange(_ sender: UITextField) {
-//		guard var totalString = sender.text else { return }
-//		let legalChar = Set("0123456789")
-//		totalString = totalString.filter { legalChar.contains($0) }
-//		guard let totalInt = Int(totalString) else { return }
-//		sender.text = String.formattedPrice(with: totalInt)
-//		totalBillErrorLabel.isHidden = true
-////		resetButton.layer.borderColor = UIColor(red: 0.94, green: 0.09, blue: 0.35, alpha: 1).cgColor
-//		resetButton.tintColor = .razzmatazz
-//	}
+	private func emojiCalculate() {
+		tipCalcButtonTapped(self)
+	}
 
-	@IBAction func tipFieldDidChange(_ sender: UITextField) {
-		tipErrorLabel.text = ""
+
+	@IBAction func tipFieldDidChange(_ sender: CustomTextField) {
+		tipErrorLabel.isHidden = true
 	}
 	
 	
@@ -146,20 +158,24 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		tipTextField.text = nil
 		totalOutputLabel.text = nil
 		tipOutputLabel.text = nil
-		totalOutputLabel.text = "$0.00"
-		tipOutputLabel.text = "$0.00"
+		totalOutputLabel.text = nil
+		tipOutputLabel.text = nil
 		tipErrorLabel.isHidden = true
 		totalBillErrorLabel.isHidden = true
 		updateResetButtonTextColor()
 	}
 
 
-	private func setUpUI() {
+	private func setUpLightUI() {
 		view.backgroundColor = .wildSand
+		tipsyTitleLabel.textColor = .black
+		dollarSymbol.textColor = .turquoiseTwo
+		percentSymbol.textColor = .turquoiseTwo
 		totalBillErrorLabel.isHidden = true
 		totalBillErrorLabel.textColor = .razzmatazz
 		tipErrorLabel.isHidden = true
 		tipErrorLabel.textColor = .razzmatazz
+		calcButton.setTitleColor(.mako, for: .normal)
 		calcButton.backgroundColor = .turquoise
 		calcButton.layer.cornerRadius = 30
 		resetButton.setTitleColor(.razzmatazz, for: .normal)
@@ -167,12 +183,64 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		totalInputView.backgroundColor = .clear
 		tipInputView.backgroundColor = .clear
 		totalInputView.backgroundColor = .white
-		totalInputView.layer.cornerRadius = 20
+		totalInputView.layer.cornerRadius = 25
 		tipInputView.backgroundColor = .white
-		tipInputView.layer.cornerRadius = 20
+		tipInputView.layer.cornerRadius = 25
+		billAmountLabel.textColor = .mako
+		tipPercentLabel.textColor = .mako
+		quickTipLabel.textColor = .mako
+		tipAmountLabel.textColor = .mako
+		totalWithTipLabel.textColor = .mako
+		twoPercentLabel.textColor = .mako
+		fifteenPercentLabel.textColor = .mako
+		twentyPercentLabel.textColor = .mako
+		twentyFivePercentLabel.textColor = .mako
+		totalBillTextField.keyboardAppearance = .light
+		tipTextField.keyboardAppearance = .light
+		totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.mako])
+		tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.mako])
+		settingsButton.setTitleColor(.turquoiseTwo, for: .normal)
 	}
 
-
+	private func setupDarkUI() {
+		view.backgroundColor = .black
+		tipsyTitleLabel.textColor = .white
+		dollarSymbol.textColor = .turquoise
+		percentSymbol.textColor = .turquoise
+		totalBillErrorLabel.isHidden = true
+		totalBillErrorLabel.textColor = .razzmatazz
+		tipErrorLabel.isHidden = true
+		tipErrorLabel.textColor = .razzmatazz
+		calcButton.setTitleColor(.mako, for: .normal)
+		calcButton.backgroundColor = .turquoise
+		calcButton.layer.cornerRadius = 30
+		resetButton.setTitleColor(.razzmatazz, for: .normal)
+		resetButton.setTitleColor(.mako, for: .disabled)
+		totalInputView.backgroundColor = .clear
+		tipInputView.backgroundColor = .clear
+		totalInputView.backgroundColor = .darkJungleGreen
+		totalInputView.layer.cornerRadius = 25
+		tipInputView.backgroundColor = .darkJungleGreen
+		tipInputView.layer.cornerRadius = 25
+		billAmountLabel.textColor = .lightGray
+		tipPercentLabel.textColor = .lightGray
+		quickTipLabel.textColor = .lightGray
+		tipAmountLabel.textColor = .lightGray
+		totalWithTipLabel.textColor = .lightGray
+		totalOutputLabel.textColor = .white
+		tipOutputLabel.textColor = .white
+		twoPercentLabel.textColor = .lightGray
+		fifteenPercentLabel.textColor = .lightGray
+		twentyPercentLabel.textColor = .lightGray
+		twentyFivePercentLabel.textColor = .lightGray
+		totalBillTextField.textColor = .white
+		tipTextField.textColor = .white
+		totalBillTextField.keyboardAppearance = .dark
+		totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+		tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+		tipTextField.keyboardAppearance = .dark
+		settingsButton.setTitleColor(.turquoise, for: .normal)
+	}
 }
 
 

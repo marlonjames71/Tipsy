@@ -18,6 +18,7 @@
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
 		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
+		37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 				370CE30322AF3B8800B66EDA /* PaddingTextField.swift */,
 				37B9A36D22F52B9A00BB774B /* StoryBoards */,
 				37B9A36E22F52BA900BB774B /* Views */,
-				37F3D41C22ACD3F5006BA05D /* Controllers */,
+				37F3D41C22ACD3F5006BA05D /* ViewControllers */,
 				37F3D41B22ACD3E2006BA05D /* Model */,
 				37B9A37122F624FD00BB774B /* Resources */,
 				371D16C322A46B4800E1BD02 /* Assets.xcassets */,
@@ -113,13 +115,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		37F3D41C22ACD3F5006BA05D /* Controllers */ = {
+		37F3D41C22ACD3F5006BA05D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				371D16BE22A46B4800E1BD02 /* TipViewController.swift */,
+				37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */,
 				3789064222A78AF80000C75A /* AlertViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +204,7 @@
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
+				37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,9 +23,5 @@ class CustomTextField: UITextField {
 	override func editingRect(forBounds bounds: CGRect) -> CGRect {
 		return bounds.insetBy(dx: insetX, dy: insetY)
 	}
-
-//	self.layer.borderWidth = 2
-//	self.layer.borderColor = #colorLiteral(red: 0.4352941215, green: 0.4431372583, blue: 0.4745098054, alpha: 1)
-//	self.layer.cornerRadius = 20
 }
 
