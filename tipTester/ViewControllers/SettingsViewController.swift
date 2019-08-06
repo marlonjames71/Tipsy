@@ -16,6 +16,7 @@ enum ThemeModes: String {
 class SettingsViewController: UIViewController {
 
 	fileprivate let themeLabelTitles: [ThemeModes] = [.light, .dark]
+	var themeHelper: ThemeHelper?
 
 	@IBOutlet weak var themeLabel: UILabel!
 	@IBOutlet weak var tableParentView: UIView!
@@ -34,6 +35,8 @@ class SettingsViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
+		guard let indexPath = tableView.indexPathForSelectedRow else { return }
+		tableView(tableView, didSelectRowAt: indexPath)
     }
 
 	private func setupLightUI() {
@@ -56,11 +59,38 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		guard let cell = tableView.cellForRow(at: indexPath) else { return }
-		if cell.isSelected {
-			cell.tintColor = .turquoiseTwo
+		// This is where I might need to check 
+		guard let themeHelper = themeHelper,
+			let cell = tableView.cellForRow(at: indexPath) else { return }
+
+		if cell.textLabel?.text == ThemeModes.light.rawValue {
+			themeHelper.setThemePreferenceLight()
 			cell.accessoryType = .checkmark
+			themeLabel.textColor = .mako
+			cell.textLabel?.textColor = .mako
+			view.backgroundColor = .wildSand
+			navigationController?.navigationBar.barTintColor = .wildSand
+			navigationController?.navigationBar.tintColor = .turquoiseTwo
+			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+		} else {
+			themeHelper.setThemePreferenceDark()
+			cell.accessoryType = .checkmark
+			themeLabel.textColor = .lightGray
+			cell.backgroundColor = .darkGray
+			view.backgroundColor = .black
+			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+			navigationController?.navigationBar.barTintColor = .black
+			navigationController?.navigationBar.tintColor = .turquoiseTwo
 		}
+//		if cell.isSelected {
+//			cell.tintColor = .turquoiseTwo
+//			cell.accessoryType = .checkmark
+//			if cell.textLabel?.text == ThemeModes.light.rawValue {
+//				#warning("Finish")
+//			} else {
+//
+//			}
+//		}
 //		tableView.reloadData()
 	}
 
@@ -70,6 +100,4 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 			cell.accessoryType = .none
 		}
 	}
-
-
 }

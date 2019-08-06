@@ -19,6 +19,8 @@
 		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
 		37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */; };
+		37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */; };
+		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 		37F3D41B22ACD3E2006BA05D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */,
+				37C85F2022F87E6C009FBE1E /* UserDefaults.swift */,
 				371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */,
 				371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */,
 			);
@@ -199,11 +205,13 @@
 				37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */,
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
 				370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */,
+				37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
+				37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */,
 				37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

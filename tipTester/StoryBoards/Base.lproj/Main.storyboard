@@ -251,7 +251,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSi-09-Ace">
-                                <rect key="frame" x="349" y="54" width="30" height="30"/>
+                                <rect key="frame" x="349" y="63" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lSi-09-Ace" secondAttribute="height" multiplier="1:1" id="mGO-Nh-dsh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" image="settings"/>
                                 <connections>
                                     <segue destination="pA6-Wd-YVC" kind="show" identifier="ShowSettingsSegue" id="7kE-79-ert"/>
@@ -279,12 +283,12 @@
                             <constraint firstItem="eCU-EL-TCO" firstAttribute="top" secondItem="Vgg-Ih-fn2" secondAttribute="bottom" constant="80" id="Ohu-fj-2dE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QxC-bl-Iqa" secondAttribute="trailing" constant="40" id="Qyy-Xj-cA8"/>
                             <constraint firstItem="wV6-35-Ffh" firstAttribute="top" secondItem="eCU-EL-TCO" secondAttribute="bottom" constant="8" id="Rr9-TM-06Y"/>
+                            <constraint firstItem="lSi-09-Ace" firstAttribute="centerY" secondItem="tsc-sw-MXh" secondAttribute="centerY" id="Sdf-rw-2jt"/>
                             <constraint firstItem="ARA-pt-Bb0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="VlM-ga-Vsx"/>
                             <constraint firstItem="dy0-18-3rM" firstAttribute="leading" secondItem="iaR-4w-sLh" secondAttribute="trailing" constant="12" id="XlI-lc-QqI"/>
                             <constraint firstItem="hQ4-Zf-sIJ" firstAttribute="top" secondItem="Nr2-gb-Vwj" secondAttribute="bottom" constant="20" id="Y1S-97-czp"/>
                             <constraint firstItem="hQ4-Zf-sIJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZKp-xa-yRI"/>
                             <constraint firstItem="wr3-L0-AF9" firstAttribute="centerX" secondItem="1UV-c0-RGd" secondAttribute="centerX" id="bSw-nW-yGG"/>
-                            <constraint firstItem="lSi-09-Ace" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dO3-1e-7gl"/>
                             <constraint firstItem="iwc-l2-a5f" firstAttribute="top" secondItem="dy0-18-3rM" secondAttribute="bottom" constant="5" id="e8p-Nw-qnU"/>
                             <constraint firstItem="vuZ-Co-MLv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="eFK-Ja-kWJ"/>
                             <constraint firstItem="iaR-4w-sLh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="mpL-EO-gGl"/>
