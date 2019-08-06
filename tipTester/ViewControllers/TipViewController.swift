@@ -97,6 +97,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		let generator = UIImpactFeedbackGenerator(style: .light)
 		generator.prepare()
 		generator.impactOccurred()
+		totalBillTextField.resignFirstResponder()
+		tipTextField.resignFirstResponder()
 		guard let totalStrInput = totalBillTextField.text, !totalStrInput.isEmpty else {
 			totalBillErrorLabel.isHidden = false
 			return
