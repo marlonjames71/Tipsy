@@ -32,8 +32,9 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		themeNotification = NotificationCenter.default.addObserver(forName: .themeChanged, object: nil, queue: nil, using: { (_) in
-			self.setUI()
+		themeNotification = NotificationCenter.default.addObserver(forName: .themeChanged, object: nil, queue: nil, using: { [weak self](_) in
+			guard let self = self else { return }
+			UIView.animate(withDuration: 0.3, animations: self.setUI)
 		})
 		tableParentView.layer.cornerRadius = 10
 		tableView.delegate = self

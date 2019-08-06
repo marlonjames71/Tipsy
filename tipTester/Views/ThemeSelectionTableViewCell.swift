@@ -29,8 +29,9 @@ class ThemeSelectionTableViewCell: UITableViewCell {
 	}
 
 	private func commonInit() {
-		themeNotification = NotificationCenter.default.addObserver(forName: .themeChanged, object: nil, queue: nil, using: { (_) in
-			self.updateViews()
+		themeNotification = NotificationCenter.default.addObserver(forName: .themeChanged, object: nil, queue: nil, using: { [weak self](_) in
+			guard let self = self else { return }
+			UIView.animate(withDuration: 0.3, animations: self.updateViews)
 		})
 	}
 

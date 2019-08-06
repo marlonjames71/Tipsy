@@ -188,7 +188,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			calcButton.layer.cornerRadius = 30
 			resetButton.setTitleColor(.razzmatazz, for: .normal)
 			resetButton.setTitleColor(.mako, for: .disabled)
-			[totalInputView, tipInputView].forEach( { $0?.backgroundColor = .white} )
+			[totalOutputLabel, tipOutputLabel].forEach( { $0?.textColor = .black})
+			[totalInputView, tipInputView].forEach( { $0?.backgroundColor = .white } )
 			[totalInputView, tipInputView].forEach( { $0?.layer.cornerRadius = 25} )
 			[billAmountLabel, tipPercentLabel, quickTipLabel, tipAmountLabel, totalWithTipLabel,
 			 twoPercentLabel, fifteenPercentLabel, twentyPercentLabel, twentyFivePercentLabel].forEach( { $0?.textColor = .mako} )
@@ -208,6 +209,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			calcButton.layer.cornerRadius = 30
 			resetButton.setTitleColor(.razzmatazz, for: .normal)
 			resetButton.setTitleColor(.mako, for: .disabled)
+			[totalOutputLabel, tipOutputLabel].forEach( { $0?.textColor = .wildSand })
 			[totalInputView, tipInputView].forEach( { $0?.backgroundColor = .darkJungleGreen} )
 			[totalInputView, tipInputView].forEach( { $0?.layer.cornerRadius = 25} )
 			[billAmountLabel, tipPercentLabel, quickTipLabel, tipAmountLabel, totalWithTipLabel,
