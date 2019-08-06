@@ -181,6 +181,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			tipsyTitleLabel.textColor = .black
 			dollarSymbol.textColor = .turquoiseTwo
 			percentSymbol.textColor = .turquoiseTwo
+			[totalBillTextField, tipTextField].forEach({ $0?.textColor = .black })
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .razzmatazz} )
 			calcButton.setTitleColor(.mako, for: .normal)
@@ -202,6 +203,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			tipsyTitleLabel.textColor = .white
 			dollarSymbol.textColor = .turquoiseTwo
 			percentSymbol.textColor = .turquoiseTwo
+			[totalBillTextField, tipTextField].forEach({ $0?.textColor = .wildSand })
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .razzmatazz} )
 			calcButton.setTitleColor(.mako, for: .normal)
