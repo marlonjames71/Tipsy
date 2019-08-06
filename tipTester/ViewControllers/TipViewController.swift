@@ -13,6 +13,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	var logic: CalculatorLogic?
 	let themeHelper = ThemeHelper()
 	var previousTip: String?
+	let clearValue = "$0.00"
 //	var cardViewController: CardViewController!
 
 	@IBOutlet weak var tipsyTitleLabel: UILabel!
@@ -48,6 +49,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.navigationController?.isNavigationBarHidden = true
+		setTheme()
 	}
 
 	override func viewDidLoad() {
@@ -59,7 +61,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		let originalImage = UIImage(named: "settings")
 		let tintedImage = originalImage?.withRenderingMode(.alwaysTemplate)
 		settingsButton.setImage(tintedImage, for: .normal)
-		setTheme()
 		updateResetButtonTextColor()
 	}
 
@@ -166,90 +167,55 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		totalBillTextField.text = nil
 		tipTextField.text = nil
 		totalOutputLabel.text = nil
-		tipOutputLabel.text = "0.00"
-		totalOutputLabel.text = "0.00"
+		tipOutputLabel.text = clearValue
+		totalOutputLabel.text = clearValue
 		tipErrorLabel.isHidden = true
 		totalBillErrorLabel.isHidden = true
 		updateResetButtonTextColor()
 	}
 
 	func setTheme() {
-		guard let theme = themeHelper.themePreference else { return }
-		switch theme {
-		case "Light":
+		switch themeHelper.themePreference {
+		case .light:
 			view.backgroundColor = .wildSand
 			tipsyTitleLabel.textColor = .black
 			dollarSymbol.textColor = .turquoiseTwo
 			percentSymbol.textColor = .turquoiseTwo
-			totalBillErrorLabel.isHidden = true
-			totalBillErrorLabel.textColor = .razzmatazz
-			tipErrorLabel.isHidden = true
-			tipErrorLabel.textColor = .razzmatazz
+			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )
+			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .razzmatazz} )
 			calcButton.setTitleColor(.mako, for: .normal)
 			calcButton.backgroundColor = .turquoise
 			calcButton.layer.cornerRadius = 30
 			resetButton.setTitleColor(.razzmatazz, for: .normal)
 			resetButton.setTitleColor(.mako, for: .disabled)
-			totalInputView.backgroundColor = .clear
-			tipInputView.backgroundColor = .clear
-			totalInputView.backgroundColor = .white
-			totalInputView.layer.cornerRadius = 25
-			tipInputView.backgroundColor = .white
-			tipInputView.layer.cornerRadius = 25
-			billAmountLabel.textColor = .mako
-			tipPercentLabel.textColor = .mako
-			quickTipLabel.textColor = .mako
-			tipAmountLabel.textColor = .mako
-			totalWithTipLabel.textColor = .mako
-			twoPercentLabel.textColor = .mako
-			fifteenPercentLabel.textColor = .mako
-			twentyPercentLabel.textColor = .mako
-			twentyFivePercentLabel.textColor = .mako
-			totalBillTextField.keyboardAppearance = .light
-			tipTextField.keyboardAppearance = .light
+			[totalInputView, tipInputView].forEach( { $0?.backgroundColor = .white} )
+			[totalInputView, tipInputView].forEach( { $0?.layer.cornerRadius = 25} )
+			[billAmountLabel, tipPercentLabel, quickTipLabel, tipAmountLabel, totalWithTipLabel,
+			 twoPercentLabel, fifteenPercentLabel, twentyPercentLabel, twentyFivePercentLabel].forEach( { $0?.textColor = .mako} )
+			[totalBillTextField, tipTextField].forEach( { $0?.keyboardAppearance = .light} )
 			totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.mako])
 			tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.mako])
 			settingsButton.tintColor = .turquoiseTwo
-		case "Dark":
+		case .dark:
 			view.backgroundColor = .black
 			tipsyTitleLabel.textColor = .white
-			dollarSymbol.textColor = .turquoise
-			percentSymbol.textColor = .turquoise
-			totalBillErrorLabel.isHidden = true
-			totalBillErrorLabel.textColor = .razzmatazz
-			tipErrorLabel.isHidden = true
-			tipErrorLabel.textColor = .razzmatazz
+			dollarSymbol.textColor = .turquoiseTwo
+			percentSymbol.textColor = .turquoiseTwo
+			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )
+			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .razzmatazz} )
 			calcButton.setTitleColor(.mako, for: .normal)
 			calcButton.backgroundColor = .turquoise
 			calcButton.layer.cornerRadius = 30
 			resetButton.setTitleColor(.razzmatazz, for: .normal)
 			resetButton.setTitleColor(.mako, for: .disabled)
-			totalInputView.backgroundColor = .clear
-			tipInputView.backgroundColor = .clear
-			totalInputView.backgroundColor = .darkJungleGreen
-			totalInputView.layer.cornerRadius = 25
-			tipInputView.backgroundColor = .darkJungleGreen
-			tipInputView.layer.cornerRadius = 25
-			billAmountLabel.textColor = .lightGray
-			tipPercentLabel.textColor = .lightGray
-			quickTipLabel.textColor = .lightGray
-			tipAmountLabel.textColor = .lightGray
-			totalWithTipLabel.textColor = .lightGray
-			totalOutputLabel.textColor = .white
-			tipOutputLabel.textColor = .white
-			twoPercentLabel.textColor = .lightGray
-			fifteenPercentLabel.textColor = .lightGray
-			twentyPercentLabel.textColor = .lightGray
-			twentyFivePercentLabel.textColor = .lightGray
-			totalBillTextField.textColor = .white
-			tipTextField.textColor = .white
-			totalBillTextField.keyboardAppearance = .dark
+			[totalInputView, tipInputView].forEach( { $0?.backgroundColor = .darkJungleGreen} )
+			[totalInputView, tipInputView].forEach( { $0?.layer.cornerRadius = 25} )
+			[billAmountLabel, tipPercentLabel, quickTipLabel, tipAmountLabel, totalWithTipLabel,
+			 twoPercentLabel, fifteenPercentLabel, twentyPercentLabel, twentyFivePercentLabel].forEach( { $0?.textColor = .lightGray} )
+			[totalBillTextField, tipTextField].forEach( { $0?.keyboardAppearance = .dark} )
 			totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 			tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-			tipTextField.keyboardAppearance = .dark
-			settingsButton.tintColor = .turquoise
-		default:
-			break
+			settingsButton.tintColor = .turquoiseTwo
 		}
 	}
 }

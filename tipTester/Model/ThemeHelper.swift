@@ -12,33 +12,43 @@ protocol ThemeHelperAccessable: AnyObject {
 	var themeHelper: ThemeHelper? { set get }
 }
 
+enum ThemeMode: Int, CaseIterable {
+	case light = 0
+	case dark
+
+	var stringValue: String {
+		switch self {
+		case .light:
+			return "Light"
+		case .dark:
+			return "Dark"
+		}
+	}
+}
+
 class ThemeHelper {
 
 	let themePreferenceKey = "selectTheme"
 
-	init() {
-		if themePreference == nil {
-			setThemePreferenceDark()
-		}
-	}
-
-	var themePreference: String? {
+	var themePreference: ThemeMode {
 		let defaults = UserDefaults.standard
-		let theme = defaults.string(forKey: themePreferenceKey)
-		return theme
+		let themeRawValue = (defaults[themePreferenceKey] as? Int) ?? 0
+		return ThemeMode(rawValue: themeRawValue) ?? ThemeMode.light
 	}
 
 	func setThemePreferenceLight() {
 		let defaults = UserDefaults.standard
-		defaults["lightModeEnabled"] = true
-//		defaults.register(defaults: ["LightTheme" : true])
-		defaults.set("Light", forKey: themePreferenceKey)
+		defaults[themePreferenceKey] = ThemeMode.light.rawValue
+		NotificationCenter.default.post(name: .themeChanged, object: nil)
 	}
 
 	func setThemePreferenceDark() {
 		let defaults = UserDefaults.standard
-		defaults["darkModeEnabled"] = true
-//		defaults.register(defaults: ["DarkTheme" : false])
-		defaults.set("Dark", forKey: themePreferenceKey)
+		defaults[themePreferenceKey] = ThemeMode.dark.rawValue
+		NotificationCenter.default.post(name: .themeChanged, object: nil)
 	}
+}
+
+extension NSNotification.Name {
+	static let themeChanged = NSNotification.Name("com.marlon.tipsy.themeChanged")
 }

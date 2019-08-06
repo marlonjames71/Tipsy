@@ -21,6 +21,7 @@
 		37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */; };
 		37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */; };
 		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
+		37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		37B9A36E22F52BA900BB774B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */,
 				37B9A36B22F4EE2500BB774B /* CustomTextField.swift */,
 			);
 			path = Views;
@@ -206,6 +209,7 @@
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
 				370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */,
 				37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */,
+				37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,

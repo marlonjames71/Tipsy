@@ -20,10 +20,4 @@ extension UserDefaults {
 	}
 }
 
-let defaults = UserDefaults.standard
-
-let darkModeEnabled = (defaults["darkModeEnabled"] as? Bool) ?? false
-
-let lightModeEnabled = (defaults["lightModeEnabled"] as? Bool) ?? false
-
 
