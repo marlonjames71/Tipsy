@@ -19,12 +19,18 @@ class SettingsViewController: UIViewController {
 	var themeHelper: ThemeHelper?
 	var themeNotification: NSObjectProtocol?
 
+	// TODO: - Fix This!
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return setStatusBarStyle()
+	}
+
 	@IBOutlet weak var themeLabel: UILabel!
 	@IBOutlet weak var tableParentView: UIView!
 	@IBOutlet weak var tableView: UITableView!
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		setNeedsStatusBarAppearanceUpdate()
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.isNavigationBarHidden = false
 		setUI()
@@ -43,7 +49,18 @@ class SettingsViewController: UIViewController {
 		guard let indexPath = tableView.indexPathForSelectedRow else { return }
 		tableView(tableView, didSelectRowAt: indexPath)
     }
-	
+
+	// TODO: - Fix this too!
+	func setStatusBarStyle() -> UIStatusBarStyle {
+		guard let themeHelper = themeHelper else { return .default }
+
+		switch themeHelper.themePreference {
+		case .dark:
+			return .lightContent
+		case .light:
+			return .default
+		}
+	}
 
 	func setUI() {
 		guard let themeHelper = themeHelper else { return }
@@ -81,6 +98,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 		guard let themeHelper = themeHelper,
 			let cell = tableView.cellForRow(at: indexPath) else { return }
 		if cell.textLabel?.text == ThemeModes.light.rawValue {
+			setNeedsStatusBarAppearanceUpdate()
 			themeHelper.setThemePreferenceLight()
 		} else {
 			themeHelper.setThemePreferenceDark()

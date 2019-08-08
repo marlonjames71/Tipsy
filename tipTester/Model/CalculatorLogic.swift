@@ -11,8 +11,8 @@ import Foundation
 
 class CalculatorLogic {
 	
-	var alert: AlertViewController?
-	
+//	var alert: AlertViewController?
+
 	func calculateTipTotal(subTotalStr: String, tipPercentStr: String) -> (String, String)? {
 		var tip: Double = 0.0
 		var total: Double = 0.0

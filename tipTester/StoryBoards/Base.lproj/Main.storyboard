@@ -18,17 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj">
-                                <rect key="frame" x="80.666666666666686" y="524" width="253" height="60"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <inset key="contentEdgeInsets" minX="50" minY="15" maxX="50" maxY="15"/>
-                                <state key="normal" title="Calculate Tip">
-                                    <color key="titleColor" red="0.35643533422826235" green="0.38222507704996872" blue="0.39839605437665782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="tipCalcButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuq-Ja-NaZ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipsy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsc-sw-MXh">
                                 <rect key="frame" x="154.66666666666666" y="54" width="104.99999999999997" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
@@ -103,6 +92,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="tipFieldDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ie2-Cb-4hh"/>
+                                            <action selector="tipFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="pkf-uM-cAp"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-xl-eUN">
@@ -213,17 +203,17 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-EL-TCO">
-                                <rect key="frame" x="61.666666666666657" y="407" width="290.66666666666674" height="48"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-EL-TCO">
+                                <rect key="frame" x="69.333333333333343" y="407" width="275.66666666666663" height="48"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8W3-9N-jNr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8W3-9N-jNr">
                                         <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UV-c0-RGd">
-                                        <rect key="frame" x="170.33333333333334" y="0.0" width="120.33333333333334" height="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1UV-c0-RGd">
+                                        <rect key="frame" x="155.33333333333331" y="0.0" width="120.33333333333331" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -231,21 +221,22 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ4-Zf-sIJ">
-                                <rect key="frame" x="185" y="604" width="44" height="33"/>
+                                <rect key="frame" x="175" y="604" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O0A-6E-baD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV6-35-Ffh">
-                                <rect key="frame" x="89.333333333333343" y="463" width="65.333333333333343" height="14.333333333333314"/>
+                                <rect key="frame" x="96.666666666666686" y="463" width="65.333333333333314" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total With Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr3-L0-AF9">
-                                <rect key="frame" x="253.00000000000003" y="463" width="78.333333333333343" height="14.333333333333314"/>
+                                <rect key="frame" x="245.66666666666666" y="463" width="78.333333333333343" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -259,6 +250,17 @@
                                 <state key="normal" image="settings"/>
                                 <connections>
                                     <segue destination="pA6-Wd-YVC" kind="show" identifier="ShowSettingsSegue" id="7kE-79-ert"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj">
+                                <rect key="frame" x="80.666666666666686" y="524" width="253" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="contentEdgeInsets" minX="50" minY="15" maxX="50" maxY="15"/>
+                                <state key="normal" title="Calculate Tip">
+                                    <color key="titleColor" red="0.35643533422826235" green="0.38222507704996872" blue="0.39839605437665782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tipCalcButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuq-Ja-NaZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -279,20 +281,22 @@
                             <constraint firstItem="iaR-4w-sLh" firstAttribute="top" secondItem="bez-C7-sMy" secondAttribute="bottom" constant="5" id="HmO-kQ-DPH"/>
                             <constraint firstItem="wV6-35-Ffh" firstAttribute="centerX" secondItem="8W3-9N-jNr" secondAttribute="centerX" id="LOe-YX-lwt"/>
                             <constraint firstItem="wr3-L0-AF9" firstAttribute="top" secondItem="eCU-EL-TCO" secondAttribute="bottom" constant="8" id="Lmh-To-Ltc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hQ4-Zf-sIJ" secondAttribute="bottom" constant="225" id="Nh7-1D-TG5"/>
                             <constraint firstItem="eCU-EL-TCO" firstAttribute="top" secondItem="Vgg-Ih-fn2" secondAttribute="bottom" constant="80" id="Ohu-fj-2dE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QxC-bl-Iqa" secondAttribute="trailing" constant="40" id="Qyy-Xj-cA8"/>
                             <constraint firstItem="wV6-35-Ffh" firstAttribute="top" secondItem="eCU-EL-TCO" secondAttribute="bottom" constant="8" id="Rr9-TM-06Y"/>
                             <constraint firstItem="lSi-09-Ace" firstAttribute="centerY" secondItem="tsc-sw-MXh" secondAttribute="centerY" id="Sdf-rw-2jt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eCU-EL-TCO" secondAttribute="trailing" constant="20" id="TIW-uS-5gW"/>
                             <constraint firstItem="ARA-pt-Bb0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="VlM-ga-Vsx"/>
                             <constraint firstItem="dy0-18-3rM" firstAttribute="leading" secondItem="iaR-4w-sLh" secondAttribute="trailing" constant="12" id="XlI-lc-QqI"/>
                             <constraint firstItem="hQ4-Zf-sIJ" firstAttribute="top" secondItem="Nr2-gb-Vwj" secondAttribute="bottom" constant="20" id="Y1S-97-czp"/>
                             <constraint firstItem="hQ4-Zf-sIJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZKp-xa-yRI"/>
                             <constraint firstItem="wr3-L0-AF9" firstAttribute="centerX" secondItem="1UV-c0-RGd" secondAttribute="centerX" id="bSw-nW-yGG"/>
                             <constraint firstItem="iwc-l2-a5f" firstAttribute="top" secondItem="dy0-18-3rM" secondAttribute="bottom" constant="5" id="e8p-Nw-qnU"/>
+                            <constraint firstItem="Nr2-gb-Vwj" firstAttribute="top" secondItem="eCU-EL-TCO" secondAttribute="bottom" constant="69" id="e9s-Ig-6pl"/>
                             <constraint firstItem="vuZ-Co-MLv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="eFK-Ja-kWJ"/>
                             <constraint firstItem="iaR-4w-sLh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="mpL-EO-gGl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jGN-gX-IR4" secondAttribute="trailing" constant="40" id="n1f-A7-ZrT"/>
+                            <constraint firstItem="eCU-EL-TCO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="neo-P4-1CO"/>
                             <constraint firstItem="vuZ-Co-MLv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iaR-4w-sLh" secondAttribute="trailing" id="o5S-iK-pkz"/>
                             <constraint firstItem="iaR-4w-sLh" firstAttribute="leading" secondItem="bez-C7-sMy" secondAttribute="leading" constant="-20" id="oMu-Ki-bD6"/>
                             <constraint firstAttribute="trailing" secondItem="iaR-4w-sLh" secondAttribute="trailing" constant="160" id="olu-Cn-XpO"/>
@@ -304,6 +308,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dy0-18-3rM" secondAttribute="trailing" constant="40" id="zO0-0a-6yj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Y1S-97-czp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="oRC-AP-1U3"/>
                     <nil key="simulatedTopBarMetrics"/>
