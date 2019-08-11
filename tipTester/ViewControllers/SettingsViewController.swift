@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
 		didSet {
 			print(self.isDarkStatusBar)
 			UIView.animate(withDuration: 0.3) {
-				self.setNeedsStatusBarAppearanceUpdate()
+				self.navigationController?.setNeedsStatusBarAppearanceUpdate()
 			}
 		}
 	}
@@ -98,10 +98,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 			let cell = tableView.cellForRow(at: indexPath) else { return }
 		if cell.textLabel?.text == ThemeModes.light.rawValue {
 			themeHelper.setThemePreferenceLight()
-//			isDarkStatusBar.toggle()
 		} else {
 			themeHelper.setThemePreferenceDark()
-//			isDarkStatusBar.toggle()
 		}
 	}
 }

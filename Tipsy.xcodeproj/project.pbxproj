@@ -15,6 +15,7 @@
 		371D16C722A46B4800E1BD02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */; };
 		371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */; };
 		371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */; };
+		373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */; };
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
 		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
@@ -35,6 +36,7 @@
 		371D16C822A46B4800E1BD02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
+		373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				37B9A36D22F52B9A00BB774B /* StoryBoards */,
 				37B9A36E22F52BA900BB774B /* Views */,
 				37F3D41C22ACD3F5006BA05D /* ViewControllers */,
+				373FB90623009FE7009EF31C /* Extensions */,
 				37F3D41B22ACD3E2006BA05D /* Model */,
 				37B9A37122F624FD00BB774B /* Resources */,
 				371D16C322A46B4800E1BD02 /* Assets.xcassets */,
@@ -86,6 +89,14 @@
 				371D16C822A46B4800E1BD02 /* Info.plist */,
 			);
 			path = tipTester;
+			sourceTree = "<group>";
+		};
+		373FB90623009FE7009EF31C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		37B9A36D22F52B9A00BB774B /* StoryBoards */ = {
@@ -212,6 +223,7 @@
 				37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
+				373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */,
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,

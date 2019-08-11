@@ -17,16 +17,14 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	var previousTip: String?
 	let clearValue = "$0.00"
 	
-//	override var preferredStatusBarStyle: UIStatusBarStyle {
-//		switch themeHelper.themePreference {
-//		case .dark:
-//			return .lightContent
-//		case .light:
-//			return .default
-//		}
-//	}
-
-//	private var _preferredStatusBarStyle = UIStatusBarStyle.default
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		switch themeHelper.themePreference {
+		case .dark:
+			return .lightContent
+		case .light:
+			return .default
+		}
+	}
 
 	// MARK: - Outlets (In order on screen)
 
