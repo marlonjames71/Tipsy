@@ -17,16 +17,16 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	var previousTip: String?
 	let clearValue = "$0.00"
 	
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		switch themeHelper.themePreference {
-		case .dark:
-			return .lightContent
-		case .light:
-			return .default
-		}
-	}
+//	override var preferredStatusBarStyle: UIStatusBarStyle {
+//		switch themeHelper.themePreference {
+//		case .dark:
+//			return .lightContent
+//		case .light:
+//			return .default
+//		}
+//	}
 
-	private var _preferredStatusBarStyle = UIStatusBarStyle.default
+//	private var _preferredStatusBarStyle = UIStatusBarStyle.default
 
 	// MARK: - Outlets (In order on screen)
 
@@ -262,7 +262,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 			tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 			settingsButton.tintColor = .turquoiseTwo
-			_preferredStatusBarStyle = UIStatusBarStyle.lightContent
+//			_preferredStatusBarStyle = UIStatusBarStyle.lightContent
 		}
 	}
 }

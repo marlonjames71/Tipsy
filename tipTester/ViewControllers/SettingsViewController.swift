@@ -19,18 +19,26 @@ class SettingsViewController: UIViewController {
 	var themeHelper: ThemeHelper?
 	var themeNotification: NSObjectProtocol?
 
-	// TODO: - Fix This!
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		return setStatusBarStyle()
+	var isDarkStatusBar = false {
+		didSet {
+			print(self.isDarkStatusBar)
+			UIView.animate(withDuration: 0.3) {
+				self.setNeedsStatusBarAppearanceUpdate()
+			}
+		}
 	}
 
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return isDarkStatusBar ? .default : .lightContent
+	}
+
+
 	@IBOutlet weak var themeLabel: UILabel!
-	@IBOutlet weak var tableParentView: UIView!
+	@IBOutlet weak var tableContainerView: UIView!
 	@IBOutlet weak var tableView: UITableView!
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		setNeedsStatusBarAppearanceUpdate()
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.isNavigationBarHidden = false
 		setUI()
@@ -42,7 +50,7 @@ class SettingsViewController: UIViewController {
 			guard let self = self else { return }
 			UIView.animate(withDuration: 0.3, animations: self.setUI)
 		})
-		tableParentView.layer.cornerRadius = 10
+		tableContainerView.layer.cornerRadius = 10
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
@@ -50,17 +58,6 @@ class SettingsViewController: UIViewController {
 		tableView(tableView, didSelectRowAt: indexPath)
     }
 
-	// TODO: - Fix this too!
-	func setStatusBarStyle() -> UIStatusBarStyle {
-		guard let themeHelper = themeHelper else { return .default }
-
-		switch themeHelper.themePreference {
-		case .dark:
-			return .lightContent
-		case .light:
-			return .default
-		}
-	}
 
 	func setUI() {
 		guard let themeHelper = themeHelper else { return }
@@ -71,12 +68,14 @@ class SettingsViewController: UIViewController {
 			navigationController?.navigationBar.barTintColor = .wildSand
 			navigationController?.navigationBar.tintColor = .turquoiseTwo
 			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+			isDarkStatusBar = true
 		case .dark:
 			themeLabel.textColor = .lightGray
 			view.backgroundColor = .black
 			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 			navigationController?.navigationBar.barTintColor = .black
 			navigationController?.navigationBar.tintColor = .turquoiseTwo
+			isDarkStatusBar = false
 		}
 	}
 }
@@ -98,10 +97,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 		guard let themeHelper = themeHelper,
 			let cell = tableView.cellForRow(at: indexPath) else { return }
 		if cell.textLabel?.text == ThemeModes.light.rawValue {
-			setNeedsStatusBarAppearanceUpdate()
 			themeHelper.setThemePreferenceLight()
+//			isDarkStatusBar.toggle()
 		} else {
 			themeHelper.setThemePreferenceDark()
+//			isDarkStatusBar.toggle()
 		}
 	}
 }
