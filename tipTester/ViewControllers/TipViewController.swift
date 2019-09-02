@@ -56,9 +56,24 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var tipAmountLabel: UILabel!
 	@IBOutlet weak var calcButton: UIButton!
 	@IBOutlet weak var resetButton: UIButton!
+	@IBOutlet weak var splitButton: UIButton!
+
+//	@IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
 
 
 	// MARK: - Lifecycle
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		navigationController?.navigationBar.isHidden = true
+		logic = CalculatorLogic()
+		totalBillTextField.delegate = self
+		tipTextField.delegate = self
+		let originalImage = UIImage(named: "settings")
+		let tintedImage = originalImage?.withRenderingMode(.alwaysTemplate)
+		settingsButton.setImage(tintedImage, for: .normal)
+		updateResetButtonTextColor()
+	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -71,16 +86,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		navigationController?.navigationBar.isHidden = true
-		logic = CalculatorLogic()
-		totalBillTextField.delegate = self
-		tipTextField.delegate = self
-		let originalImage = UIImage(named: "settings")
-		let tintedImage = originalImage?.withRenderingMode(.alwaysTemplate)
-		settingsButton.setImage(tintedImage, for: .normal)
-		updateResetButtonTextColor()
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		setTheme()
 	}
 
 	override func viewWillDisappear(_ animated: Bool) {
@@ -97,6 +105,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		generator.impactOccurred()
 		totalBillTextField.resignFirstResponder()
 		tipTextField.resignFirstResponder()
+		resetButton.isEnabled = true
 		guard let totalStrInput = totalBillTextField.text, !totalStrInput.isEmpty else {
 			totalBillErrorLabel.isHidden = false
 			return
@@ -157,7 +166,14 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	@IBAction func tipFieldDidChange(_ sender: CustomTextField) {
 		tipErrorLabel.isHidden = true
+		tipValueChanged()
 	}
+
+	@IBAction func splitButtonTapped(_ sender: UIButton) {
+		showSplitPlatter()
+	}
+
+
 
 
 	// MARK: - Navigation
@@ -169,6 +185,17 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 
 	// MARK: - Helper Methods
+
+	private func showSplitPlatter() {
+		guard let platterViewController = storyboard?.instantiateViewController(withIdentifier: "PlatterViewController") as? PlatterViewController else { return }
+		addChild(platterViewController)
+		view.addSubview(platterViewController.view)
+		platterViewController.animateIn()
+	}
+
+	private func removeSplitPlatter(platterViewController: PlatterViewController) {
+		
+	}
 
 	private func tipValueChanged() {
 		tipErrorLabel.isHidden = true
@@ -184,6 +211,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	private func updateResetButtonTextColor() {
 		if totalBillTextField.text?.isEmpty == true && tipTextField.text?.isEmpty == true {
 			resetButton.isEnabled = false
+		} else  if totalBillTextField.text?.isEmpty == true && tipTextField.text?.isEmpty == false {
+			resetButton.isEnabled = true
 		} else {
 			resetButton.isEnabled = true
 		}
@@ -238,6 +267,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.mako])
 			tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.mako])
 			settingsButton.tintColor = .turquoiseTwo
+			splitButton.backgroundColor = .turquoise
+			splitButton.layer.cornerRadius = splitButton.frame.height / 2
+			splitButton.setTitleColor(.mako2, for: .normal)
 		case .dark:
 			view.backgroundColor = .black
 			tipsyTitleLabel.textColor = .white
@@ -246,7 +278,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			[totalBillTextField, tipTextField].forEach({ $0?.textColor = .wildSand })
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .razzmatazz} )
-			calcButton.setTitleColor(.mako, for: .normal)
+			calcButton.setTitleColor(.mako2, for: .normal)
 			calcButton.backgroundColor = .turquoise
 			calcButton.layer.cornerRadius = 30
 			resetButton.setTitleColor(.canCan, for: .normal)
@@ -260,10 +292,10 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 			tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 			settingsButton.tintColor = .turquoiseTwo
-//			_preferredStatusBarStyle = UIStatusBarStyle.lightContent
+			splitButton.layer.cornerRadius = splitButton.frame.height / 2
+			splitButton.backgroundColor = .turquoise
+			splitButton.setTitleColor(.mako2, for: .normal)
 		}
 	}
 }
-
-
 

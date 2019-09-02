@@ -10,8 +10,6 @@ import Foundation
 
 
 class CalculatorLogic {
-	
-//	var alert: AlertViewController?
 
 	func calculateTipTotal(subTotalStr: String, tipPercentStr: String) -> (String, String)? {
 		var tip: Double = 0.0
@@ -24,8 +22,6 @@ class CalculatorLogic {
 			tip = subTotal * tipPercent / 100
 			total = subTotal + tip
 			
-		} else {
-			// TODO: Add some kind of alert message maybe?
 		}
 		
 		guard let formattedTip = currencyFormatter.string(from: NSNumber(value: tip)) else { return nil}

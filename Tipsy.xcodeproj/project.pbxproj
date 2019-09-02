@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BFEE3231CB682009B7B25 /* PlatterViewController.swift */; };
+		370BFEE6231CBE77009B7B25 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BFEE5231CBE77009B7B25 /* ScaleSegue.swift */; };
 		370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370CE30322AF3B8800B66EDA /* PaddingTextField.swift */; };
 		371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BC22A46B4800E1BD02 /* AppDelegate.swift */; };
 		371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BE22A46B4800E1BD02 /* TipViewController.swift */; };
@@ -16,6 +18,7 @@
 		371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */; };
 		371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */; };
 		373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */; };
+		373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB9072300FF97009EF31C /* CustomButtons.swift */; };
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
 		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
@@ -26,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370BFEE3231CB682009B7B25 /* PlatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatterViewController.swift; sourceTree = "<group>"; };
+		370BFEE5231CBE77009B7B25 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
 		370CE30322AF3B8800B66EDA /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		371D16B922A46B4800E1BD02 /* tipTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D16BC22A46B4800E1BD02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
+		373FB9072300FF97009EF31C /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 		37B9A36E22F52BA900BB774B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				373FB9072300FF97009EF31C /* CustomButtons.swift */,
 				37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */,
 				37B9A36B22F4EE2500BB774B /* CustomTextField.swift */,
 			);
@@ -119,6 +126,7 @@
 		37B9A37122F624FD00BB774B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				370BFEE5231CBE77009B7B25 /* ScaleSegue.swift */,
 				37B9A36F22F624F500BB774B /* Colors.swift */,
 			);
 			path = Resources;
@@ -139,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				371D16BE22A46B4800E1BD02 /* TipViewController.swift */,
+				370BFEE3231CB682009B7B25 /* PlatterViewController.swift */,
 				37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */,
 				3789064222A78AF80000C75A /* AlertViewController.swift */,
 			);
@@ -218,6 +227,7 @@
 			files = (
 				37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */,
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
+				373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */,
 				370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */,
 				37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */,
 				37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */,
@@ -227,7 +237,9 @@
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
+				370BFEE6231CBE77009B7B25 /* ScaleSegue.swift in Sources */,
 				37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */,
+				370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */,
 				37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = tipTester/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,7 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = tipTester/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

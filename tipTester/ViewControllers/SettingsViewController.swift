@@ -21,7 +21,6 @@ class SettingsViewController: UIViewController {
 
 	var isDarkStatusBar = false {
 		didSet {
-			print(self.isDarkStatusBar)
 			UIView.animate(withDuration: 0.3) {
 				self.navigationController?.setNeedsStatusBarAppearanceUpdate()
 			}
@@ -34,9 +33,11 @@ class SettingsViewController: UIViewController {
 
 
 	@IBOutlet weak var themeLabel: UILabel!
-	@IBOutlet weak var tableContainerView: UIView!
-	@IBOutlet weak var tableView: UITableView!
-
+	@IBOutlet weak var themeTableContainerView: UIView!
+	@IBOutlet weak var themeTableView: UITableView!
+	@IBOutlet weak var emojiSelectLabel: UILabel!
+	@IBOutlet weak var cellContainer: UIView!
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		navigationController?.navigationBar.prefersLargeTitles = true
@@ -50,12 +51,12 @@ class SettingsViewController: UIViewController {
 			guard let self = self else { return }
 			UIView.animate(withDuration: 0.3, animations: self.setUI)
 		})
-		tableContainerView.layer.cornerRadius = 10
-		tableView.delegate = self
-		tableView.dataSource = self
-		tableView.tableFooterView = UIView()
-		guard let indexPath = tableView.indexPathForSelectedRow else { return }
-		tableView(tableView, didSelectRowAt: indexPath)
+		themeTableContainerView.layer.cornerRadius = 10
+		themeTableView.delegate = self
+		themeTableView.dataSource = self
+		themeTableView.tableFooterView = UIView()
+		guard let indexPath = themeTableView.indexPathForSelectedRow else { return }
+		tableView(themeTableView, didSelectRowAt: indexPath)
     }
 
 
