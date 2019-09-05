@@ -72,6 +72,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		let originalImage = UIImage(named: "settings")
 		let tintedImage = originalImage?.withRenderingMode(.alwaysTemplate)
 		settingsButton.setImage(tintedImage, for: .normal)
+		let splitIcon = UIImage(named: "splitIcon60")
+		let tintedIcon = splitIcon?.withRenderingMode(.alwaysTemplate)
+		splitButton.setImage(tintedIcon, for: .normal)
+		let resetIcon = UIImage(named: "reset-50")
+		let tintedResetIcon = resetIcon?.withRenderingMode(.alwaysTemplate)
+		resetButton.setImage(tintedResetIcon, for: .normal)
 		updateResetButtonTextColor()
 	}
 
@@ -187,14 +193,16 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	// MARK: - Helper Methods
 
 	private func showSplitPlatter() {
-		guard let platterViewController = storyboard?.instantiateViewController(withIdentifier: "PlatterViewController") as? PlatterViewController else { return }
+		guard let platterViewController = storyboard?.instantiateViewController(withIdentifier: "PlatterViewController") as? PlatterViewController,
+			let total = totalOutputLabel.text,
+			let originalTotal = totalBillTextField.text else { return }
+		platterViewController.themeHelper = themeHelper
+		platterViewController.totalAmount = total
+		platterViewController.originalTotal = originalTotal
+		platterViewController.logic = logic
 		addChild(platterViewController)
 		view.addSubview(platterViewController.view)
 		platterViewController.animateIn()
-	}
-
-	private func removeSplitPlatter(platterViewController: PlatterViewController) {
-		
 	}
 
 	private func tipValueChanged() {
@@ -244,6 +252,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	// MARK: - Theme Function
 
 	func setTheme() {
+		splitButton.setTitle(" Split", for: .normal)
 		switch themeHelper.themePreference {
 		case .light:
 			view.backgroundColor = .wildSand
@@ -253,7 +262,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			[totalBillTextField, tipTextField].forEach({ $0?.textColor = .black })
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .razzmatazz} )
-			calcButton.setTitleColor(.mako, for: .normal)
+			calcButton.setTitleColor(.mako2, for: .normal)
 			calcButton.backgroundColor = .turquoise
 			calcButton.layer.cornerRadius = 30
 			resetButton.setTitleColor(.canCan, for: .normal)
@@ -267,9 +276,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.mako])
 			tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.mako])
 			settingsButton.tintColor = .turquoiseTwo
-			splitButton.backgroundColor = .turquoise
+			splitButton.overrideUserInterfaceStyle = .light
+			splitButton.backgroundColor = .tertiarySystemBackground
 			splitButton.layer.cornerRadius = splitButton.frame.height / 2
-			splitButton.setTitleColor(.mako2, for: .normal)
+			splitButton.setTitleColor(.turquoiseTwo, for: .normal)
+			splitButton.tintColor = .turquoiseTwo
+			resetButton.tintColor = .mako
 		case .dark:
 			view.backgroundColor = .black
 			tipsyTitleLabel.textColor = .white
@@ -292,9 +304,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			totalBillTextField.attributedPlaceholder = NSAttributedString(string: "0.00", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 			tipTextField.attributedPlaceholder = NSAttributedString(string: "0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 			settingsButton.tintColor = .turquoiseTwo
+			splitButton.overrideUserInterfaceStyle = .dark
 			splitButton.layer.cornerRadius = splitButton.frame.height / 2
-			splitButton.backgroundColor = .turquoise
-			splitButton.setTitleColor(.mako2, for: .normal)
+			splitButton.backgroundColor = .secondarySystemBackground
+			splitButton.setTitleColor(.turquoise, for: .normal)
+			splitButton.tintColor = .turquoiseTwo
+			resetButton.tintColor = .wildSand
 		}
 	}
 }
