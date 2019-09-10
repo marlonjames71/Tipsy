@@ -354,14 +354,17 @@
                         <outlet property="billAmountLabel" destination="bez-C7-sMy" id="GgO-Np-D30"/>
                         <outlet property="calcButton" destination="Nr2-gb-Vwj" id="0Og-XF-epx"/>
                         <outlet property="dollarSymbol" destination="3uH-eA-dzy" id="bsi-iA-INL"/>
+                        <outlet property="downSwipeGesture" destination="0fQ-G1-hMn" id="Atf-fi-v8W"/>
                         <outlet property="emojiStackView" destination="ARA-pt-Bb0" id="uYk-W6-OTj"/>
                         <outlet property="fifteenPercentLabel" destination="rvc-Hz-pfj" id="P2t-gO-eLk"/>
                         <outlet property="firstEmoji" destination="v9Z-fV-Crm" id="K5C-VY-L1i"/>
                         <outlet property="fourthEmoji" destination="gJo-1F-hEA" id="PwC-Vu-ZCx"/>
                         <outlet property="hideKeyboardButton" destination="L0i-9e-Iz8" id="8id-fz-TRK"/>
+                        <outlet property="leftSwipeGesture" destination="syC-aH-hvb" id="zC9-ZD-pku"/>
                         <outlet property="percentSymbol" destination="ErJ-xl-eUN" id="ieN-lP-ZLa"/>
                         <outlet property="quickTipLabel" destination="jGN-gX-IR4" id="Q91-Ql-S4E"/>
                         <outlet property="resetButton" destination="hQ4-Zf-sIJ" id="tei-f4-dcc"/>
+                        <outlet property="rightSwipeGesture" destination="94z-zZ-Thc" id="hgQ-hX-Mn7"/>
                         <outlet property="secondEmoji" destination="uXc-NR-yI2" id="qIE-0o-Las"/>
                         <outlet property="settingsButton" destination="lSi-09-Ace" id="K7q-E1-8ZI"/>
                         <outlet property="splitButton" destination="i2E-4d-mgh" id="LcG-xy-5dU"/>

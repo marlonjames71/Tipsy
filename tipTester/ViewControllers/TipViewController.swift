@@ -59,6 +59,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var splitButton: UIButton!
 	@IBOutlet weak var activateKeyboardButton: UIButton!
 	@IBOutlet weak var hideKeyboardButton: UIButton!
+	@IBOutlet weak var leftSwipeGesture: UISwipeGestureRecognizer!
+	@IBOutlet weak var rightSwipeGesture: UISwipeGestureRecognizer!
+	@IBOutlet weak var downSwipeGesture: UISwipeGestureRecognizer!
 
 //	@IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
 
@@ -226,9 +229,11 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		platterViewController.totalAmount = total
 		platterViewController.originalTotal = originalTotal
 		platterViewController.logic = logic
+		platterViewController.delegate = self
 		addChild(platterViewController)
 		view.addSubview(platterViewController.view)
 		platterViewController.animateIn()
+		[leftSwipeGesture, rightSwipeGesture, downSwipeGesture].forEach { $0?.isEnabled = false }
 	}
 
 	private func tipValueChanged() {
@@ -367,3 +372,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	}
 }
 
+extension TipViewController: PlatterViewControllerDelegate {
+	func didFinishShowing() {
+		[leftSwipeGesture, rightSwipeGesture, downSwipeGesture].forEach { $0?.isEnabled = true }
+	}
+}

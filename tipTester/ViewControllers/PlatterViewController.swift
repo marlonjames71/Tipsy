@@ -9,6 +9,10 @@
 import UIKit
 import CoreMotion
 
+protocol PlatterViewControllerDelegate: AnyObject {
+	func didFinishShowing()
+}
+
 class PlatterViewController: UIViewController {
 
 	enum PlatterPosition {
@@ -63,6 +67,8 @@ class PlatterViewController: UIViewController {
 			}
 		}
 	}
+
+	weak var delegate: PlatterViewControllerDelegate?
 
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		return isDarkStatusBar ? .default : .lightContent	}
@@ -146,6 +152,7 @@ class PlatterViewController: UIViewController {
 			self.view.transform = CGAffineTransform(scaleX: 5.0, y: 2.5)
 			self.view.alpha = 0
 		}, completion: completion)
+		
 	}
 
 	func movePlatter(to destination: PlatterPosition) {
@@ -186,6 +193,7 @@ class PlatterViewController: UIViewController {
 	}
 
 	func dismissView(animated: Bool = true) {
+		delegate?.didFinishShowing()
 		if animated {
 			animateOut { _ in
 				self.view.removeFromSuperview()
