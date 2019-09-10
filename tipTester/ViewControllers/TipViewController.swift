@@ -195,6 +195,18 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		tipTextField.resignFirstResponder()
 	}
 
+	@IBAction func leftSwipe(_ sender: UISwipeGestureRecognizer) {
+		totalBillTextField.becomeFirstResponder()
+	}
+	@IBAction func rightSwipe(_ sender: UISwipeGestureRecognizer) {
+		tipTextField.becomeFirstResponder()
+	}
+	@IBAction func downSwipe(_ sender: UISwipeGestureRecognizer) {
+		tipTextField.resignFirstResponder()
+		totalBillTextField.resignFirstResponder()
+		showHideKeyboard(show: false)
+	}
+
 
 	// MARK: - Navigation
 
@@ -242,7 +254,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			UIView.animate(withDuration: 0.3) {
 				self.hideKeyboardButton.alpha = 0
 			}
-			UIView.animate(withDuration: 0.7) {
+			UIView.animate(withDuration: 0.8) {
 				self.activateKeyboardButton.alpha = 1
 			}
 		}
@@ -265,10 +277,10 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 
-	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		showHideKeyboard(show: false)
-		self.view.endEditing(true)
-	}
+//	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//		showHideKeyboard(show: false)
+//		self.view.endEditing(true)
+//	}
 	
 	func clear() {
 		totalBillTextField.text = nil

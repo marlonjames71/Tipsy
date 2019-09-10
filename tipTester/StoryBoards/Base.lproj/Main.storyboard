@@ -286,6 +286,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="iwc-l2-a5f" firstAttribute="trailing" secondItem="dy0-18-3rM" secondAttribute="trailing" id="1iL-7O-4NP"/>
                             <constraint firstItem="dy0-18-3rM" firstAttribute="top" secondItem="QxC-bl-Iqa" secondAttribute="bottom" constant="5" id="4HM-YU-TVp"/>
@@ -340,6 +341,11 @@
                                 <include reference="Y1S-97-czp"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="syC-aH-hvb" appends="YES" id="Jty-fa-BuF"/>
+                            <outletCollection property="gestureRecognizers" destination="94z-zZ-Thc" appends="YES" id="Hse-MR-lzJ"/>
+                            <outletCollection property="gestureRecognizers" destination="0fQ-G1-hMn" appends="YES" id="o9Q-ea-Umx"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="oRC-AP-1U3"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -378,6 +384,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="syC-aH-hvb" userLabel="Left Swipe Gesture Recognizer">
+                    <connections>
+                        <action selector="leftSwipe:" destination="BYZ-38-t0r" id="iZA-uj-NxB"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="94z-zZ-Thc" userLabel="Right Swipe Gesture Recognizer">
+                    <connections>
+                        <action selector="rightSwipe:" destination="BYZ-38-t0r" id="0zn-7q-TDc"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="0fQ-G1-hMn">
+                    <connections>
+                        <action selector="downSwipe:" destination="BYZ-38-t0r" id="uQ3-Zu-lC5"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="138.61607142857142"/>
         </scene>
