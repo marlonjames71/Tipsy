@@ -80,7 +80,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		let resetIcon = UIImage(named: "reset-50")
 		let tintedResetIcon = resetIcon?.withRenderingMode(.alwaysTemplate)
 		resetButton.setImage(tintedResetIcon, for: .normal)
-		tipTextField.text = "20"
 		totalBillTextField.becomeFirstResponder()
 		updateResetButtonTextColor()
 	}
@@ -95,6 +94,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			view.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
 		}
 		hideKeyboardButton.alpha = 0
+		tipTextField.text = "20"
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -140,6 +140,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		clear()
 		let generator = UISelectionFeedbackGenerator()
 		generator.selectionChanged()
+		tipTextField.text = "20"
 	}
 
 	@IBAction func firstEmojiTapped(_ sender: UIButton) {
