@@ -57,6 +57,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var calcButton: UIButton!
 	@IBOutlet weak var resetButton: UIButton!
 	@IBOutlet weak var splitButton: UIButton!
+	@IBOutlet weak var activateKeyboardButton: UIButton!
+	@IBOutlet weak var hideKeyboardButton: UIButton!
 
 //	@IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
 
@@ -78,6 +80,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		let resetIcon = UIImage(named: "reset-50")
 		let tintedResetIcon = resetIcon?.withRenderingMode(.alwaysTemplate)
 		resetButton.setImage(tintedResetIcon, for: .normal)
+		tipTextField.text = "20"
+		totalBillTextField.becomeFirstResponder()
 		updateResetButtonTextColor()
 	}
 
@@ -90,6 +94,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		} else if UIScreen.main.bounds.height == 667 {
 			view.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
 		}
+		hideKeyboardButton.alpha = 0
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -109,7 +114,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		let generator = UIImpactFeedbackGenerator(style: .light)
 		generator.prepare()
 		generator.impactOccurred()
-		totalBillTextField.resignFirstResponder()
 		tipTextField.resignFirstResponder()
 		resetButton.isEnabled = true
 		guard let totalStrInput = totalBillTextField.text, !totalStrInput.isEmpty else {
@@ -166,7 +170,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		guard let totalInt = Int(totalString) else { return }
 		sender.text = String.formattedPrice(with: totalInt)
 		totalBillErrorLabel.isHidden = true
-
+		tipCalcButtonTapped(self)
 		updateResetButtonTextColor()
 	}
 
@@ -179,7 +183,16 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		showSplitPlatter()
 	}
 
+	@IBAction func activateKeyboard(_ sender: UIButton) {
+		totalBillTextField.becomeFirstResponder()
+		showHideKeyboard(show: true)
+	}
 
+	@IBAction func hideKeyboard(_ sender: UIButton) {
+		showHideKeyboard(show: false)
+		totalBillTextField.resignFirstResponder()
+		tipTextField.resignFirstResponder()
+	}
 
 
 	// MARK: - Navigation
@@ -216,6 +229,24 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		generator.selectionChanged()
 	}
 
+	private func showHideKeyboard(show: Bool) {
+		if show {
+			UIView.animate(withDuration: 0.4) {
+				self.hideKeyboardButton.alpha = 1
+			}
+			UIView.animate(withDuration: 0.6) {
+				self.activateKeyboardButton.alpha = 0
+			}
+		} else {
+			UIView.animate(withDuration: 0.3) {
+				self.hideKeyboardButton.alpha = 0
+			}
+			UIView.animate(withDuration: 0.7) {
+				self.activateKeyboardButton.alpha = 1
+			}
+		}
+	}
+
 	private func updateResetButtonTextColor() {
 		if totalBillTextField.text?.isEmpty == true && tipTextField.text?.isEmpty == true {
 			resetButton.isEnabled = false
@@ -234,6 +265,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		showHideKeyboard(show: false)
 		self.view.endEditing(true)
 	}
 	
@@ -246,6 +278,10 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		tipErrorLabel.isHidden = true
 		totalBillErrorLabel.isHidden = true
 		updateResetButtonTextColor()
+	}
+
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		showHideKeyboard(show: true)
 	}
 
 
@@ -282,6 +318,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			splitButton.setTitleColor(.turquoiseTwo, for: .normal)
 			splitButton.tintColor = .turquoiseTwo
 			resetButton.tintColor = .mako
+			activateKeyboardButton.tintColor = .turquoiseTwo
+			hideKeyboardButton.tintColor = .turquoiseTwo
 		case .dark:
 			view.backgroundColor = .black
 			tipsyTitleLabel.textColor = .white
@@ -310,6 +348,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			splitButton.setTitleColor(.turquoise, for: .normal)
 			splitButton.tintColor = .turquoiseTwo
 			resetButton.tintColor = .wildSand
+			activateKeyboardButton.tintColor = .turquoise
+			hideKeyboardButton.tintColor = .turquoise
 		}
 	}
 }

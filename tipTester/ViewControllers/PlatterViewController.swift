@@ -38,7 +38,7 @@ class PlatterViewController: UIViewController {
 	var totalAmount: String?
 	var originalTotal: String?
 	var eachAmount: Double = 0.00
-	var partyCount: Int = 1 {
+	var partyCount: Int = 2 {
 		didSet {
 			partyCountLabel.text = "\(partyCount)"
 		}
@@ -200,12 +200,13 @@ class PlatterViewController: UIViewController {
 	private func setStandardUI() {
 		loadViewIfNeeded()
 		dismissButton.layer.cornerRadius = dismissButton.frame.height / 2
-		partyCountLabel.text = "1"
+		partyCountLabel.text = "2"
 		partyCountLabelContainer.layer.cornerRadius = partyCountLabelContainer.frame.height / 2
 		platterView.layer.cornerRadius = 12
 		dismissButton.setTitleColor(.mako2, for: .normal)
 		guard let total = totalAmount else { return }
 		totalLabel.text = "\(total)"
+		stepper.value = 2
 	}
 
 
@@ -222,7 +223,7 @@ class PlatterViewController: UIViewController {
 			platterView.layer.shadowOpacity = 0.4
 			partyCountLabelContainer.backgroundColor = .white
 			dismissButton.backgroundColor = .turquoiseTwo
-			eachLabel.textColor = .mako2
+			eachLabel.textColor = .turquoiseTwo
 			totalLabel.textColor = .mako2
 			tipLabel.textColor = .mako2
 			eachDescLabel.textColor = .mako
@@ -239,7 +240,7 @@ class PlatterViewController: UIViewController {
 			let blurEffect = UIBlurEffect(style: .systemThinMaterialDark)
 			blurEffectView.effect = UIVibrancyEffect(blurEffect: blurEffect, style: .secondaryFill)
 			blurEffectView.effect = UIBlurEffect(style: .dark)
-			eachLabel.textColor = .wildSand
+			eachLabel.textColor = .turquoise
 			totalLabel.textColor = .wildSand
 			tipLabel.textColor = .wildSand
 			eachDescLabel.textColor = .lightGray
