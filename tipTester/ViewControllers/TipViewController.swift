@@ -62,6 +62,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var leftSwipeGesture: UISwipeGestureRecognizer!
 	@IBOutlet weak var rightSwipeGesture: UISwipeGestureRecognizer!
 	@IBOutlet weak var downSwipeGesture: UISwipeGestureRecognizer!
+	@IBOutlet weak var screenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer!
 
 //	@IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
 
@@ -75,7 +76,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		totalBillTextField.delegate = self
 		tipTextField.delegate = self
 		totalBillTextField.becomeFirstResponder()
-		updateResetButtonTextColor()
+		updateResetButtonEnabled()
+		screenEdgeGestureRecognizer.edges = .right
+//		screenEdgeGestureRecognizer
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -109,23 +112,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		generator.prepare()
 		generator.impactOccurred()
 		resetButton.isEnabled = true
-		guard let totalStrInput = totalBillTextField.text, !totalStrInput.isEmpty else {
-			totalBillErrorLabel.isHidden = false
-			return
-		}
-		guard let tipPercentStrInput = tipTextField.text, !tipPercentStrInput.isEmpty else {
-			tipErrorLabel.isHidden = false
-			return
-		}
-		if (Int(tipPercentStrInput) ?? 0) >= 40 {
-			let alert = UIAlertController(title: "Wow! You are one generous person!!", message: "🔥💫🙌", preferredStyle: .alert)
-			alert.addAction(UIAlertAction(title: "Heck yeah, I'm awesome!", style: .default, handler: nil))
-			present(alert, animated: true, completion: nil)
-		}
-		guard let logic = logic else { return }
-		guard let (tipOutput, totalOutput) = logic.calculateTipTotal(subTotalStr: totalStrInput, tipPercentStr: tipPercentStrInput) else { return }
-		tipOutputLabel.text = tipOutput
-		totalOutputLabel.text = totalOutput
+		calculateTip()
+		totalBillTextField.resignFirstResponder()
 		tipTextField.resignFirstResponder()
 		showHideKeyboard(show: false)
 	}
@@ -166,8 +154,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		guard let totalInt = Int(totalString) else { return }
 		sender.text = String.formattedPrice(with: totalInt)
 		totalBillErrorLabel.isHidden = true
-		tipCalcButtonTapped(self)
-		updateResetButtonTextColor()
+		calculateTip()
+		updateResetButtonEnabled()
 	}
 
 	@IBAction func tipFieldDidChange(_ sender: CustomTextField) {
@@ -206,6 +194,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		showHideKeyboard(show: false)
 	}
 
+	@IBAction func screenEdgeGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
+		if screenEdgeGestureRecognizer.state == .ended {
+			print("I'm printing stuff")
+			performSegue(withIdentifier: "ShowSettingsSegue", sender: nil)
+		}
+	}
 
 	// MARK: - Navigation
 
@@ -216,6 +210,26 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 
 	// MARK: - Helper Methods
+
+	private func calculateTip() {
+		guard let totalStrInput = totalBillTextField.text, !totalStrInput.isEmpty else {
+			totalBillErrorLabel.isHidden = false
+			return
+		}
+		guard let tipPercentStrInput = tipTextField.text, !tipPercentStrInput.isEmpty else {
+			tipErrorLabel.isHidden = false
+			return
+		}
+		if (Int(tipPercentStrInput) ?? 0) >= 40 {
+			let alert = UIAlertController(title: "Wow! You are one generous person!!", message: "🔥💫🙌", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Heck yeah, I'm awesome!", style: .default, handler: nil))
+			present(alert, animated: true, completion: nil)
+		}
+		guard let logic = logic else { return }
+		guard let (tipOutput, totalOutput) = logic.calculateTipTotal(subTotalStr: totalStrInput, tipPercentStr: tipPercentStrInput) else { return }
+		tipOutputLabel.text = tipOutput
+		totalOutputLabel.text = totalOutput
+	}
 
 	private func showSplitPlatter() {
 		guard let platterViewController = storyboard?.instantiateViewController(withIdentifier: "PlatterViewController") as? PlatterViewController,
@@ -234,7 +248,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	private func tipValueChanged() {
 		tipErrorLabel.isHidden = true
-		updateResetButtonTextColor()
+		updateResetButtonEnabled()
 		resetTaptic()
 	}
 
@@ -261,7 +275,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 
-	private func updateResetButtonTextColor() {
+	private func updateResetButtonEnabled() {
 		if totalBillTextField.text?.isEmpty == true && tipTextField.text?.isEmpty == true {
 			resetButton.isEnabled = false
 		} else  if totalBillTextField.text?.isEmpty == true && tipTextField.text?.isEmpty == false {
@@ -277,11 +291,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			tipErrorLabel.isHidden = true
 		}
 	}
-
-//	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//		showHideKeyboard(show: false)
-//		self.view.endEditing(true)
-//	}
 	
 	func clear() {
 		totalBillTextField.text = nil
@@ -291,7 +300,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		totalOutputLabel.text = clearValue
 		tipErrorLabel.isHidden = true
 		totalBillErrorLabel.isHidden = true
-		updateResetButtonTextColor()
+		updateResetButtonEnabled()
 	}
 
 	func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -302,7 +311,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	// MARK: - Theme Function
 
 	func setTheme() {
-		splitButton.setTitle(" Split", for: .normal)
 		switch themeHelper.themePreference {
 		case .light:
 			view.backgroundColor = .wildSand
@@ -311,7 +319,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			percentSymbol.textColor = .turquoiseTwo
 			[totalBillTextField, tipTextField].forEach({ $0?.textColor = .black })
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )
-			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .razzmatazz} )
+			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .canCan} )
 			calcButton.setTitleColor(.mako2, for: .normal)
 			calcButton.backgroundColor = .turquoise
 			calcButton.layer.cornerRadius = 30
@@ -329,7 +337,11 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			splitButton.overrideUserInterfaceStyle = .light
 			splitButton.backgroundColor = .tertiarySystemBackground
 			splitButton.layer.cornerRadius = splitButton.frame.height / 2
+			splitButton.layer.shadowColor = UIColor.lightGray.cgColor
+			splitButton.layer.shadowOpacity = 0.2
+			splitButton.layer.shadowRadius = 16
 			splitButton.setTitleColor(.turquoiseTwo, for: .normal)
+			splitButton.setTitleColor(.darkTurquoise, for: .highlighted)
 			splitButton.tintColor = .turquoiseTwo
 			resetButton.tintColor = .mako
 			activateKeyboardButton.tintColor = .turquoiseTwo
@@ -341,7 +353,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			percentSymbol.textColor = .turquoiseTwo
 			[totalBillTextField, tipTextField].forEach({ $0?.textColor = .wildSand })
 			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )
-			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .razzmatazz} )
+			[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.textColor = .canCan} )
 			calcButton.setTitleColor(.mako2, for: .normal)
 			calcButton.backgroundColor = .turquoise
 			calcButton.layer.cornerRadius = 30
@@ -360,6 +372,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			splitButton.layer.cornerRadius = splitButton.frame.height / 2
 			splitButton.backgroundColor = .secondarySystemBackground
 			splitButton.setTitleColor(.turquoise, for: .normal)
+			splitButton.setTitleColor(.darkTurquoise, for: .highlighted)
 			splitButton.tintColor = .turquoiseTwo
 			resetButton.tintColor = .wildSand
 			activateKeyboardButton.tintColor = .turquoise

@@ -218,6 +218,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ4-Zf-sIJ">
                                 <rect key="frame" x="184.66666666666666" y="604" width="44.666666666666657" height="24"/>
+                                <color key="tintColor" name="tipsyAccentColor"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" image="arrow.counterclockwise.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
@@ -245,6 +246,7 @@
                                     <constraint firstAttribute="height" constant="30" id="z3S-Cv-OMs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" name="tipsyAccentColor"/>
                                 <state key="normal" image="gear" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                 </state>
@@ -266,9 +268,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2E-4d-mgh">
                                 <rect key="frame" x="154.33333333333334" y="794" width="105.66666666666666" height="38"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="tintColor" name="tipsyAccentColor"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="8" maxX="20" maxY="8"/>
                                 <state key="normal" title="Split" image="person.2" catalog="system">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" name="tipsyAccentColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                 </state>
                                 <connections>
                                     <action selector="splitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pMu-KG-luz"/>
@@ -277,6 +281,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-dr-dKR">
                                 <rect key="frame" x="336" y="818" width="28" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" name="tipsyAccentColor"/>
                                 <state key="normal" image="keyboard" catalog="system"/>
                                 <connections>
                                     <action selector="activateKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JsY-gc-ejB"/>
@@ -285,6 +290,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0i-9e-Iz8">
                                 <rect key="frame" x="356" y="552.66666666666663" width="28" height="25.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" name="tipsyAccentColor"/>
                                 <state key="normal" image="keyboard.chevron.compact.down" catalog="system"/>
                                 <connections>
                                     <action selector="hideKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAc-jM-T7Q"/>
@@ -351,6 +357,7 @@
                             <outletCollection property="gestureRecognizers" destination="syC-aH-hvb" appends="YES" id="Jty-fa-BuF"/>
                             <outletCollection property="gestureRecognizers" destination="94z-zZ-Thc" appends="YES" id="Hse-MR-lzJ"/>
                             <outletCollection property="gestureRecognizers" destination="0fQ-G1-hMn" appends="YES" id="o9Q-ea-Umx"/>
+                            <outletCollection property="gestureRecognizers" destination="phG-q8-hid" appends="YES" id="9K8-LX-ccZ"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="oRC-AP-1U3"/>
@@ -371,6 +378,7 @@
                         <outlet property="quickTipLabel" destination="jGN-gX-IR4" id="Q91-Ql-S4E"/>
                         <outlet property="resetButton" destination="hQ4-Zf-sIJ" id="tei-f4-dcc"/>
                         <outlet property="rightSwipeGesture" destination="94z-zZ-Thc" id="hgQ-hX-Mn7"/>
+                        <outlet property="screenEdgeGestureRecognizer" destination="phG-q8-hid" id="ObE-gk-Gki"/>
                         <outlet property="secondEmoji" destination="uXc-NR-yI2" id="qIE-0o-Las"/>
                         <outlet property="settingsButton" destination="lSi-09-Ace" id="K7q-E1-8ZI"/>
                         <outlet property="splitButton" destination="i2E-4d-mgh" id="LcG-xy-5dU"/>
@@ -408,6 +416,11 @@
                         <action selector="downSwipe:" destination="BYZ-38-t0r" id="uQ3-Zu-lC5"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="phG-q8-hid">
+                    <connections>
+                        <action selector="screenEdgeGesture:" destination="BYZ-38-t0r" id="Rnn-IV-CtL"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="138.61607142857142"/>
         </scene>
@@ -652,9 +665,8 @@
                                     <constraint firstAttribute="height" constant="44" id="Qaw-6E-C2v"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-fV-5eC">
-                                <rect key="frame" x="30" y="309" width="354" height="43"/>
-                                <string key="text">If you're someone who likes their bills to be an even amount then  you'll most likely want this setting turned on. It will round the amounts for you up to the nearest dollar.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round the bill total to the nearest dollar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-fV-5eC">
+                                <rect key="frame" x="30" y="309" width="354" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
