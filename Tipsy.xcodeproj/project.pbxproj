@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BFEE3231CB682009B7B25 /* PlatterViewController.swift */; };
-		370BFEE6231CBE77009B7B25 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BFEE5231CBE77009B7B25 /* ScaleSegue.swift */; };
 		370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370CE30322AF3B8800B66EDA /* PaddingTextField.swift */; };
 		371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BC22A46B4800E1BD02 /* AppDelegate.swift */; };
 		371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BE22A46B4800E1BD02 /* TipViewController.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		370BFEE3231CB682009B7B25 /* PlatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatterViewController.swift; sourceTree = "<group>"; };
-		370BFEE5231CBE77009B7B25 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
 		370CE30322AF3B8800B66EDA /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		371D16B922A46B4800E1BD02 /* tipTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D16BC22A46B4800E1BD02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 		37B9A37122F624FD00BB774B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				370BFEE5231CBE77009B7B25 /* ScaleSegue.swift */,
 				37B9A36F22F624F500BB774B /* Colors.swift */,
 			);
 			path = Resources;
@@ -237,7 +234,6 @@
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
-				370BFEE6231CBE77009B7B25 /* ScaleSegue.swift in Sources */,
 				37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */,
 				370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */,
 				37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */,

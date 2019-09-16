@@ -35,6 +35,10 @@ class SettingsViewController: UIViewController {
 	@IBOutlet weak var themeLabel: UILabel!
 	@IBOutlet weak var themeTableContainerView: UIView!
 	@IBOutlet weak var themeTableView: UITableView!
+	@IBOutlet weak var roundSettingContainerView: UIView!
+	@IBOutlet weak var roundedAmountsLabel: UILabel!
+	@IBOutlet weak var roundSwitch: UISwitch!
+	@IBOutlet weak var descriptionLabelForRoundSetting: UILabel!
 	@IBOutlet weak var emojiSelectLabel: UILabel!
 	@IBOutlet weak var cellContainer: UIView!
 	
@@ -55,8 +59,10 @@ class SettingsViewController: UIViewController {
 		themeTableView.delegate = self
 		themeTableView.dataSource = self
 		themeTableView.tableFooterView = UIView()
+		roundSettingContainerView.layer.cornerRadius = 10
 		guard let indexPath = themeTableView.indexPathForSelectedRow else { return }
 		tableView(themeTableView, didSelectRowAt: indexPath)
+		roundSwitch.onTintColor = .turquoise
     }
 
 
@@ -69,6 +75,10 @@ class SettingsViewController: UIViewController {
 			navigationController?.navigationBar.barTintColor = .wildSand
 			navigationController?.navigationBar.tintColor = .turquoiseTwo
 			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+			roundSwitch.tintColor = .turquoiseTwo
+			roundSettingContainerView.backgroundColor = .white
+			roundedAmountsLabel.textColor = .mako2
+			descriptionLabelForRoundSetting.textColor = .mako
 			isDarkStatusBar = true
 		case .dark:
 			themeLabel.textColor = .lightGray
@@ -76,6 +86,10 @@ class SettingsViewController: UIViewController {
 			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 			navigationController?.navigationBar.barTintColor = .black
 			navigationController?.navigationBar.tintColor = .turquoiseTwo
+			roundSwitch.tintColor = .turquoise
+			roundSettingContainerView.backgroundColor = .darkJungleGreen
+			roundedAmountsLabel.textColor = .wildSand
+			descriptionLabelForRoundSetting.textColor = .lightGray
 			isDarkStatusBar = false
 		}
 	}

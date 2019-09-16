@@ -74,15 +74,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		logic = CalculatorLogic()
 		totalBillTextField.delegate = self
 		tipTextField.delegate = self
-		let originalImage = UIImage(named: "settings")
-		let tintedImage = originalImage?.withRenderingMode(.alwaysTemplate)
-		settingsButton.setImage(tintedImage, for: .normal)
-		let splitIcon = UIImage(named: "splitIcon60")
-		let tintedIcon = splitIcon?.withRenderingMode(.alwaysTemplate)
-		splitButton.setImage(tintedIcon, for: .normal)
-		let resetIcon = UIImage(named: "reset-50")
-		let tintedResetIcon = resetIcon?.withRenderingMode(.alwaysTemplate)
-		resetButton.setImage(tintedResetIcon, for: .normal)
 		totalBillTextField.becomeFirstResponder()
 		updateResetButtonTextColor()
 	}
@@ -117,7 +108,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		let generator = UIImpactFeedbackGenerator(style: .light)
 		generator.prepare()
 		generator.impactOccurred()
-		tipTextField.resignFirstResponder()
 		resetButton.isEnabled = true
 		guard let totalStrInput = totalBillTextField.text, !totalStrInput.isEmpty else {
 			totalBillErrorLabel.isHidden = false
@@ -136,6 +126,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		guard let (tipOutput, totalOutput) = logic.calculateTipTotal(subTotalStr: totalStrInput, tipPercentStr: tipPercentStrInput) else { return }
 		tipOutputLabel.text = tipOutput
 		totalOutputLabel.text = totalOutput
+		tipTextField.resignFirstResponder()
+		showHideKeyboard(show: false)
 	}
 
 
@@ -199,10 +191,14 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func leftSwipe(_ sender: UISwipeGestureRecognizer) {
-		totalBillTextField.becomeFirstResponder()
+		if tipTextField.isFirstResponder {
+			totalBillTextField.becomeFirstResponder()
+		}
 	}
 	@IBAction func rightSwipe(_ sender: UISwipeGestureRecognizer) {
-		tipTextField.becomeFirstResponder()
+		if totalBillTextField.isFirstResponder {
+			tipTextField.becomeFirstResponder()
+		}
 	}
 	@IBAction func downSwipe(_ sender: UISwipeGestureRecognizer) {
 		tipTextField.resignFirstResponder()
