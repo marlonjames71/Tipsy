@@ -36,7 +36,6 @@ class PlatterViewController: UIViewController {
 	@IBOutlet weak var tipDescLabel: UILabel!
 
 	let generator = UIImpactFeedbackGenerator(style: .medium)
-	var themeHelper: ThemeHelper?
 	let motionManager = CMMotionManager()
 	var logic: CalculatorLogic?
 	var totalAmount: String?
@@ -77,7 +76,7 @@ class PlatterViewController: UIViewController {
         super.viewDidLoad()
 		motionManager.startAccelerometerUpdates()
 		_ = motionChecker
-		setTheme()
+//		setTheme()
 		setStandardUI()
 		stepper.minimumValue = 1
 		stepper.maximumValue = 10
@@ -102,17 +101,16 @@ class PlatterViewController: UIViewController {
 		let totalValueString = total.replacingOccurrences(of: "$", with: "")
 		let totalValue = Double(totalValueString)
 		let divisorValue = Double(divisorValueString)
-		if let total = totalValue,
-			let divisor = divisorValue,
-			let logic = logic {
-			let eachValue = total / divisor
-			eachAmount = eachValue
-			eachLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: eachAmount)) ?? "$0.00")"
-			let newTotalAmount = getAmountFromEachLabel() * Double(partyCount)
-			totalLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: newTotalAmount)) ?? "0.00")"
-			tipLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: newTipAmount(newTotal: newTotalAmount))) ?? "0.00")"
-		}
-
+        if let total = totalValue,
+            let divisor = divisorValue,
+            let logic = logic {
+            let eachValue = total / divisor
+            eachAmount = eachValue
+            eachLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: eachAmount)) ?? "$0.00")"
+            let newTotalAmount = getAmountFromEachLabel() * Double(partyCount)
+            totalLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: newTotalAmount)) ?? "0.00")"
+            tipLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: newTipAmount(newTotal: newTotalAmount))) ?? "0.00")"
+        }
 	}
 
 	private func getAmountFromEachLabel() -> Double {
@@ -210,51 +208,12 @@ class PlatterViewController: UIViewController {
 		dismissButton.layer.cornerRadius = dismissButton.frame.height / 2
 		partyCountLabel.text = "2"
 		partyCountLabelContainer.layer.cornerRadius = partyCountLabelContainer.frame.height / 2
+        partyCountLabelContainer.layer.cornerCurve = .continuous
 		platterView.layer.cornerRadius = 12
+        platterView.layer.cornerCurve = .continuous
 		dismissButton.setTitleColor(.mako2, for: .normal)
 		guard let total = totalAmount else { return }
 		totalLabel.text = "\(total)"
 		stepper.value = 2
-	}
-
-
-	private func setTheme() {
-		guard let themeHelper = themeHelper else { return }
-		switch themeHelper.themePreference {
-		case .light:
-			let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight)
-			blurEffectView.effect = UIVibrancyEffect(blurEffect: blurEffect, style: .quaternaryLabel)
-			blurEffectView.effect = UIBlurEffect(style: .light)
-			platterView.backgroundColor = .wildSand
-			platterView.layer.shadowColor = UIColor.lightGray.cgColor
-			platterView.layer.shadowRadius = 14
-			platterView.layer.shadowOpacity = 0.4
-			partyCountLabelContainer.backgroundColor = .white
-			dismissButton.backgroundColor = .turquoiseTwo
-			eachLabel.textColor = .turquoiseTwo
-			totalLabel.textColor = .mako2
-			tipLabel.textColor = .mako2
-			eachDescLabel.textColor = .mako
-			tipDescLabel.textColor = .mako
-			totalDescLabel.textColor = .mako
-			partyCountLabel.textColor = .mako2
-			stepper.overrideUserInterfaceStyle = .light
-
-		case .dark:
-			platterView.backgroundColor = .darkJungleGreen
-			partyCountLabelContainer.backgroundColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.0)
-			partyCountLabel.textColor = .wildSand
-			dismissButton.backgroundColor = .turquoise
-			let blurEffect = UIBlurEffect(style: .systemThinMaterialDark)
-			blurEffectView.effect = UIVibrancyEffect(blurEffect: blurEffect, style: .secondaryFill)
-			blurEffectView.effect = UIBlurEffect(style: .dark)
-			eachLabel.textColor = .turquoise
-			totalLabel.textColor = .wildSand
-			tipLabel.textColor = .wildSand
-			eachDescLabel.textColor = .lightGray
-			totalDescLabel.textColor = .lightGray
-			tipDescLabel.textColor = .lightGray
-			stepper.overrideUserInterfaceStyle = .dark
-		}
 	}
 }

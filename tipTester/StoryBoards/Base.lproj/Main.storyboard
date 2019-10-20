@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9lY-hm-lf2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9lY-hm-lf2">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,13 +25,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Tip %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwc-l2-a5f" userLabel="TipErrorLabel">
                                 <rect key="frame" x="296" y="217" width="78" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="1" green="0.11450415360000001" blue="0.37467125220000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" name="tipsyErrorLabel"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Total Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuZ-Co-MLv" userLabel="TotalErrorLabel">
                                 <rect key="frame" x="70" y="217" width="184" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="1" green="0.11450415362246547" blue="0.37467125223310982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" name="tipsyErrorLabel"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaR-4w-sLh">
@@ -39,6 +39,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-hv-mPW" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
                                         <rect key="frame" x="31.666666666666671" y="0.0" width="182.33333333333331" height="50"/>
+                                        <color key="textColor" name="tipsyLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
@@ -56,11 +57,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-eA-dzy">
                                         <rect key="frame" x="18" y="13.999999999999998" width="10.666666666666664" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tipsyAccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4Ac-05-fyt"/>
                                     <constraint firstItem="3uH-eA-dzy" firstAttribute="centerY" secondItem="iaR-4w-sLh" secondAttribute="centerY" id="8je-eI-vmP"/>
@@ -76,6 +77,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-VM-bLN" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
                                         <rect key="frame" x="36.666666666666679" y="0.0" width="71.333333333333314" height="50"/>
+                                        <color key="textColor" name="tipsyLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
@@ -94,11 +96,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-xl-eUN">
                                         <rect key="frame" x="18" y="13.999999999999998" width="15.666666666666664" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tipsyAccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="FcE-VM-bLN" secondAttribute="bottom" id="0Qb-oY-y0R"/>
                                     <constraint firstItem="FcE-VM-bLN" firstAttribute="leading" secondItem="ErJ-xl-eUN" secondAttribute="trailing" constant="3" id="3gg-NW-Q6d"/>
@@ -174,25 +176,25 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmv-lz-vqc">
                                                 <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <color key="textColor" name="tipsySecondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvc-Hz-pfj">
                                                 <rect key="frame" x="88.666666666666657" y="0.0" width="68.333333333333343" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <color key="textColor" name="tipsySecondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjZ-tm-SzU">
                                                 <rect key="frame" x="177" y="0.0" width="68.666666666666686" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <color key="textColor" name="tipsySecondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-me-i0U">
                                                 <rect key="frame" x="265.66666666666669" y="0.0" width="68.333333333333314" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <color key="textColor" name="tipsySecondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -217,8 +219,8 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ4-Zf-sIJ">
-                                <rect key="frame" x="184.66666666666666" y="604" width="44.666666666666657" height="24"/>
-                                <color key="tintColor" name="tipsyAccentColor"/>
+                                <rect key="frame" x="185" y="604" width="44.333333333333343" height="23.666666666666629"/>
+                                <color key="tintColor" name="tipsyLabelColor"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" image="arrow.counterclockwise.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
@@ -256,6 +258,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj" customClass="CustomButton" customModule="tipTester" customModuleProvider="target">
                                 <rect key="frame" x="80" y="524" width="254" height="60"/>
+                                <color key="backgroundColor" name="tipsyAccentColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="50" minY="15" maxX="50" maxY="15"/>
                                 <state key="normal" title="Calculate Tip">
@@ -266,7 +269,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2E-4d-mgh">
-                                <rect key="frame" x="154.33333333333334" y="794" width="105.66666666666666" height="38"/>
+                                <rect key="frame" x="154.33333333333334" y="794" width="105.33333333333334" height="38"/>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="tintColor" name="tipsyAccentColor"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="8" maxX="20" maxY="8"/>
@@ -279,7 +283,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-dr-dKR">
-                                <rect key="frame" x="336" y="818" width="28" height="24"/>
+                                <rect key="frame" x="336.33333333333331" y="818" width="27.666666666666686" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" name="tipsyAccentColor"/>
                                 <state key="normal" image="keyboard" catalog="system"/>
@@ -288,7 +292,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0i-9e-Iz8">
-                                <rect key="frame" x="356" y="552.66666666666663" width="28" height="25.333333333333371"/>
+                                <rect key="frame" x="356.33333333333331" y="553" width="27.666666666666686" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" name="tipsyAccentColor"/>
                                 <state key="normal" image="keyboard.chevron.compact.down" catalog="system"/>
@@ -297,7 +301,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="tipsyBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="iwc-l2-a5f" firstAttribute="trailing" secondItem="dy0-18-3rM" secondAttribute="trailing" id="1iL-7O-4NP"/>
@@ -450,7 +454,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$75.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LwR-yX-Ml2">
                                         <rect key="frame" x="8" y="25" width="124" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tipsyAccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n1m-R7-Ir6">
@@ -459,28 +463,28 @@
                                             <constraint firstAttribute="height" constant="30" id="I69-s4-VLJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tipsyLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip (For whole bill - Included in split)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtk-Pa-Tnf">
-                                        <rect key="frame" x="8" y="163.33333333333331" width="124" height="26.333333333333343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip for total bill" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtk-Pa-Tnf">
+                                        <rect key="frame" x="8" y="163.33333333333331" width="124" height="13.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tipsySecondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="$150.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="R4A-lN-EgC">
-                                        <rect key="frame" x="8" y="229.66666666666669" width="124" height="30"/>
+                                        <rect key="frame" x="8" y="216.66666666666669" width="124" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="qtj-SR-dNp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tipsyLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total of Bill (Tip included)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEE-G7-Sho">
-                                        <rect key="frame" x="8" y="262.66666666666669" width="124" height="26.333333333333314"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total of Bill (with tip)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEE-G7-Sho">
+                                        <rect key="frame" x="8" y="249.66666666666671" width="124" height="13.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tipsySecondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpx-r7-Xvg">
@@ -489,11 +493,11 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZR-IO-utZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="40"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="tipsyLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" name="tipsySplitCountBGColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="BuC-mG-fvF"/>
                                             <constraint firstAttribute="bottom" secondItem="uZR-IO-utZ" secondAttribute="bottom" id="IbJ-bx-gNf"/>
@@ -514,24 +518,28 @@
                                     </stepper>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIj-dr-QHB">
                                         <rect key="frame" x="16" y="505" width="108" height="40"/>
+                                        <color key="backgroundColor" name="tipsyAccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="FnA-wF-uS4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" name="tipsyAccentColor"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
-                                        <state key="normal" title="Dismiss"/>
+                                        <state key="normal" title="Dismiss">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="dismissTapped:" destination="cDB-kk-dix" eventType="touchUpInside" id="y5w-CJ-fCJ"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each person (Tip Included)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQM-dM-5fJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount each person pays (Tip Included)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQM-dM-5fJ">
                                         <rect key="frame" x="8" y="64" width="124" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tipsySecondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="tipsySpecialCaseBGColor"/>
                                 <constraints>
                                     <constraint firstItem="LwR-yX-Ml2" firstAttribute="leading" secondItem="KEW-aC-OMK" secondAttribute="leading" constant="8" id="2Db-bo-72W"/>
                                     <constraint firstItem="Qtk-Pa-Tnf" firstAttribute="top" secondItem="n1m-R7-Ir6" secondAttribute="bottom" constant="3" id="2Ub-k5-E9a"/>
@@ -624,12 +632,15 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPa-fc-GK0">
                                 <rect key="frame" x="16" y="130" width="382" height="87"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-go-2TA">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-go-2TA">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="87"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
+                                        <color key="separatorColor" name="tipsySecondaryBackgroundColor"/>
+                                        <color key="sectionIndexBackgroundColor" name="tipsySecondaryBackgroundColor"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
+                                <color key="tintColor" name="tipsyAccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xBz-go-2TA" secondAttribute="bottom" id="F7P-DD-bHl"/>
                                     <constraint firstItem="xBz-go-2TA" firstAttribute="leading" secondItem="lPa-fc-GK0" secondAttribute="leading" id="FuZ-wP-5KT"/>
@@ -647,17 +658,20 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Amounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lm-Me-AwA">
                                                 <rect key="frame" x="0.0" y="0.0" width="277" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="tipsyLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HIQ-fd-JNS">
                                                 <rect key="frame" x="293" y="0.0" width="51" height="31"/>
                                                 <color key="onTintColor" name="tipsyAccentColor"/>
+                                                <connections>
+                                                    <action selector="roundSwitchToggled:" destination="pA6-Wd-YVC" eventType="valueChanged" id="AIy-tj-wPa"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dAq-Vj-gl8" secondAttribute="trailing" constant="20" id="EtS-cN-iXD"/>
                                     <constraint firstItem="dAq-Vj-gl8" firstAttribute="leading" secondItem="eTA-vY-zOO" secondAttribute="leading" constant="20" id="IAo-ow-tgk"/>
@@ -665,14 +679,15 @@
                                     <constraint firstAttribute="height" constant="44" id="Qaw-6E-C2v"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round the bill total to the nearest dollar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-fV-5eC">
-                                <rect key="frame" x="30" y="309" width="354" height="14.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-fV-5eC">
+                                <rect key="frame" x="30" y="309" width="354" height="43"/>
+                                <string key="text">If you're someone who likes their bills to be an even amount then you'll most likely want this setting turned on. It will round the amounts for you up to the nearest dollar.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="tipsySecondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="tipsyBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LYs-Ix-y35" firstAttribute="trailing" secondItem="eTA-vY-zOO" secondAttribute="trailing" constant="16" id="GTn-kj-6b9"/>
                             <constraint firstItem="lPa-fc-GK0" firstAttribute="leading" secondItem="LYs-Ix-y35" secondAttribute="leading" constant="16" id="HKN-1R-O33"/>
@@ -713,6 +728,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nvt-9g-XVh">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="tipsyAccentColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -726,13 +742,34 @@
     </scenes>
     <resources>
         <image name="Search Icon" width="28.5" height="28"/>
-        <image name="arrow.counterclockwise.circle" catalog="system" width="64" height="62"/>
-        <image name="gear" catalog="system" width="64" height="60"/>
+        <image name="arrow.counterclockwise.circle" catalog="system" width="64" height="60"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="keyboard" catalog="system" width="64" height="34"/>
-        <image name="keyboard.chevron.compact.down" catalog="system" width="64" height="46"/>
+        <image name="keyboard.chevron.compact.down" catalog="system" width="64" height="44"/>
         <image name="person.2" catalog="system" width="64" height="40"/>
         <namedColor name="tipsyAccentColor">
-            <color red="0.22" green="0.98999999999999999" blue="0.84999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.2199999988079071" green="0.99000000953674316" blue="0.85000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tipsyBackgroundColor">
+            <color red="0.029999999329447746" green="0.029999999329447746" blue="0.029999999329447746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tipsyErrorLabel">
+            <color red="0.82999998331069946" green="0.51999998092651367" blue="0.61000001430511475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tipsyLabelColor">
+            <color red="0.95999997854232788" green="0.95999997854232788" blue="0.95999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tipsySecondaryBackgroundColor">
+            <color red="0.11999999731779099" green="0.11999999731779099" blue="0.11999999731779099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tipsySecondaryLabelColor">
+            <color red="0.67000001668930054" green="0.67000001668930054" blue="0.67000001668930054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tipsySpecialCaseBGColor">
+            <color red="0.11999999731779099" green="0.11999999731779099" blue="0.11999999731779099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tipsySplitCountBGColor">
+            <color red="0.019999999552965164" green="0.019999999552965164" blue="0.019999999552965164" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

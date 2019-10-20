@@ -25,6 +25,7 @@
 		37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */; };
 		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
 		37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */; };
+		37DBD2EC235CECF50097C7FA /* RoundingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBD2EB235CECF50097C7FA /* RoundingKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		37DBD2EB235CECF50097C7FA /* RoundingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				37B9A36F22F624F500BB774B /* Colors.swift */,
+				37DBD2EB235CECF50097C7FA /* RoundingKey.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */,
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
+				37DBD2EC235CECF50097C7FA /* RoundingKey.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
 				37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */,
 				370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */,

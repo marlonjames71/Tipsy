@@ -16,21 +16,10 @@ enum ThemeModes: String {
 class SettingsViewController: UIViewController {
 
 	fileprivate let themeLabelTitles: [String] = ThemeMode.allCases.map { $0.stringValue }
-	var themeHelper: ThemeHelper?
 	var themeNotification: NSObjectProtocol?
-
-	var isDarkStatusBar = false {
-		didSet {
-			UIView.animate(withDuration: 0.3) {
-				self.navigationController?.setNeedsStatusBarAppearanceUpdate()
-			}
-		}
-	}
-
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		return isDarkStatusBar ? .default : .lightContent
-	}
-
+	let interfaceStyle = UITraitCollection.current
+	let defaults = UserDefaults.standard
+	var roundingIsOn = false
 
 	@IBOutlet weak var themeLabel: UILabel!
 	@IBOutlet weak var themeTableContainerView: UIView!
@@ -44,53 +33,51 @@ class SettingsViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		navigationController?.navigationBar.prefersLargeTitles = true
-		navigationController?.isNavigationBarHidden = false
+        checkForRoundedPreference()
 		setUI()
 	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		themeNotification = NotificationCenter.default.addObserver(forName: .themeChanged, object: nil, queue: nil, using: { [weak self](_) in
-			guard let self = self else { return }
-			UIView.animate(withDuration: 0.3, animations: self.setUI)
-		})
 		themeTableContainerView.layer.cornerRadius = 10
 		themeTableView.delegate = self
 		themeTableView.dataSource = self
 		themeTableView.tableFooterView = UIView()
+		themeTableView.backgroundColor = .darkJungleGreen
 		roundSettingContainerView.layer.cornerRadius = 10
 		guard let indexPath = themeTableView.indexPathForSelectedRow else { return }
 		tableView(themeTableView, didSelectRowAt: indexPath)
-		roundSwitch.onTintColor = .turquoise
     }
 
+	@IBAction func roundSwitchToggled(_ sender: UISwitch) {
+		roundingIsOn = !roundingIsOn
+		saveRoundedPreference()
+	}
+
+	private func saveRoundedPreference() {
+        defaults.set(roundingIsOn, forKey: .roundingKey)
+		defaults.synchronize()
+	}
+
+	func checkForRoundedPreference() {
+        let roundingToggled = defaults.bool(forKey: .roundingKey)
+
+		if roundingToggled {
+			roundingIsOn = true
+			roundSwitch.isOn = true
+		} else {
+			roundingIsOn = false
+			roundSwitch.isOn = false
+		}
+	}
+	
 
 	func setUI() {
-		guard let themeHelper = themeHelper else { return }
-		switch themeHelper.themePreference {
-		case .light:
-			themeLabel.textColor = .mako
-			view.backgroundColor = .wildSand
-			navigationController?.navigationBar.barTintColor = .wildSand
-			navigationController?.navigationBar.tintColor = .turquoiseTwo
-			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-			roundSwitch.tintColor = .turquoiseTwo
-			roundSettingContainerView.backgroundColor = .white
-			roundedAmountsLabel.textColor = .mako2
-			descriptionLabelForRoundSetting.textColor = .mako
-			isDarkStatusBar = true
-		case .dark:
-			themeLabel.textColor = .lightGray
-			view.backgroundColor = .black
-			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-			navigationController?.navigationBar.barTintColor = .black
-			navigationController?.navigationBar.tintColor = .turquoiseTwo
-			roundSwitch.tintColor = .turquoise
-			roundSettingContainerView.backgroundColor = .darkJungleGreen
-			roundedAmountsLabel.textColor = .wildSand
-			descriptionLabelForRoundSetting.textColor = .lightGray
-			isDarkStatusBar = false
+		let traitCollection = UITraitCollection()
+		if traitCollection.userInterfaceStyle == .light {
+			themeTableView.backgroundColor = .white
+		} else {
+			themeTableView.backgroundColor = .darkJungleGreen
 		}
 	}
 }
@@ -103,18 +90,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = ThemeSelectionTableViewCell()
 		cell.textLabel?.text = themeLabelTitles[indexPath.row]
-		cell.themeHelper = themeHelper
 		cell.selectionStyle = .none
 		return cell
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		guard let themeHelper = themeHelper,
-			let cell = tableView.cellForRow(at: indexPath) else { return }
-		if cell.textLabel?.text == ThemeModes.light.rawValue {
-			themeHelper.setThemePreferenceLight()
-		} else {
-			themeHelper.setThemePreferenceDark()
-		}
+
 	}
 }
