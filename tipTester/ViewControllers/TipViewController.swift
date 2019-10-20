@@ -16,7 +16,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	var previousTip: String?
 	let clearValue = "$0.00"
     let defaults = UserDefaults.standard
-    
+    var calculatedTipPercentage: String = "20" {
+        didSet {
+            tipTextField.text = calculatedTipPercentage
+            calculateTip()
+        }
+    }
 
 	// MARK: - Outlets (In order on screen)
 
@@ -79,7 +84,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			view.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
 		}
 		hideKeyboardButton.alpha = 0
-		tipTextField.text = "20"
+		tipTextField.text = calculatedTipPercentage
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -111,27 +116,23 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		clear()
 		let generator = UISelectionFeedbackGenerator()
 		generator.selectionChanged()
-		tipTextField.text = "20"
+		calculatedTipPercentage = "20"
 	}
 
 	@IBAction func firstEmojiTapped(_ sender: UIButton) {
-		tipTextField.text = "2"
-		emojiCalculate()
+		calculatedTipPercentage = "2"
 	}
 
 	@IBAction func secondEmojiTapped(_ sender: UIButton) {
-		tipTextField.text = "15"
-		emojiCalculate()
+		calculatedTipPercentage = "15"
 	}
 
 	@IBAction func thirdEmojiTapped(_ sender: UIButton) {
-		tipTextField.text = "20"
-		emojiCalculate()
+		calculatedTipPercentage = "20"
 	}
 
 	@IBAction func fourthEmojiTapped(_ sender: UIButton) {
-		tipTextField.text = "25"
-		emojiCalculate()
+		calculatedTipPercentage = "25"
 	}
 
 	@IBAction func totalDidChange(_ sender: CustomTextField) {
@@ -148,7 +149,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	@IBAction func tipFieldDidChange(_ sender: CustomTextField) {
 		tipErrorLabel.isHidden = true
-		tipValueChanged()
+        calculatedTipPercentage = sender.text ?? ""
 	}
 
 	@IBAction func splitButtonTapped(_ sender: UIButton) {
@@ -207,22 +208,19 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			tipErrorLabel.isHidden = false
 			return
 		}
-		if (Int(tipPercentStrInput) ?? 0) >= 40 {
-			let alert = UIAlertController(title: "Wow! You are one generous person!!", message: "🔥💫🙌", preferredStyle: .alert)
-			alert.addAction(UIAlertAction(title: "Heck yeah, I'm awesome!", style: .default, handler: nil))
-			present(alert, animated: true, completion: nil)
-		}
-		guard let logic = logic else { return }
+        guard let logic = logic else { return }
         let rounding = defaults.bool(forKey: .roundingKey)
 
-        let valueInfo = logic.totalPerPerson(billTotalString: totalStrInput, tipPercentageString: tipPercentStrInput, isRounded: rounding)
+        let valueInfo = logic.totalPerPerson(billTotalString: totalStrInput, tipPercentageString: calculatedTipPercentage, isRounded: rounding)
         tipOutputLabel.text = valueInfo.tipAmount
         totalOutputLabel.text = valueInfo.wholeBillTotal
         tipTextField.text = valueInfo.actualTipPercentage
-        
-//		guard let (tipOutput, totalOutput) = logic.calculateTipTotal(subTotalStr: totalStrInput, tipPercentStr: tipPercentStrInput) else { return }
-//		tipOutputLabel.text = tipOutput
-//		totalOutputLabel.text = totalOutput
+
+        if (Int(tipPercentStrInput) ?? 0) >= 40 && (Double(valueInfo.tipAmount) ?? 0 > 10.00) {
+            let alert = UIAlertController(title: "Wow! You are one generous person!!", message: "🔥💫🙌", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Heck yeah, I'm awesome!", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
 	}
 
 	private func showSplitPlatter() {
@@ -237,12 +235,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		view.addSubview(platterViewController.view)
 		platterViewController.animateIn()
 		[leftSwipeGesture, rightSwipeGesture, downSwipeGesture].forEach { $0?.isEnabled = false }
-	}
-
-	private func tipValueChanged() {
-		tipErrorLabel.isHidden = true
-		updateResetButtonEnabled()
-		resetTaptic()
 	}
 
 	private func resetTaptic() {
@@ -278,12 +270,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 
-	private func emojiCalculate() {
-		tipCalcButtonTapped(self)
-		if tipErrorLabel.isHidden == false {
-			tipErrorLabel.isHidden = true
-		}
-	}
 	
 	func clear() {
 		totalBillTextField.text = nil
