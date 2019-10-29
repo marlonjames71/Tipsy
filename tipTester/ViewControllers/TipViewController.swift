@@ -85,6 +85,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		}
 		hideKeyboardButton.alpha = 0
 		tipTextField.text = calculatedTipPercentage
+		calculateTip()
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -229,6 +230,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			let originalTotal = totalBillTextField.text else { return }
 		platterViewController.totalAmount = total
 		platterViewController.originalTotal = originalTotal
+        platterViewController.tipPercentage = calculatedTipPercentage
 		platterViewController.logic = logic
 		platterViewController.delegate = self
 		addChild(platterViewController)

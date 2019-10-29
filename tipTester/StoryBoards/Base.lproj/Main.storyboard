@@ -253,7 +253,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pA6-Wd-YVC" kind="show" identifier="ShowSettingsSegue" id="7kE-79-ert"/>
+                                    <segue destination="KKA-Vg-A1t" kind="show" identifier="ShowSettingsSegue" id="Qja-hj-fS8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj" customClass="CustomButton" customModule="tipTester" customModuleProvider="target">
@@ -262,7 +262,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="50" minY="15" maxX="50" maxY="15"/>
                                 <state key="normal" title="Calculate Tip">
-                                    <color key="titleColor" red="0.35643533422826235" green="0.38222507704996872" blue="0.39839605437665782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" name="tipsySpecialCaseBGColor"/>
                                 </state>
                                 <connections>
                                     <action selector="tipCalcButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuq-Ja-NaZ"/>
@@ -616,108 +616,101 @@
             <point key="canvasLocation" x="1957.9710144927537" y="816.96428571428567"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="Faf-Ho-19l">
+        <scene sceneID="Dto-Nh-WgA">
             <objects>
-                <viewController title="Settings" id="pA6-Wd-YVC" customClass="SettingsViewController" customModule="tipTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="D9c-4m-VMI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <tableViewController id="KKA-Vg-A1t" customClass="SettingsTableViewController" customModule="tipTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="p77-7K-wi6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-hc-cJ9">
-                                <rect key="frame" x="29.999999999999996" y="104" width="47.666666666666657" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPa-fc-GK0">
-                                <rect key="frame" x="16" y="130" width="382" height="87"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-go-2TA">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="87"/>
-                                        <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
-                                        <color key="separatorColor" name="tipsySecondaryBackgroundColor"/>
-                                        <color key="sectionIndexBackgroundColor" name="tipsySecondaryBackgroundColor"/>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
-                                <color key="tintColor" name="tipsyAccentColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="xBz-go-2TA" secondAttribute="bottom" id="F7P-DD-bHl"/>
-                                    <constraint firstItem="xBz-go-2TA" firstAttribute="leading" secondItem="lPa-fc-GK0" secondAttribute="leading" id="FuZ-wP-5KT"/>
-                                    <constraint firstItem="xBz-go-2TA" firstAttribute="top" secondItem="lPa-fc-GK0" secondAttribute="top" id="jHM-0R-02P"/>
-                                    <constraint firstAttribute="trailing" secondItem="xBz-go-2TA" secondAttribute="trailing" id="vOR-VT-Jha"/>
-                                    <constraint firstAttribute="height" constant="87" id="xdM-VR-0Eb"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTA-vY-zOO">
-                                <rect key="frame" x="16" y="257" width="382" height="44"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dAq-Vj-gl8">
-                                        <rect key="frame" x="20" y="6.6666666666666856" width="342" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Amounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lm-Me-AwA">
-                                                <rect key="frame" x="0.0" y="0.0" width="277" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="tipsyLabelColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HIQ-fd-JNS">
-                                                <rect key="frame" x="293" y="0.0" width="51" height="31"/>
-                                                <color key="onTintColor" name="tipsyAccentColor"/>
-                                                <connections>
-                                                    <action selector="roundSwitchToggled:" destination="pA6-Wd-YVC" eventType="valueChanged" id="AIy-tj-wPa"/>
-                                                </connections>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dAq-Vj-gl8" secondAttribute="trailing" constant="20" id="EtS-cN-iXD"/>
-                                    <constraint firstItem="dAq-Vj-gl8" firstAttribute="leading" secondItem="eTA-vY-zOO" secondAttribute="leading" constant="20" id="IAo-ow-tgk"/>
-                                    <constraint firstItem="dAq-Vj-gl8" firstAttribute="centerY" secondItem="eTA-vY-zOO" secondAttribute="centerY" id="ILN-Tp-nRm"/>
-                                    <constraint firstAttribute="height" constant="44" id="Qaw-6E-C2v"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-fV-5eC">
-                                <rect key="frame" x="30" y="309" width="354" height="43"/>
-                                <string key="text">If you're someone who likes their bills to be an even amount then you'll most likely want this setting turned on. It will round the amounts for you up to the nearest dollar.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" name="tipsySecondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" name="tipsyBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="LYs-Ix-y35" firstAttribute="trailing" secondItem="eTA-vY-zOO" secondAttribute="trailing" constant="16" id="GTn-kj-6b9"/>
-                            <constraint firstItem="lPa-fc-GK0" firstAttribute="leading" secondItem="LYs-Ix-y35" secondAttribute="leading" constant="16" id="HKN-1R-O33"/>
-                            <constraint firstItem="WoP-fV-5eC" firstAttribute="top" secondItem="eTA-vY-zOO" secondAttribute="bottom" constant="8" id="JDR-w5-OU7"/>
-                            <constraint firstItem="LYs-Ix-y35" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wSP-hc-cJ9" secondAttribute="trailing" constant="16" id="QQa-oF-ebc"/>
-                            <constraint firstItem="eTA-vY-zOO" firstAttribute="top" secondItem="lPa-fc-GK0" secondAttribute="bottom" constant="40" id="Rbs-bB-bq7"/>
-                            <constraint firstItem="wSP-hc-cJ9" firstAttribute="leading" secondItem="LYs-Ix-y35" secondAttribute="leading" constant="30" id="ZKq-d1-MUX"/>
-                            <constraint firstItem="eTA-vY-zOO" firstAttribute="leading" secondItem="LYs-Ix-y35" secondAttribute="leading" constant="16" id="aC8-9q-dJI"/>
-                            <constraint firstItem="wSP-hc-cJ9" firstAttribute="top" secondItem="LYs-Ix-y35" secondAttribute="top" constant="16" id="dii-DB-3Ib"/>
-                            <constraint firstItem="WoP-fV-5eC" firstAttribute="leading" secondItem="LYs-Ix-y35" secondAttribute="leading" constant="30" id="gyA-Zc-Sq2"/>
-                            <constraint firstItem="lPa-fc-GK0" firstAttribute="top" secondItem="wSP-hc-cJ9" secondAttribute="bottom" constant="8" id="qPU-fQ-c0g"/>
-                            <constraint firstItem="LYs-Ix-y35" firstAttribute="trailing" secondItem="lPa-fc-GK0" secondAttribute="trailing" constant="16" id="tYV-Kq-VqK"/>
-                            <constraint firstItem="LYs-Ix-y35" firstAttribute="trailing" secondItem="WoP-fV-5eC" secondAttribute="trailing" constant="30" id="xfl-5g-rgt"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="LYs-Ix-y35"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="descriptionLabelForRoundSetting" destination="WoP-fV-5eC" id="tUf-g1-L9X"/>
-                        <outlet property="roundSettingContainerView" destination="eTA-vY-zOO" id="f0Q-sP-kf0"/>
-                        <outlet property="roundSwitch" destination="HIQ-fd-JNS" id="wd7-ps-eAq"/>
-                        <outlet property="roundedAmountsLabel" destination="4lm-Me-AwA" id="ZHl-g7-Zz2"/>
-                        <outlet property="themeLabel" destination="wSP-hc-cJ9" id="QZq-08-LQM"/>
-                        <outlet property="themeTableContainerView" destination="lPa-fc-GK0" id="lll-KK-Pbz"/>
-                        <outlet property="themeTableView" destination="xBz-go-2TA" id="Vtl-4h-bH4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yUB-hO-qpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" textLabel="iYs-P8-qzc" style="IBUITableViewCellStyleDefault" id="eKc-pz-zpu">
+                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKc-pz-zpu" id="ZcK-fK-WGQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iYs-P8-qzc">
+                                            <rect key="frame" x="20" y="0.0" width="315" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RoundingCell" rowHeight="65" id="8gY-lu-4pK" customClass="RoundSettingTableViewCell" customModule="tipTester" customModuleProvider="target">
+                                <rect key="frame" x="20" y="99" width="374" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8gY-lu-4pK" id="eEa-P0-Gqe">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bNV-h9-5b9">
+                                            <rect key="frame" x="20" y="17" width="334" height="31"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP9-Vf-2Ob">
+                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVh-rQ-QMP">
+                                                    <rect key="frame" x="285" y="0.0" width="51" height="31"/>
+                                                    <color key="tintColor" name="tipsyAccentColor"/>
+                                                    <color key="onTintColor" name="tipsyAccentColor"/>
+                                                    <connections>
+                                                        <action selector="roundingSwitched:" destination="8gY-lu-4pK" eventType="valueChanged" id="5mF-8O-t0j"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bNV-h9-5b9" secondAttribute="trailing" id="R3K-OG-pJh"/>
+                                        <constraint firstItem="bNV-h9-5b9" firstAttribute="centerY" secondItem="eEa-P0-Gqe" secondAttribute="centerY" id="khF-dl-xf3"/>
+                                        <constraint firstItem="bNV-h9-5b9" firstAttribute="leading" secondItem="eEa-P0-Gqe" secondAttribute="leadingMargin" id="omb-hF-DgI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
+                                <connections>
+                                    <outlet property="descLabel" destination="UP9-Vf-2Ob" id="rqz-4q-uUs"/>
+                                    <outlet property="roundSwitch" destination="sVh-rQ-QMP" id="xTJ-KV-DWo"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" textLabel="JgW-Mc-QdD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="jaT-WX-kgR">
+                                <rect key="frame" x="20" y="164" width="374" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaT-WX-kgR" id="q4p-1x-w0G">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JgW-Mc-QdD">
+                                            <rect key="frame" x="20" y="0.0" width="315" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KKA-Vg-A1t" id="UZq-u7-N2M"/>
+                            <outlet property="delegate" destination="KKA-Vg-A1t" id="SKr-I5-N4d"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="ohp-Js-kqe"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPj-BR-0nt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2694.202898550725" y="138.61607142857142"/>
+            <point key="canvasLocation" x="2809" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sdQ-EO-z9B">

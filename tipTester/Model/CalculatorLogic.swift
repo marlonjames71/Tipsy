@@ -10,27 +10,6 @@ import Foundation
 
 
 class CalculatorLogic {
-
-	func calculateTipTotal(subTotalStr: String, tipPercentStr: String) -> (String, String)? {
-		var tip: Double = 0.0
-		var total: Double = 0.0
-		if !subTotalStr.isEmpty,
-			!tipPercentStr.isEmpty,
-			let subTotal = Double(subTotalStr),
-			let tipPercent = Double(tipPercentStr) {
-			
-			tip = subTotal * tipPercent / 100
-			total = subTotal + tip
-			
-		}
-		
-		guard let formattedTip = currencyFormatter.string(from: NSNumber(value: tip)) else { return nil}
-		guard let formattedTotal = currencyFormatter.string(from: NSNumber(value: total)) else { return nil }
-		
-		let result = (formattedTip, formattedTotal)
-
-		return result
-	}
 	
 	var currencyFormatter: NumberFormatter = {
 		let formatter = NumberFormatter()

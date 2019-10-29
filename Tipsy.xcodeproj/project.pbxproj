@@ -21,6 +21,8 @@
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
 		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
+		37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040052368ABAF00476B15 /* SettingsTableViewController.swift */; };
+		37C040082368AEF200476B15 /* RoundSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */; };
 		37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */; };
 		37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */; };
 		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
@@ -45,6 +47,8 @@
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		37C040052368ABAF00476B15 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSettingTableViewCell.swift; sourceTree = "<group>"; };
 		37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				373FB9072300FF97009EF31C /* CustomButtons.swift */,
 				37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */,
 				37B9A36B22F4EE2500BB774B /* CustomTextField.swift */,
+				37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				370BFEE3231CB682009B7B25 /* PlatterViewController.swift */,
 				37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */,
 				3789064222A78AF80000C75A /* AlertViewController.swift */,
+				37C040052368ABAF00476B15 /* SettingsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -228,9 +234,11 @@
 				37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */,
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
 				373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */,
+				37C040082368AEF200476B15 /* RoundSettingTableViewCell.swift in Sources */,
 				370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */,
 				37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */,
 				37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */,
+				37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
 				373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */,

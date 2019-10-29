@@ -37,6 +37,8 @@ class PlatterViewController: UIViewController {
 
 	let generator = UIImpactFeedbackGenerator(style: .medium)
 	let motionManager = CMMotionManager()
+    let defaults = UserDefaults.standard
+    var tipPercentage: String?
 	var logic: CalculatorLogic?
 	var totalAmount: String?
 	var originalTotal: String?
@@ -96,21 +98,16 @@ class PlatterViewController: UIViewController {
 	}
 
 	private func calculateSplit() {
-		guard let total = totalAmount else { return }
-		guard let divisorValueString = partyCountLabel.text else { return }
+		guard let total = originalTotal else { return }
+        guard let logic = logic else { return }
+        guard let tipPercentage = tipPercentage else { return }
+        let rounding = defaults.bool(forKey: .roundingKey)
 		let totalValueString = total.replacingOccurrences(of: "$", with: "")
-		let totalValue = Double(totalValueString)
-		let divisorValue = Double(divisorValueString)
-        if let total = totalValue,
-            let divisor = divisorValue,
-            let logic = logic {
-            let eachValue = total / divisor
-            eachAmount = eachValue
-            eachLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: eachAmount)) ?? "$0.00")"
-            let newTotalAmount = getAmountFromEachLabel() * Double(partyCount)
-            totalLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: newTotalAmount)) ?? "0.00")"
-            tipLabel.text = "\(logic.currencyFormatter.string(from: NSNumber(value: newTipAmount(newTotal: newTotalAmount))) ?? "0.00")"
-        }
+
+        let amountInfo = logic.totalPerPerson(billTotalString: totalValueString, tipPercentageString: tipPercentage, numberOfPeople: partyCount, isRounded: rounding)
+        eachLabel.text = amountInfo.totalPerPerson
+        totalLabel.text = amountInfo.wholeBillTotal
+        tipLabel.text = amountInfo.tipAmount
 	}
 
 	private func getAmountFromEachLabel() -> Double {
