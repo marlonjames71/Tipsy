@@ -7,15 +7,12 @@
 //
 
 import UIKit
+import MessageUI
 
 class SettingsTableViewController: UITableViewController {
 
-	fileprivate let helpAndFeedbackArray = ["Quick Help Via Twitter", "Send Feedback", "Quick Tips"]
+	fileprivate let helpAndFeedbackArray = ["Quick Help Via Twitter", "Send Feedback", "Quick Tipsies"]
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 
     // MARK: - Table view data source
 
@@ -24,7 +21,7 @@ class SettingsTableViewController: UITableViewController {
 		case 0:
 			return "Help & Feedback"
 		case 1:
-			return "When this setting is turned on, it will round *up* to the nearest dollar"
+			return "Calculator"
 		case 2:
 			return "Quick tip emojis"
 		default:
@@ -58,7 +55,7 @@ class SettingsTableViewController: UITableViewController {
 			return contactCell
 		case 1:
 			guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? RoundSettingTableViewCell else { return UITableViewCell() }
-			roundingCell.descLabel.text = "Round To Nearest Dollar"
+			roundingCell.descLabel.text = "Round Totals Up To Nearest Dollar"
 			return roundingCell
 		case 2:
 			let emojiCell = tableView.dequeueReusableCell(withIdentifier: "ChooseEmojiCell", for: indexPath)
@@ -71,14 +68,52 @@ class SettingsTableViewController: UITableViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard indexPath.section == 0 else { return }
+		switch indexPath.row {
+		case 0:
+			// Twitter
+			break
+		case 1:
+			if MFMailComposeViewController.canSendMail() {
+				let composeVC = MFMailComposeViewController()
+				composeVC.mailComposeDelegate = self
+				composeVC.setToRecipients(["subsformarlon@gmail.com"])
+				composeVC.setSubject("Feedback for Tipsy")
+				composeVC.setMessageBody("Hello, Tipsy peeps! I have an idea for your app:", isHTML: false)
+				present(composeVC, animated: true, completion: nil)
+			} else {
+				let mailAlert = UIAlertController(title: "Mail Services are not available", message: "Your mail app appears to be unconfigured", preferredStyle: .alert)
+				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+				present(mailAlert, animated: true, completion: nil)
+			}
+		default:
+			break
+		}
+	}
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
+	func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+		switch result {
+		case .cancelled:
+			controller.dismiss(animated: true, completion: nil)
+		case .saved:
+			controller.dismiss(animated: true, completion: nil)
+		case .sent:
+			let sentAlert = UIAlertController(title: "Your email has been sent", message: nil, preferredStyle: .alert)
+			sentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			controller.dismiss(animated: true) {
+				self.present(sentAlert, animated: true, completion: nil)
+			}
+		case .failed:
+			let errorAlert = UIAlertController(title: "Oops, an error has occured", message: nil, preferredStyle: .alert)
+			errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			controller.dismiss(animated: true) {
+				self.present(errorAlert, animated: true, completion: nil)
+			}
+		@unknown default:
+			fatalError()
+		}
+	}
 }
