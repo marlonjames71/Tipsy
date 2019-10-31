@@ -8,10 +8,15 @@
 
 import UIKit
 import MessageUI
+import Social
 
 class SettingsTableViewController: UITableViewController {
 
-	fileprivate let helpAndFeedbackArray = ["Quick Help Via Twitter", "Send Feedback", "Quick Tipsies"]
+	fileprivate let helpAndFeedbackArray = ["Follow Tipsy on Twitter", "Send Feedback", "Contact Us", "Quick Tipsies"]
+	fileprivate let twitterUrl: URL = {
+		let baseURL = URL(string: "https://twitter.com/mredig")!
+		return baseURL
+	}()
 
 
     // MARK: - Table view data source
@@ -72,21 +77,40 @@ class SettingsTableViewController: UITableViewController {
 		guard indexPath.section == 0 else { return }
 		switch indexPath.row {
 		case 0:
-			// Twitter
+			if UIApplication.shared.canOpenURL(twitterUrl) {
+				UIApplication.shared.open(twitterUrl, options: [:], completionHandler: nil)
+			}
 			break
 		case 1:
 			if MFMailComposeViewController.canSendMail() {
 				let composeVC = MFMailComposeViewController()
+				composeVC.navigationBar.tintColor = .turquoiseTwo
 				composeVC.mailComposeDelegate = self
 				composeVC.setToRecipients(["subsformarlon@gmail.com"])
 				composeVC.setSubject("Feedback for Tipsy")
-				composeVC.setMessageBody("Hello, Tipsy peeps! I have an idea for your app:", isHTML: false)
+				composeVC.setMessageBody("Hey there, Tipsy! I have an idea for your app:\n\n", isHTML: false)
 				present(composeVC, animated: true, completion: nil)
 			} else {
-				let mailAlert = UIAlertController(title: "Mail Services are not available", message: "Your mail app appears to be unconfigured", preferredStyle: .alert)
+				let mailAlert = UIAlertController(title: "Mail Services are not available", message: "Your mail app appears to not be configured", preferredStyle: .alert)
 				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 				present(mailAlert, animated: true, completion: nil)
 			}
+		case 2:
+			if MFMailComposeViewController.canSendMail() {
+				let composeVC = MFMailComposeViewController()
+				composeVC.navigationBar.tintColor = .turquoiseTwo
+				composeVC.mailComposeDelegate = self
+				composeVC.setToRecipients(["subsformarlon@gmail.com"])
+				composeVC.setSubject("Tipsy Issue")
+				composeVC.setMessageBody("Hi, nice people at Tipsy. I'm having an issue I'd like help with: \n\n\n", isHTML: false)
+				present(composeVC, animated: true, completion: nil)
+			} else {
+				let mailAlert = UIAlertController(title: "Mail services are not available", message: "Your mail app appears to not be configured", preferredStyle: .alert)
+				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+				present(mailAlert, animated: true, completion: nil)
+			}
+		case 3:
+			self.performSegue(withIdentifier: "QuickTipsModalSegue", sender: self)
 		default:
 			break
 		}

@@ -16,14 +16,17 @@
 		371D16C722A46B4800E1BD02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */; };
 		371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */; };
 		371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */; };
+		373F92DE236A5F3D003F1B36 /* AlertTint+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F92DD236A5F3D003F1B36 /* AlertTint+UIAlertController.swift */; };
 		373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */; };
 		373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB9072300FF97009EF31C /* CustomButtons.swift */; };
+		3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3A8236AC874008442DA /* QuickTipsViewController.swift */; };
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
+		37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */; };
+		37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */; };
 		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
 		37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040052368ABAF00476B15 /* SettingsTableViewController.swift */; };
 		37C040082368AEF200476B15 /* RoundSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */; };
-		37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */; };
 		37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */; };
 		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
 		37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */; };
@@ -42,14 +45,17 @@
 		371D16C822A46B4800E1BD02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
+		373F92DD236A5F3D003F1B36 /* AlertTint+UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlertTint+UIAlertController.swift"; sourceTree = "<group>"; };
 		373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
 		373FB9072300FF97009EF31C /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		3782D3A8236AC874008442DA /* QuickTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsViewController.swift; sourceTree = "<group>"; };
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewController.swift; sourceTree = "<group>"; };
+		37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		37C040052368ABAF00476B15 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSettingTableViewCell.swift; sourceTree = "<group>"; };
-		37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37C85F1E22F7DA84009FBE1E /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */,
+				373F92DD236A5F3D003F1B36 /* AlertTint+UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 				37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */,
 				37B9A36B22F4EE2500BB774B /* CustomTextField.swift */,
 				37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */,
+				37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,9 +161,10 @@
 			children = (
 				371D16BE22A46B4800E1BD02 /* TipViewController.swift */,
 				370BFEE3231CB682009B7B25 /* PlatterViewController.swift */,
-				37C85F1822F7B58A009FBE1E /* SettingsViewController.swift */,
 				3789064222A78AF80000C75A /* AlertViewController.swift */,
 				37C040052368ABAF00476B15 /* SettingsTableViewController.swift */,
+				37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */,
+				3782D3A8236AC874008442DA /* QuickTipsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -238,17 +247,20 @@
 				370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */,
 				37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */,
 				37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */,
+				37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */,
 				37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
 				373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */,
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
+				373F92DE236A5F3D003F1B36 /* AlertTint+UIAlertController.swift in Sources */,
 				37DBD2EC235CECF50097C7FA /* RoundingKey.swift in Sources */,
+				3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
+				37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */,
 				37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */,
 				370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */,
-				37C85F1922F7B58A009FBE1E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

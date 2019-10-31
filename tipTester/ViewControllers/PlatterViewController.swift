@@ -61,18 +61,18 @@ class PlatterViewController: UIViewController {
 	}()
 
 
-	var isDarkStatusBar = false {
-		didSet {
-			UIView.animate(withDuration: 0.3) {
-				self.navigationController?.setNeedsStatusBarAppearanceUpdate()
-			}
-		}
-	}
+//	var isDarkStatusBar = false {
+//		didSet {
+//			UIView.animate(withDuration: 0.3) {
+//				self.navigationController?.setNeedsStatusBarAppearanceUpdate()
+//			}
+//		}
+//	}
 
 	weak var delegate: PlatterViewControllerDelegate?
 
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		return isDarkStatusBar ? .default : .lightContent	}
+//	override var preferredStatusBarStyle: UIStatusBarStyle {
+//		return isDarkStatusBar ? .default : .lightContent	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,16 +98,22 @@ class PlatterViewController: UIViewController {
 	}
 
 	private func calculateSplit() {
-		guard let total = originalTotal else { return }
-        guard let logic = logic else { return }
-        guard let tipPercentage = tipPercentage else { return }
-        let rounding = defaults.bool(forKey: .roundingKey)
-		let totalValueString = total.replacingOccurrences(of: "$", with: "")
+		guard let logic = logic else { return }
+		let rounding = defaults.bool(forKey: .roundingKey)
+//		guard let total = originalTotal else { return }
+//        guard let tipPercentage = tipPercentage else { return }
 
-        let amountInfo = logic.totalPerPerson(billTotalString: totalValueString, tipPercentageString: tipPercentage, numberOfPeople: partyCount, isRounded: rounding)
-        eachLabel.text = amountInfo.totalPerPerson
-        totalLabel.text = amountInfo.wholeBillTotal
-        tipLabel.text = amountInfo.tipAmount
+		if let total = originalTotal, let tipPercentage = tipPercentage {
+			let totalValueString = total.replacingOccurrences(of: "$", with: "")
+			let amountInfo = logic.totalPerPerson(billTotalString: totalValueString, tipPercentageString: tipPercentage, numberOfPeople: partyCount, isRounded: rounding)
+			eachLabel.text = amountInfo.totalPerPerson
+			totalLabel.text = amountInfo.wholeBillTotal
+			tipLabel.text = amountInfo.tipAmount
+		} else {
+			eachLabel.text = "$0.00"
+			totalLabel.text = "$0.00"
+			tipLabel.text = "$0.00"
+		}
 	}
 
 	private func getAmountFromEachLabel() -> Double {
@@ -202,6 +208,11 @@ class PlatterViewController: UIViewController {
 
 	private func setStandardUI() {
 		loadViewIfNeeded()
+		if originalTotal == nil {
+			totalLabel.text = "$0.00"
+			tipLabel.text = "$0.00"
+			eachLabel.text = "$0.00"
+		}
 		dismissButton.layer.cornerRadius = dismissButton.frame.height / 2
 		partyCountLabel.text = "2"
 		partyCountLabelContainer.layer.cornerRadius = partyCountLabelContainer.frame.height / 2
