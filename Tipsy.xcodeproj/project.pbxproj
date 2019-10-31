@@ -20,6 +20,7 @@
 		373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */; };
 		373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB9072300FF97009EF31C /* CustomButtons.swift */; };
 		3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3A8236AC874008442DA /* QuickTipsViewController.swift */; };
+		3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */; };
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
 		37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */; };
 		37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */; };
@@ -49,6 +50,7 @@
 		373FB90423009FE0009EF31C /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
 		373FB9072300FF97009EF31C /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		3782D3A8236AC874008442DA /* QuickTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsViewController.swift; sourceTree = "<group>"; };
+		3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverSelectedTableViewCell.swift; sourceTree = "<group>"; };
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewController.swift; sourceTree = "<group>"; };
 		37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				37B9A36B22F4EE2500BB774B /* CustomTextField.swift */,
 				37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */,
 				37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */,
+				3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */,
 				37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
+				3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
 				373FB90523009FE0009EF31C /* UINavigationController+StatusBar.swift in Sources */,
 				3789064322A78AF80000C75A /* AlertViewController.swift in Sources */,

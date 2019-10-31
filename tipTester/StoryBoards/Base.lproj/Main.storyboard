@@ -625,7 +625,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="tipsyBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" textLabel="iYs-P8-qzc" style="IBUITableViewCellStyleDefault" id="eKc-pz-zpu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" textLabel="iYs-P8-qzc" style="IBUITableViewCellStyleDefault" id="eKc-pz-zpu" customClass="NeverSelectedTableViewCell" customModule="tipTester" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.333332061767578" width="374" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKc-pz-zpu" id="ZcK-fK-WGQ">
@@ -682,7 +682,7 @@
                                     <outlet property="roundSwitch" destination="sVh-rQ-QMP" id="xTJ-KV-DWo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" textLabel="JgW-Mc-QdD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="jaT-WX-kgR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" textLabel="JgW-Mc-QdD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="jaT-WX-kgR" customClass="NeverSelectedTableViewCell" customModule="tipTester" customModuleProvider="target">
                                 <rect key="frame" x="20" y="164" width="374" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaT-WX-kgR" id="q4p-1x-w0G">
@@ -727,14 +727,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="chevron.compact.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MQX-jY-ij3">
-                                <rect key="frame" x="185" y="15.666666666666629" width="45" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.compact.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MQX-jY-ij3">
+                                <rect key="frame" x="184.66666666666666" y="15.666666666666668" width="45" height="15.333333333333336"/>
                                 <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PD7-9f-CLE" firstAttribute="top" secondItem="MQX-jY-ij3" secondAttribute="top" id="9Gl-3p-8bb"/>
+                            <constraint firstItem="MQX-jY-ij3" firstAttribute="centerX" secondItem="UQs-VU-zj6" secondAttribute="centerX" id="yT0-YA-lBI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PD7-9f-CLE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quick Tipsies" id="mIH-id-gBN">
@@ -744,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruT-YK-tOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3726" y="-206"/>
+            <point key="canvasLocation" x="3807" y="478"/>
         </scene>
         <!--Choose Emojis-->
         <scene sceneID="Nww-HM-ha4">
@@ -919,7 +922,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuC-Lp-flC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4457.971014492754" y="468.75"/>
+            <point key="canvasLocation" x="4539" y="-224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sdQ-EO-z9B">
@@ -963,7 +966,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWG-rV-ZAm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3726.0869565217395" y="468.75"/>
+            <point key="canvasLocation" x="3807" y="-225"/>
         </scene>
     </scenes>
     <resources>

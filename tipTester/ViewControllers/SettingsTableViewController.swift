@@ -51,7 +51,6 @@ class SettingsTableViewController: UITableViewController {
 		}
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		switch indexPath.section {
 		case 0:
@@ -110,7 +109,7 @@ class SettingsTableViewController: UITableViewController {
 				present(mailAlert, animated: true, completion: nil)
 			}
 		case 3:
-			self.performSegue(withIdentifier: "QuickTipsModalSegue", sender: self)
+			performSegue(withIdentifier: "QuickTipsModalSegue", sender: self)
 		default:
 			break
 		}
