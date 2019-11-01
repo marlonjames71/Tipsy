@@ -58,7 +58,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-eA-dzy">
                                         <rect key="frame" x="18" y="13.999999999999998" width="10.666666666666664" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <color key="textColor" name="tipsyAccentColor"/>
+                                        <color key="textColor" name="darkerAccents"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -97,7 +97,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-xl-eUN">
                                         <rect key="frame" x="18" y="13.999999999999998" width="15.666666666666664" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <color key="textColor" name="tipsyAccentColor"/>
+                                        <color key="textColor" name="darkerAccents"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -249,7 +249,7 @@
                                     <constraint firstAttribute="height" constant="30" id="z3S-Cv-OMs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="tintColor" name="tipsyAccentColor"/>
+                                <color key="tintColor" name="darkerAccents"/>
                                 <state key="normal" image="gear" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                 </state>
@@ -259,11 +259,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj" customClass="CustomButton" customModule="tipTester" customModuleProvider="target">
                                 <rect key="frame" x="80" y="524" width="254" height="60"/>
-                                <color key="backgroundColor" name="tipsyAccentColor"/>
+                                <color key="backgroundColor" name="darkerAccents"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="50" minY="15" maxX="50" maxY="15"/>
                                 <state key="normal" title="Calculate Tip">
-                                    <color key="titleColor" name="tipsySpecialCaseBGColor"/>
+                                    <color key="titleColor" name="reverseTipsyLabelColor"/>
                                 </state>
                                 <connections>
                                     <action selector="tipCalcButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuq-Ja-NaZ"/>
@@ -273,10 +273,10 @@
                                 <rect key="frame" x="154.33333333333334" y="794" width="105.33333333333334" height="38"/>
                                 <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <color key="tintColor" name="tipsyAccentColor"/>
+                                <color key="tintColor" name="darkerAccents"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="8" maxX="20" maxY="8"/>
                                 <state key="normal" title="Split" image="person.2" catalog="system">
-                                    <color key="titleColor" name="tipsyAccentColor"/>
+                                    <color key="titleColor" name="darkerAccents"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                 </state>
                                 <connections>
@@ -286,7 +286,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-dr-dKR">
                                 <rect key="frame" x="336.33333333333331" y="818" width="27.666666666666686" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" name="tipsyAccentColor"/>
+                                <color key="tintColor" name="darkerAccents"/>
                                 <state key="normal" image="keyboard" catalog="system"/>
                                 <connections>
                                     <action selector="activateKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JsY-gc-ejB"/>
@@ -295,7 +295,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0i-9e-Iz8">
                                 <rect key="frame" x="356.33333333333331" y="553" width="27.666666666666686" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" name="tipsyAccentColor"/>
+                                <color key="tintColor" name="darkerAccents"/>
                                 <state key="normal" image="keyboard.chevron.compact.down" catalog="system"/>
                                 <connections>
                                     <action selector="hideKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAc-jM-T7Q"/>
@@ -455,7 +455,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$75.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LwR-yX-Ml2">
                                         <rect key="frame" x="8" y="25" width="124" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <color key="textColor" name="tipsyAccentColor"/>
+                                        <color key="textColor" name="darkerAccents"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n1m-R7-Ir6">
@@ -519,7 +519,7 @@
                                     </stepper>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIj-dr-QHB">
                                         <rect key="frame" x="16" y="505" width="108" height="40"/>
-                                        <color key="backgroundColor" name="tipsyAccentColor"/>
+                                        <color key="backgroundColor" name="darkerAccents"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="FnA-wF-uS4"/>
                                         </constraints>
@@ -527,7 +527,7 @@
                                         <color key="tintColor" name="tipsyAccentColor"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
                                         <state key="normal" title="Dismiss">
-                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" name="reverseTipsyLabelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="dismissTapped:" destination="cDB-kk-dix" eventType="touchUpInside" id="y5w-CJ-fCJ"/>
@@ -949,7 +949,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nvt-9g-XVh">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="tipsyAccentColor"/>
+                        <color key="tintColor" name="darkerAccents"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -969,7 +969,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" name="tipsyAccentColor"/>
+                        <color key="tintColor" name="darkerAccents"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ry2-hL-BAf">
@@ -993,6 +993,12 @@
         <image name="keyboard" catalog="system" width="64" height="34"/>
         <image name="keyboard.chevron.compact.down" catalog="system" width="64" height="44"/>
         <image name="person.2" catalog="system" width="64" height="40"/>
+        <namedColor name="darkerAccents">
+            <color red="0.0" green="0.65107846260070801" blue="0.60466200113296509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="reverseTipsyLabelColor">
+            <color red="0.95999999999999996" green="0.95999999999999996" blue="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="tipsyAccentColor">
             <color red="0.18000000715255737" green="0.82999998331069946" blue="0.69999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

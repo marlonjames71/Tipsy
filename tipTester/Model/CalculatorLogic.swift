@@ -24,9 +24,9 @@ class CalculatorLogic {
         return formatter
     }()
 
-    func totalPerPerson(billTotalString: String, tipPercentageString: String, numberOfPeople: Int = 1, isRounded: Bool) -> (totalPerPerson: String, actualTipPercentage: String, tipAmount: String, wholeBillTotal: String) {
+    func totalPerPerson(billTotalString: String, tipPercentageString: String, numberOfPeople: Int = 1, isRounded: Bool) -> (totalPerPerson: String, actualTipPercentage: String, tipAmount: String, wholeBillTotal: String)? {
         guard let billSubtotal = Double(billTotalString),
-            let preprocessTipPercent = Double(tipPercentageString) else { return ("", "", "", "") }
+            let preprocessTipPercent = Double(tipPercentageString) else { return nil }
         let tipPercentage = preprocessTipPercent / 100
 
         // Each Person Total
@@ -35,7 +35,7 @@ class CalculatorLogic {
         var eachPersonTotal = eachPersonSubtotal + tipAmount
 
         // Actual Tip Percentage Value
-        eachPersonTotal = isRounded ? ceil(eachPersonTotal) : eachPersonTotal
+		eachPersonTotal = isRounded ? ceil(eachPersonTotal) : eachPersonTotal.roundToNearestDecimalPlace(2)
         let actualTip = (eachPersonTotal / eachPersonSubtotal) - 1
 
         // The total of the bill with each person's split included
@@ -48,9 +48,20 @@ class CalculatorLogic {
         guard let formattedEachPersonTotalStr = currencyFormatter.string(from: NSNumber(value: eachPersonTotal)),
             let formattedTipAmountStr = currencyFormatter.string(from: NSNumber(value: completeTipAmount)),
             let formattedWholeBillTotal = currencyFormatter.string(from: NSNumber(value: wholeBillAmount)),
-            let formattedTipPercentageStr = percentFormatter.string(from: NSNumber(value: actualTip)) else { return ("", "", "", "") }
+            let formattedTipPercentageStr = percentFormatter.string(from: NSNumber(value: actualTip)) else { return nil }
 
         return (formattedEachPersonTotalStr, formattedTipPercentageStr, formattedTipAmountStr, formattedWholeBillTotal)
     }
+}
+
+extension Double {
+
+	/// decimal Places is the count of decimal places to be rounded to. Example: 1 = tenths, 2 = hundredths, 3 = thousandths, etc.
+	func roundToNearestDecimalPlace(_ decimalPlace: UInt8) -> Double {
+		let roundedStr = String(format: "%.0\(decimalPlace)f", self)
+		guard let roundedValue = Double(roundedStr) else { fatalError("Could not unwrap rounded value from string. self: \(self), decimal place: \(decimalPlace), rounded string: \(roundedStr)") }
+
+		return roundedValue
+	}
 }
 

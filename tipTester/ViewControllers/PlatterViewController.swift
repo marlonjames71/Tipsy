@@ -60,30 +60,25 @@ class PlatterViewController: UIViewController {
 		return timer
 	}()
 
-
-//	var isDarkStatusBar = false {
-//		didSet {
-//			UIView.animate(withDuration: 0.3) {
-//				self.navigationController?.setNeedsStatusBarAppearanceUpdate()
-//			}
-//		}
-//	}
-
 	weak var delegate: PlatterViewControllerDelegate?
-
-//	override var preferredStatusBarStyle: UIStatusBarStyle {
-//		return isDarkStatusBar ? .default : .lightContent	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		motionManager.startAccelerometerUpdates()
 		_ = motionChecker
-//		setTheme()
 		setStandardUI()
 		stepper.minimumValue = 1
 		stepper.maximumValue = 10
 		calculateSplit()
 		generator.prepare()
+
+		platterView.layer.shadowColor = UIColor.black.cgColor
+		platterView.layer.shadowOpacity = 0.3
+		platterView.layer.shadowOffset = .zero
+		platterView.layer.shadowRadius = 10
+		platterView.layer.shadowPath = UIBezierPath(rect: platterView.bounds).cgPath
+		platterView.layer.shouldRasterize = true
+		platterView.layer.rasterizationScale = UIScreen.main.scale
     }
 
 	deinit {
@@ -100,12 +95,10 @@ class PlatterViewController: UIViewController {
 	private func calculateSplit() {
 		guard let logic = logic else { return }
 		let rounding = defaults.bool(forKey: .roundingKey)
-//		guard let total = originalTotal else { return }
-//        guard let tipPercentage = tipPercentage else { return }
 
-		if let total = originalTotal, let tipPercentage = tipPercentage {
-			let totalValueString = total.replacingOccurrences(of: "$", with: "")
-			let amountInfo = logic.totalPerPerson(billTotalString: totalValueString, tipPercentageString: tipPercentage, numberOfPeople: partyCount, isRounded: rounding)
+		if let totalValueString = originalTotal?.replacingOccurrences(of: "$", with: ""),
+			let tipPercentage = tipPercentage,
+			let amountInfo = logic.totalPerPerson(billTotalString: totalValueString, tipPercentageString: tipPercentage, numberOfPeople: partyCount, isRounded: rounding) {
 			eachLabel.text = amountInfo.totalPerPerson
 			totalLabel.text = amountInfo.wholeBillTotal
 			tipLabel.text = amountInfo.tipAmount
@@ -219,7 +212,7 @@ class PlatterViewController: UIViewController {
         partyCountLabelContainer.layer.cornerCurve = .continuous
 		platterView.layer.cornerRadius = 12
         platterView.layer.cornerCurve = .continuous
-		dismissButton.setTitleColor(.mako2, for: .normal)
+//		dismissButton.setTitleColor(.mako2, for: .normal)
 		guard let total = totalAmount else { return }
 		totalLabel.text = "\(total)"
 		stepper.value = 2

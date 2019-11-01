@@ -192,12 +192,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 
-	// MARK: - Navigation
-
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		guard let settingsVC = segue.destination as? SettingsViewController else { return }
-	}
-
 
 	// MARK: - Helper Methods
 
@@ -213,10 +207,16 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         guard let logic = logic else { return }
         let rounding = defaults.bool(forKey: .roundingKey)
 
-        let valueInfo = logic.totalPerPerson(billTotalString: totalStrInput, tipPercentageString: calculatedTipPercentage, isRounded: rounding)
-        tipOutputLabel.text = valueInfo.tipAmount
-        totalOutputLabel.text = valueInfo.wholeBillTotal
-        tipTextField.text = valueInfo.actualTipPercentage
+		guard let valueInfo = logic.totalPerPerson(billTotalString: totalStrInput, tipPercentageString: calculatedTipPercentage, isRounded: rounding) else {
+			tipOutputLabel.text = "$0.00"
+			totalOutputLabel.text = "$0.00"
+			tipTextField.text = "$0.00"
+			return
+		}
+
+		tipOutputLabel.text = valueInfo.tipAmount
+		totalOutputLabel.text = valueInfo.wholeBillTotal
+		tipTextField.text = valueInfo.actualTipPercentage
 
         if (Int(tipPercentStrInput) ?? 0) >= 40 && (Double(valueInfo.tipAmount) ?? 0 > 10.00) {
             let alert = UIAlertController(title: "Wow! You are one generous person!!", message: "🔥💫🙌", preferredStyle: .alert)
@@ -302,7 +302,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	func setUI() {
 		let traitCollection = UITraitCollection()
 		calcButton.layer.cornerRadius = calcButton.frame.height / 2
-		calcButton.setTitleColor(.mako2, for: .normal)
+//		calcButton.setTitleColor(.mako2, for: .normal)
 		splitButton.layer.cornerRadius = splitButton.frame.height / 2
         splitButton.layer.cornerCurve = .continuous
 		[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )

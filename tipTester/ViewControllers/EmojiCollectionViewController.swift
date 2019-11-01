@@ -98,9 +98,14 @@ extension EmojiCollectionViewController: UICollectionViewDelegate, UICollectionV
 
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let selectedEmoji = emojiArray[indexPath.item]
+		var shouldMoveToNext = false
 		for emoji in quickEmojiArray {
 			if emoji.emojiSelected {
 				emoji.setTitle(selectedEmoji, for: .normal)
+				shouldMoveToNext = true
+			} else if shouldMoveToNext {
+				selectEmojiButton(emoji)
+				shouldMoveToNext = false
 			}
 		}
 	}

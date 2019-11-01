@@ -10,18 +10,6 @@ import UIKit
 
 class EmojiButton: UIButton {
 
-//	private var _isSelected = false
-
-//	override var isSelected: Bool {
-//		get {
-//			_isSelected
-//		}
-//		set {
-//			_isSelected = newValue
-//			updateViews()
-//		}
-//	}
-
 	var emojiSelected: Bool = false {
 		didSet {
 			updateViews()
@@ -38,7 +26,7 @@ class EmojiButton: UIButton {
 			layer.cornerRadius = 10
 			layer.cornerCurve = .continuous
 			layer.borderColor = tintColor.cgColor
-			layer.borderWidth = 2
+			layer.borderWidth = 2.5
 		} else {
 			layer.borderWidth = 0
 		}
