@@ -14,6 +14,13 @@ class EmojiCollectionViewController: UIViewController {
 	@IBOutlet weak var containerView: UIView!
 	@IBOutlet weak var blurView: UIView!
 
+	@IBOutlet weak var emojiOne: EmojiButton!
+	@IBOutlet weak var emojiTwo: EmojiButton!
+	@IBOutlet weak var emojiThree: EmojiButton!
+	@IBOutlet weak var emojiFour: EmojiButton!
+
+	lazy var quickEmojiArray = [emojiOne, emojiTwo, emojiThree, emojiFour].compactMap { $0 }
+
 	let layer = CAGradientLayer()
 
     override func viewDidLoad() {
@@ -26,17 +33,12 @@ class EmojiCollectionViewController: UIViewController {
 		blurEffectView.frame = blurView.bounds
 		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		blurView.addSubview(blurEffectView)
+		emojiButtonSelected(emojiOne)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	@IBAction func emojiButtonSelected(_ sender: EmojiButton) {
+		selectEmojiButton(sender)
+	}
 
 	@IBAction func saveEmojiSet(_ sender: UIBarButtonItem) {
 
@@ -44,6 +46,13 @@ class EmojiCollectionViewController: UIViewController {
 
 	@IBAction func cancelTapped(_ sender: UIBarButtonItem) {
 		dismiss(animated: true, completion: nil)
+	}
+
+	private func selectEmojiButton(_ button: EmojiButton) {
+		quickEmojiArray.forEach { $0.emojiSelected = false }
+		button.setTitleColor(.black, for: .selected)
+		button.emojiSelected = true
+		button.tintColor = .turquoiseTwo
 	}
 
 	let emojiArray = Array("""
@@ -70,5 +79,14 @@ extension EmojiCollectionViewController: UICollectionViewDelegate, UICollectionV
 		emojiCell.emojiLabel.text = emoji
 
 		return emojiCell
+	}
+
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let selectedEmoji = emojiArray[indexPath.item]
+		for emoji in quickEmojiArray {
+			if emoji.emojiSelected {
+				emoji.setTitle(selectedEmoji, for: .normal)
+			}
+		}
 	}
 }

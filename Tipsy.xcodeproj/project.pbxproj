@@ -21,6 +21,7 @@
 		373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB9072300FF97009EF31C /* CustomButtons.swift */; };
 		3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3A8236AC874008442DA /* QuickTipsViewController.swift */; };
 		3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */; };
+		3782D3AD236BAE4D008442DA /* EmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3AC236BAE4D008442DA /* EmojiButton.swift */; };
 		3789064322A78AF80000C75A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3789064222A78AF80000C75A /* AlertViewController.swift */; };
 		37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */; };
 		37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */; };
@@ -51,6 +52,7 @@
 		373FB9072300FF97009EF31C /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		3782D3A8236AC874008442DA /* QuickTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsViewController.swift; sourceTree = "<group>"; };
 		3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverSelectedTableViewCell.swift; sourceTree = "<group>"; };
+		3782D3AC236BAE4D008442DA /* EmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButton.swift; sourceTree = "<group>"; };
 		3789064222A78AF80000C75A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewController.swift; sourceTree = "<group>"; };
 		37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		37B9A36E22F52BA900BB774B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3782D3AC236BAE4D008442DA /* EmojiButton.swift */,
 				373FB9072300FF97009EF31C /* CustomButtons.swift */,
 				37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */,
 				37B9A36B22F4EE2500BB774B /* CustomTextField.swift */,
@@ -248,6 +251,7 @@
 				373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */,
 				37C040082368AEF200476B15 /* RoundSettingTableViewCell.swift in Sources */,
 				370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */,
+				3782D3AD236BAE4D008442DA /* EmojiButton.swift in Sources */,
 				37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */,
 				37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */,
 				37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */,

@@ -810,10 +810,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-jz-EZc">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="74"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-9e-65T">
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-9e-65T" customClass="EmojiButton" customModule="tipTester" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="🤬"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="5bg-oC-QfL"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtJ-WO-pAn">
                                                         <rect key="frame" x="0.0" y="57" width="83.666666666666671" height="17"/>
@@ -826,10 +829,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Z2a-9v-e1G">
                                                 <rect key="frame" x="83.666666666666686" y="0.0" width="83.333333333333314" height="74"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-Su-PKH">
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-Su-PKH" customClass="EmojiButton" customModule="tipTester" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="😐"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="Brk-eY-yYt"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjq-xr-VMH">
                                                         <rect key="frame" x="0.0" y="57" width="83.333333333333329" height="17"/>
@@ -842,10 +848,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="OD4-fU-dIa">
                                                 <rect key="frame" x="167" y="0.0" width="83.666666666666686" height="74"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpB-t4-mnE">
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpB-t4-mnE" customClass="EmojiButton" customModule="tipTester" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="😁"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="SbK-gm-FhT"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-jm-smC">
                                                         <rect key="frame" x="0.0" y="57" width="83.666666666666671" height="17"/>
@@ -858,10 +867,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-0b-B1p">
                                                 <rect key="frame" x="250.66666666666671" y="0.0" width="83.333333333333343" height="74"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVs-dN-0Xn">
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVs-dN-0Xn" customClass="EmojiButton" customModule="tipTester" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="😜"/>
+                                                        <connections>
+                                                            <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="arx-qu-SDp"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-nn-016">
                                                         <rect key="frame" x="0.0" y="57" width="83.333333333333329" height="17"/>
@@ -918,6 +930,10 @@
                         <outlet property="blurView" destination="N1R-qM-yxg" id="soV-b2-PLy"/>
                         <outlet property="containerView" destination="OCy-Am-oRe" id="fKE-G4-HuC"/>
                         <outlet property="emojiCollectionView" destination="o4W-jz-h6a" id="78b-QL-g3b"/>
+                        <outlet property="emojiFour" destination="qVs-dN-0Xn" id="cHl-9W-Doc"/>
+                        <outlet property="emojiOne" destination="ODS-9e-65T" id="TfX-T3-wTE"/>
+                        <outlet property="emojiThree" destination="LpB-t4-mnE" id="NXk-9t-1lj"/>
+                        <outlet property="emojiTwo" destination="zVx-Su-PKH" id="2GE-kk-Ip9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuC-Lp-flC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
