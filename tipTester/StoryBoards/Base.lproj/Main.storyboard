@@ -76,8 +76,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy0-18-3rM">
                                 <rect key="frame" x="266" y="162" width="108" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-VM-bLN" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
-                                        <rect key="frame" x="36.666666666666679" y="0.0" width="71.333333333333314" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-VM-bLN" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="73.333333333333329" height="50"/>
                                         <color key="textColor" name="tipsyLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -95,7 +95,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-xl-eUN">
-                                        <rect key="frame" x="18" y="13.999999999999998" width="15.666666666666664" height="22.333333333333329"/>
+                                        <rect key="frame" x="76.333333333333314" y="13.999999999999998" width="15.666666666666671" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" name="darkerAccents"/>
                                         <nil key="highlightedColor"/>
@@ -104,13 +104,13 @@
                                 <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="FcE-VM-bLN" secondAttribute="bottom" id="0Qb-oY-y0R"/>
-                                    <constraint firstItem="FcE-VM-bLN" firstAttribute="leading" secondItem="ErJ-xl-eUN" secondAttribute="trailing" constant="3" id="3gg-NW-Q6d"/>
-                                    <constraint firstItem="ErJ-xl-eUN" firstAttribute="leading" secondItem="dy0-18-3rM" secondAttribute="leadingMargin" constant="10" id="4KD-dj-QH6"/>
-                                    <constraint firstAttribute="trailing" secondItem="FcE-VM-bLN" secondAttribute="trailing" id="Cgr-dA-p4v"/>
-                                    <constraint firstItem="FcE-VM-bLN" firstAttribute="leading" secondItem="ErJ-xl-eUN" secondAttribute="trailing" constant="3" id="RYx-gg-GnT"/>
+                                    <constraint firstAttribute="trailing" secondItem="ErJ-xl-eUN" secondAttribute="trailing" constant="16" id="Hag-Yh-nDv"/>
+                                    <constraint firstItem="ErJ-xl-eUN" firstAttribute="leading" secondItem="FcE-VM-bLN" secondAttribute="trailing" constant="3" id="MNX-DA-PIC"/>
                                     <constraint firstAttribute="height" constant="50" id="ivQ-ub-hQB"/>
                                     <constraint firstItem="ErJ-xl-eUN" firstAttribute="centerY" secondItem="dy0-18-3rM" secondAttribute="centerY" id="k4o-JW-ssI"/>
+                                    <constraint firstItem="FcE-VM-bLN" firstAttribute="leading" secondItem="dy0-18-3rM" secondAttribute="leading" id="t2Z-cv-7JW"/>
                                     <constraint firstItem="FcE-VM-bLN" firstAttribute="top" secondItem="dy0-18-3rM" secondAttribute="top" id="uLd-BQ-oV8"/>
+                                    <constraint firstItem="ErJ-xl-eUN" firstAttribute="leading" secondItem="FcE-VM-bLN" secondAttribute="trailing" constant="3" id="xPz-Lc-xj1"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxC-bl-Iqa">
