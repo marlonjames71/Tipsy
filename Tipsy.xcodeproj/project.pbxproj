@@ -30,6 +30,22 @@
 		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
 		37DBD2EC235CECF50097C7FA /* RoundingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBD2EB235CECF50097C7FA /* RoundingKey.swift */; };
 		37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59C4236BB61800EA1082 /* Defaults.swift */; };
+		37DD59D7236C8FA100EA1082 /* Tipsy Icon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */; };
+		37DD59D8236C8FA100EA1082 /* Tipsy Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */; };
+		37DD59D9236C8FA100EA1082 /* Tipsy Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C9236C8FA100EA1082 /* Tipsy Icon-60@3x.png */; };
+		37DD59DA236C8FA100EA1082 /* Tipsy Icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CA236C8FA100EA1082 /* Tipsy Icon-29@2x.png */; };
+		37DD59DB236C8FA100EA1082 /* Tipsy Icon-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CB236C8FA100EA1082 /* Tipsy Icon-20.png */; };
+		37DD59DC236C8FA100EA1082 /* Tipsy Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CC236C8FA100EA1082 /* Tipsy Icon-40@3x.png */; };
+		37DD59DD236C8FA100EA1082 /* Tipsy Icon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CD236C8FA100EA1082 /* Tipsy Icon-1024.png */; };
+		37DD59DE236C8FA100EA1082 /* Tipsy Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CE236C8FA100EA1082 /* Tipsy Icon-40.png */; };
+		37DD59DF236C8FA100EA1082 /* Tipsy Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CF236C8FA100EA1082 /* Tipsy Icon-40@2x.png */; };
+		37DD59E0236C8FA100EA1082 /* Tipsy Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D0236C8FA100EA1082 /* Tipsy Icon-76@2x.png */; };
+		37DD59E1236C8FA100EA1082 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D1236C8FA100EA1082 /* Contents.json */; };
+		37DD59E2236C8FA100EA1082 /* Tipsy Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D2236C8FA100EA1082 /* Tipsy Icon-76.png */; };
+		37DD59E3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png */; };
+		37DD59E4236C8FA100EA1082 /* Tipsy Icon-20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D4236C8FA100EA1082 /* Tipsy Icon-20@2x.png */; };
+		37DD59E5236C8FA100EA1082 /* Tipsy Icon-20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D5236C8FA100EA1082 /* Tipsy Icon-20@3x.png */; };
+		37DD59E6236C8FA100EA1082 /* Tipsy Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D6236C8FA100EA1082 /* Tipsy Icon-29.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +74,22 @@
 		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		37DBD2EB235CECF50097C7FA /* RoundingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingKey.swift; sourceTree = "<group>"; };
 		37DD59C4236BB61800EA1082 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29@3x.png"; sourceTree = "<group>"; };
+		37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-60@2x.png"; sourceTree = "<group>"; };
+		37DD59C9236C8FA100EA1082 /* Tipsy Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-60@3x.png"; sourceTree = "<group>"; };
+		37DD59CA236C8FA100EA1082 /* Tipsy Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29@2x.png"; sourceTree = "<group>"; };
+		37DD59CB236C8FA100EA1082 /* Tipsy Icon-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-20.png"; sourceTree = "<group>"; };
+		37DD59CC236C8FA100EA1082 /* Tipsy Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-40@3x.png"; sourceTree = "<group>"; };
+		37DD59CD236C8FA100EA1082 /* Tipsy Icon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-1024.png"; sourceTree = "<group>"; };
+		37DD59CE236C8FA100EA1082 /* Tipsy Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-40.png"; sourceTree = "<group>"; };
+		37DD59CF236C8FA100EA1082 /* Tipsy Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-40@2x.png"; sourceTree = "<group>"; };
+		37DD59D0236C8FA100EA1082 /* Tipsy Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-76@2x.png"; sourceTree = "<group>"; };
+		37DD59D1236C8FA100EA1082 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		37DD59D2236C8FA100EA1082 /* Tipsy Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-76.png"; sourceTree = "<group>"; };
+		37DD59D3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-83.5@2x.png"; sourceTree = "<group>"; };
+		37DD59D4236C8FA100EA1082 /* Tipsy Icon-20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-20@2x.png"; sourceTree = "<group>"; };
+		37DD59D5236C8FA100EA1082 /* Tipsy Icon-20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-20@3x.png"; sourceTree = "<group>"; };
+		37DD59D6236C8FA100EA1082 /* Tipsy Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +132,7 @@
 				37DD59C3236BB60000EA1082 /* Helpers */,
 				37B9A37122F624FD00BB774B /* Resources */,
 				371D16C322A46B4800E1BD02 /* Assets.xcassets */,
+				37DD59C6236C8FA100EA1082 /* AppIcon.appiconset */,
 				371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */,
 				371D16C822A46B4800E1BD02 /* Info.plist */,
 			);
@@ -150,6 +183,29 @@
 				37DD59C4236BB61800EA1082 /* Defaults.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		37DD59C6236C8FA100EA1082 /* AppIcon.appiconset */ = {
+			isa = PBXGroup;
+			children = (
+				37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */,
+				37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */,
+				37DD59C9236C8FA100EA1082 /* Tipsy Icon-60@3x.png */,
+				37DD59CA236C8FA100EA1082 /* Tipsy Icon-29@2x.png */,
+				37DD59CB236C8FA100EA1082 /* Tipsy Icon-20.png */,
+				37DD59CC236C8FA100EA1082 /* Tipsy Icon-40@3x.png */,
+				37DD59CD236C8FA100EA1082 /* Tipsy Icon-1024.png */,
+				37DD59CE236C8FA100EA1082 /* Tipsy Icon-40.png */,
+				37DD59CF236C8FA100EA1082 /* Tipsy Icon-40@2x.png */,
+				37DD59D0236C8FA100EA1082 /* Tipsy Icon-76@2x.png */,
+				37DD59D1236C8FA100EA1082 /* Contents.json */,
+				37DD59D2236C8FA100EA1082 /* Tipsy Icon-76.png */,
+				37DD59D3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png */,
+				37DD59D4236C8FA100EA1082 /* Tipsy Icon-20@2x.png */,
+				37DD59D5236C8FA100EA1082 /* Tipsy Icon-20@3x.png */,
+				37DD59D6236C8FA100EA1082 /* Tipsy Icon-29.png */,
+			);
+			path = AppIcon.appiconset;
 			sourceTree = "<group>";
 		};
 		37F3D41B22ACD3E2006BA05D /* Model */ = {
@@ -232,9 +288,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DD59E3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png in Resources */,
+				37DD59D8236C8FA100EA1082 /* Tipsy Icon-60@2x.png in Resources */,
+				37DD59D7236C8FA100EA1082 /* Tipsy Icon-29@3x.png in Resources */,
 				371D16C722A46B4800E1BD02 /* LaunchScreen.storyboard in Resources */,
 				371D16C422A46B4800E1BD02 /* Assets.xcassets in Resources */,
+				37DD59E0236C8FA100EA1082 /* Tipsy Icon-76@2x.png in Resources */,
+				37DD59DF236C8FA100EA1082 /* Tipsy Icon-40@2x.png in Resources */,
 				371D16C222A46B4800E1BD02 /* Main.storyboard in Resources */,
+				37DD59DB236C8FA100EA1082 /* Tipsy Icon-20.png in Resources */,
+				37DD59DE236C8FA100EA1082 /* Tipsy Icon-40.png in Resources */,
+				37DD59D9236C8FA100EA1082 /* Tipsy Icon-60@3x.png in Resources */,
+				37DD59DC236C8FA100EA1082 /* Tipsy Icon-40@3x.png in Resources */,
+				37DD59E2236C8FA100EA1082 /* Tipsy Icon-76.png in Resources */,
+				37DD59E6236C8FA100EA1082 /* Tipsy Icon-29.png in Resources */,
+				37DD59DD236C8FA100EA1082 /* Tipsy Icon-1024.png in Resources */,
+				37DD59DA236C8FA100EA1082 /* Tipsy Icon-29@2x.png in Resources */,
+				37DD59E5236C8FA100EA1082 /* Tipsy Icon-20@3x.png in Resources */,
+				37DD59E1236C8FA100EA1082 /* Contents.json in Resources */,
+				37DD59E4236C8FA100EA1082 /* Tipsy Icon-20@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

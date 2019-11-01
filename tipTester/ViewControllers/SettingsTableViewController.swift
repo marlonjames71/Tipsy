@@ -12,11 +12,20 @@ import Social
 
 class SettingsTableViewController: UITableViewController {
 
+	@IBOutlet weak var buildVersionLabel: UILabel!
+
 	fileprivate let helpAndFeedbackArray = ["Follow Tipsy on Twitter", "Send Feedback", "Contact Us", "Quick Tipsies"]
 	fileprivate let twitterUrl: URL = {
 		let baseURL = URL(string: "https://twitter.com/mredig")!
 		return baseURL
 	}()
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else { return }
+        guard let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") else { return }
+        buildVersionLabel.text = "Version: \(version) ⌇ Build: \(buildNumber)"
+	}
 
 
     // MARK: - Table view data source
