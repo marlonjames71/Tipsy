@@ -86,6 +86,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		hideKeyboardButton.alpha = 0
 		tipTextField.text = calculatedTipPercentage
 		calculateTip()
+		loadEmojis()
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -270,6 +271,13 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		} else {
 			resetButton.isEnabled = true
 		}
+	}
+
+	private func loadEmojis() {
+		firstEmoji.setTitle(DefaultsManager.emojiOne, for: .normal)
+		secondEmoji.setTitle(DefaultsManager.emojiTwo, for: .normal)
+		thirdEmoji.setTitle(DefaultsManager.emojiThree, for: .normal)
+		fourthEmoji.setTitle(DefaultsManager.emojiFour, for: .normal)
 	}
 
 	

@@ -34,14 +34,31 @@ class EmojiCollectionViewController: UIViewController {
 		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		blurView.addSubview(blurEffectView)
 		emojiButtonSelected(emojiOne)
+		loadEmojis()
     }
+
+	private func loadEmojis() {
+		emojiOne.setTitle(DefaultsManager.emojiOne, for: .normal)
+		emojiTwo.setTitle(DefaultsManager.emojiTwo, for: .normal)
+		emojiThree.setTitle(DefaultsManager.emojiThree, for: .normal)
+		emojiFour.setTitle(DefaultsManager.emojiFour, for: .normal)
+	}
 
 	@IBAction func emojiButtonSelected(_ sender: EmojiButton) {
 		selectEmojiButton(sender)
 	}
 
 	@IBAction func saveEmojiSet(_ sender: UIBarButtonItem) {
-
+		DefaultsManager.emojiOne = emojiOne.currentTitle ?? DefaultsManager.emojiOne
+		DefaultsManager.emojiTwo = emojiTwo.currentTitle ?? DefaultsManager.emojiTwo
+		DefaultsManager.emojiThree = emojiThree.currentTitle ?? DefaultsManager.emojiThree
+		DefaultsManager.emojiFour = emojiFour.currentTitle ?? DefaultsManager.emojiFour
+		let emojiSuccessAlert = UIAlertController(title: "You emojis have been updated: \(DefaultsManager.emojiOne)\(DefaultsManager.emojiTwo)\(DefaultsManager.emojiThree)\(DefaultsManager.emojiFour)", message: nil, preferredStyle: .alert)
+		let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+			self.dismiss(animated: true, completion: nil)
+		}
+		emojiSuccessAlert.addAction(okAction)
+		self.present(emojiSuccessAlert, animated: true, completion: nil)
 	}
 
 	@IBAction func cancelTapped(_ sender: UIBarButtonItem) {
@@ -75,9 +92,7 @@ extension EmojiCollectionViewController: UICollectionViewDelegate, UICollectionV
 		guard let emojiCell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmojiCell", for: indexPath) as? EmojiCollectionViewCell else { return UICollectionViewCell() }
 
 		let emoji = emojiArray[indexPath.item]
-
 		emojiCell.emojiLabel.text = emoji
-
 		return emojiCell
 	}
 

@@ -33,6 +33,7 @@
 		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
 		37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */; };
 		37DBD2EC235CECF50097C7FA /* RoundingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBD2EB235CECF50097C7FA /* RoundingKey.swift */; };
+		37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59C4236BB61800EA1082 /* Defaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		37C85F4F22F9248B009FBE1E /* ThemeSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		37DBD2EB235CECF50097C7FA /* RoundingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingKey.swift; sourceTree = "<group>"; };
+		37DD59C4236BB61800EA1082 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		371D16BB22A46B4800E1BD02 /* tipTester */ = {
 			isa = PBXGroup;
 			children = (
+				37DD59C3236BB60000EA1082 /* Helpers */,
 				371D16BC22A46B4800E1BD02 /* AppDelegate.swift */,
 				370CE30322AF3B8800B66EDA /* PaddingTextField.swift */,
 				37B9A36D22F52B9A00BB774B /* StoryBoards */,
@@ -149,6 +152,14 @@
 				37DBD2EB235CECF50097C7FA /* RoundingKey.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		37DD59C3236BB60000EA1082 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				37DD59C4236BB61800EA1082 /* Defaults.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		37F3D41B22ACD3E2006BA05D /* Model */ = {
@@ -255,6 +266,7 @@
 				37C85F1F22F7DA84009FBE1E /* ThemeHelper.swift in Sources */,
 				37C85F5022F9248B009FBE1E /* ThemeSelectionTableViewCell.swift in Sources */,
 				37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */,
+				37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */,
 				37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */,
