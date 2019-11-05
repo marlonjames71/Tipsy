@@ -16,7 +16,7 @@ class SettingsTableViewController: UITableViewController {
 
 	fileprivate let helpAndFeedbackArray = ["Follow Tipsy on Twitter", "Send Feedback", "Contact Us", "Quick Tipsies"]
 	fileprivate let twitterUrl: URL = {
-		let baseURL = URL(string: "https://twitter.com/marlonjames71")!
+		let baseURL = URL(string: "https://twitter.com/_MarlonJames")!
 		return baseURL
 	}()
 
