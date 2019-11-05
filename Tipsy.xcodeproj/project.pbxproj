@@ -23,6 +23,7 @@
 		3782D3AD236BAE4D008442DA /* EmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3AC236BAE4D008442DA /* EmojiButton.swift */; };
 		37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */; };
 		37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */; };
+		37B7A9FB2371F6FA0061AE13 /* HapticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7A9FA2371F6FA0061AE13 /* HapticTableViewCell.swift */; };
 		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
 		37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040052368ABAF00476B15 /* SettingsTableViewController.swift */; };
@@ -54,7 +55,7 @@
 /* Begin PBXFileReference section */
 		370BFEE3231CB682009B7B25 /* PlatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatterViewController.swift; sourceTree = "<group>"; };
 		370CE30322AF3B8800B66EDA /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
-		371D16B922A46B4800E1BD02 /* tipTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		371D16B922A46B4800E1BD02 /* tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D16BC22A46B4800E1BD02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		371D16BE22A46B4800E1BD02 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		371D16C122A46B4800E1BD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		3782D3AC236BAE4D008442DA /* EmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButton.swift; sourceTree = "<group>"; };
 		37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewController.swift; sourceTree = "<group>"; };
 		37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		37B7A9FA2371F6FA0061AE13 /* HapticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTableViewCell.swift; sourceTree = "<group>"; };
 		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		37C040052368ABAF00476B15 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 		371D16B022A46B4800E1BD02 = {
 			isa = PBXGroup;
 			children = (
-				371D16BB22A46B4800E1BD02 /* tipTester */,
+				371D16BB22A46B4800E1BD02 /* tipsy */,
 				371D16BA22A46B4800E1BD02 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,12 +122,12 @@
 		371D16BA22A46B4800E1BD02 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				371D16B922A46B4800E1BD02 /* tipTester.app */,
+				371D16B922A46B4800E1BD02 /* tipsy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		371D16BB22A46B4800E1BD02 /* tipTester */ = {
+		371D16BB22A46B4800E1BD02 /* tipsy */ = {
 			isa = PBXGroup;
 			children = (
 				371D16BC22A46B4800E1BD02 /* AppDelegate.swift */,
@@ -142,7 +144,7 @@
 				371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */,
 				371D16C822A46B4800E1BD02 /* Info.plist */,
 			);
-			path = tipTester;
+			path = tipsy;
 			sourceTree = "<group>";
 		};
 		373FB90623009FE7009EF31C /* Extensions */ = {
@@ -173,6 +175,7 @@
 				37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */,
 				37DD59E923711F9300EA1082 /* QuickTipsView.swift */,
 				37DD59EB23711FB700EA1082 /* QuickTipsView.xib */,
+				37B7A9FA2371F6FA0061AE13 /* HapticTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,9 +245,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		371D16B822A46B4800E1BD02 /* tipTester */ = {
+		371D16B822A46B4800E1BD02 /* tipsy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 371D16CB22A46B4800E1BD02 /* Build configuration list for PBXNativeTarget "tipTester" */;
+			buildConfigurationList = 371D16CB22A46B4800E1BD02 /* Build configuration list for PBXNativeTarget "tipsy" */;
 			buildPhases = (
 				371D16B522A46B4800E1BD02 /* Sources */,
 				371D16B622A46B4800E1BD02 /* Frameworks */,
@@ -254,9 +257,9 @@
 			);
 			dependencies = (
 			);
-			name = tipTester;
+			name = tipsy;
 			productName = tipTester;
-			productReference = 371D16B922A46B4800E1BD02 /* tipTester.app */;
+			productReference = 371D16B922A46B4800E1BD02 /* tipsy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -287,7 +290,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				371D16B822A46B4800E1BD02 /* tipTester */,
+				371D16B822A46B4800E1BD02 /* tipsy */,
 			);
 		};
 /* End PBXProject section */
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B7A9FB2371F6FA0061AE13 /* HapticTableViewCell.swift in Sources */,
 				37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */,
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
 				373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */,
@@ -496,13 +500,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6VB3396MT;
-				INFOPLIST_FILE = tipTester/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Marlon-Raskin.tipTester";
+				PRODUCT_BUNDLE_IDENTIFIER = "Marlon-Raskin.tipsy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -515,13 +519,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6VB3396MT;
-				INFOPLIST_FILE = tipTester/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Marlon-Raskin.tipTester";
+				PRODUCT_BUNDLE_IDENTIFIER = "Marlon-Raskin.tipsy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -540,7 +544,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		371D16CB22A46B4800E1BD02 /* Build configuration list for PBXNativeTarget "tipTester" */ = {
+		371D16CB22A46B4800E1BD02 /* Build configuration list for PBXNativeTarget "tipsy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				371D16CC22A46B4800E1BD02 /* Debug */,

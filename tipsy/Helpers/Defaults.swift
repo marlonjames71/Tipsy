@@ -16,6 +16,7 @@ fileprivate extension String {
 	static let emojiTwoKey = "emojiTwo"
 	static let emojiThreeKey = "emojiThree"
 	static let emojiFourKey = "emojiFour"
+	static let hapticFeedbackIsOnKey = "hapticIsOn"
 }
 
 enum DefaultsManager {
@@ -63,6 +64,15 @@ enum DefaultsManager {
 		}
 		set {
 			defaults.set(newValue, forKey: .emojiFourKey)
+		}
+	}
+
+	static var hapticFeedbackIsOn: Bool {
+		get {
+			return defaults.object(forKey: .hapticFeedbackIsOnKey) as? Bool ?? true
+		}
+		set {
+			defaults.set(newValue, forKey: .hapticFeedbackIsOnKey)
 		}
 	}
 

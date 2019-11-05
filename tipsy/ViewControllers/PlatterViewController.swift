@@ -35,7 +35,7 @@ class PlatterViewController: UIViewController {
 	@IBOutlet weak var tipLabel: UILabel!
 	@IBOutlet weak var tipDescLabel: UILabel!
 
-	let generator = UIImpactFeedbackGenerator(style: .medium)
+	let generator = UIImpactFeedbackGenerator(style: .soft)
 	let motionManager = CMMotionManager()
     let defaults = UserDefaults.standard
     var tipPercentage: String?
@@ -138,6 +138,7 @@ class PlatterViewController: UIViewController {
 		UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 5.0, options: [.curveEaseInOut], animations: {
 			self.view.transform = .identity
 			self.view.alpha = 1
+			self.generator.impactOccurred()
 		}, completion: nil)
 	}
 

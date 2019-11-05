@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9lY-hm-lf2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9lY-hm-lf2">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -12,7 +12,7 @@
         <!--Tip View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController interfaceStyle="dark" id="BYZ-38-t0r" customClass="TipViewController" customModule="tipTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="BYZ-38-t0r" customClass="TipViewController" customModule="tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaR-4w-sLh">
                                 <rect key="frame" x="40" y="162" width="214" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-hv-mPW" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-hv-mPW" customClass="CustomTextField" customModule="tipsy" customModuleProvider="target">
                                         <rect key="frame" x="31.666666666666671" y="0.0" width="182.33333333333331" height="50"/>
                                         <color key="textColor" name="tipsyLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -76,7 +76,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy0-18-3rM">
                                 <rect key="frame" x="266" y="162" width="108" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-VM-bLN" customClass="CustomTextField" customModule="tipTester" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-VM-bLN" customClass="CustomTextField" customModule="tipsy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="73.333333333333329" height="50"/>
                                         <color key="textColor" name="tipsyLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -137,7 +137,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-Ih-fn2">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9Z-fV-Crm" customClass="CustomButton" customModule="tipTester" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9Z-fV-Crm" customClass="CustomButton" customModule="tipsy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="🤬"/>
@@ -145,7 +145,7 @@
                                                     <action selector="firstEmojiTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Tc-N6-Zlr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXc-NR-yI2" customClass="CustomButton" customModule="tipTester" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXc-NR-yI2" customClass="CustomButton" customModule="tipsy" customModuleProvider="target">
                                                 <rect key="frame" x="88.666666666666657" y="0.0" width="68.333333333333343" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="😐"/>
@@ -153,7 +153,7 @@
                                                     <action selector="secondEmojiTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d1a-BI-F4Q"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C1-rN-L3N" customClass="CustomButton" customModule="tipTester" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C1-rN-L3N" customClass="CustomButton" customModule="tipsy" customModuleProvider="target">
                                                 <rect key="frame" x="177" y="0.0" width="68.666666666666686" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="😁"/>
@@ -161,7 +161,7 @@
                                                     <action selector="thirdEmojiTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEd-Ae-5tr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJo-1F-hEA" customClass="CustomButton" customModule="tipTester" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJo-1F-hEA" customClass="CustomButton" customModule="tipsy" customModuleProvider="target">
                                                 <rect key="frame" x="265.66666666666669" y="0.0" width="68.333333333333314" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="😜"/>
@@ -257,7 +257,7 @@
                                     <segue destination="KKA-Vg-A1t" kind="show" identifier="ShowSettingsSegue" id="Qja-hj-fS8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj" customClass="CustomButton" customModule="tipTester" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj" customClass="CustomButton" customModule="tipsy" customModuleProvider="target">
                                 <rect key="frame" x="80" y="524" width="254" height="60"/>
                                 <color key="backgroundColor" name="darkerAccents"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -432,7 +432,7 @@
         <!--Platter View Controller-->
         <scene sceneID="dsf-Z9-laf">
             <objects>
-                <viewController storyboardIdentifier="PlatterViewController" interfaceStyle="dark" id="cDB-kk-dix" customClass="PlatterViewController" customModule="tipTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlatterViewController" interfaceStyle="dark" id="cDB-kk-dix" customClass="PlatterViewController" customModule="tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCy-vE-S9b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -619,20 +619,20 @@
         <!--Settings-->
         <scene sceneID="Dto-Nh-WgA">
             <objects>
-                <tableViewController id="KKA-Vg-A1t" customClass="SettingsTableViewController" customModule="tipTester" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="KKA-Vg-A1t" customClass="SettingsTableViewController" customModule="tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="p77-7K-wi6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="tipsyBackgroundColor"/>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yCb-00-Qtj">
-                            <rect key="frame" x="0.0" y="242" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="307" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" textLabel="iYs-P8-qzc" style="IBUITableViewCellStyleDefault" id="eKc-pz-zpu" customClass="NeverSelectedTableViewCell" customModule="tipTester" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" textLabel="iYs-P8-qzc" style="IBUITableViewCellStyleDefault" id="eKc-pz-zpu" customClass="NeverSelectedTableViewCell" customModule="tipsy" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.333332061767578" width="374" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKc-pz-zpu" id="ZcK-fK-WGQ">
@@ -650,7 +650,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RoundingCell" rowHeight="65" id="8gY-lu-4pK" customClass="RoundSettingTableViewCell" customModule="tipTester" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RoundingCell" rowHeight="65" id="8gY-lu-4pK" customClass="RoundSettingTableViewCell" customModule="tipsy" customModuleProvider="target">
                                 <rect key="frame" x="20" y="99" width="374" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8gY-lu-4pK" id="eEa-P0-Gqe">
@@ -689,8 +689,50 @@
                                     <outlet property="roundSwitch" destination="sVh-rQ-QMP" id="xTJ-KV-DWo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" textLabel="JgW-Mc-QdD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="jaT-WX-kgR" customClass="NeverSelectedTableViewCell" customModule="tipTester" customModuleProvider="target">
-                                <rect key="frame" x="20" y="164" width="374" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HapticCell" rowHeight="65" id="kRR-Yf-YfE" customClass="HapticTableViewCell" customModule="tipsy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="164" width="374" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kRR-Yf-YfE" id="9Ag-fj-UOc">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mS1-t4-vGv">
+                                            <rect key="frame" x="20" y="17" width="334" height="31"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vzR-hN-28d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-yf-JQp">
+                                                    <rect key="frame" x="285" y="0.0" width="51" height="31"/>
+                                                    <color key="tintColor" name="tipsyAccentColor"/>
+                                                    <color key="onTintColor" name="tipsyAccentColor"/>
+                                                    <connections>
+                                                        <action selector="hapticPreferenceChanged:" destination="kRR-Yf-YfE" eventType="valueChanged" id="MdD-QK-6Nd"/>
+                                                        <action selector="roundingSwitched:" destination="kRR-Yf-YfE" eventType="valueChanged" id="lYg-a6-xyZ"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mS1-t4-vGv" secondAttribute="trailing" id="HQH-Vg-sKf"/>
+                                        <constraint firstItem="mS1-t4-vGv" firstAttribute="leading" secondItem="9Ag-fj-UOc" secondAttribute="leadingMargin" id="iNK-AG-2bS"/>
+                                        <constraint firstItem="mS1-t4-vGv" firstAttribute="centerY" secondItem="9Ag-fj-UOc" secondAttribute="centerY" id="s1P-8z-vz8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
+                                <connections>
+                                    <outlet property="descLabel" destination="vzR-hN-28d" id="Vaa-00-i0p"/>
+                                    <outlet property="hapticSwitch" destination="PSp-yf-JQp" id="0lW-OG-gTX"/>
+                                    <outlet property="label" destination="vzR-hN-28d" id="F2Y-QY-rkb"/>
+                                    <outlet property="roundSwitch" destination="PSp-yf-JQp" id="j9P-g3-YBx"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" textLabel="JgW-Mc-QdD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="jaT-WX-kgR" customClass="NeverSelectedTableViewCell" customModule="tipsy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="229" width="374" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaT-WX-kgR" id="q4p-1x-w0G">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
@@ -731,7 +773,7 @@
         <!--Choose Emojis-->
         <scene sceneID="Nww-HM-ha4">
             <objects>
-                <viewController id="6UP-Dm-9dY" customClass="EmojiCollectionViewController" customModule="tipTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6UP-Dm-9dY" customClass="EmojiCollectionViewController" customModule="tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ca-gU-7Ga">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -746,7 +788,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="100" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiCell" id="UDD-xk-k0V" customClass="EmojiCollectionViewCell" customModule="tipTester" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiCell" id="UDD-xk-k0V" customClass="EmojiCollectionViewCell" customModule="tipsy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="100" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kqL-5W-d5s">
@@ -789,7 +831,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-jz-EZc">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="74"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-9e-65T" customClass="EmojiButton" customModule="tipTester" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-9e-65T" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="🤬"/>
@@ -808,7 +850,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Z2a-9v-e1G">
                                                 <rect key="frame" x="83.666666666666686" y="0.0" width="83.333333333333314" height="74"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-Su-PKH" customClass="EmojiButton" customModule="tipTester" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-Su-PKH" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="😐"/>
@@ -827,7 +869,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="OD4-fU-dIa">
                                                 <rect key="frame" x="167" y="0.0" width="83.666666666666686" height="74"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpB-t4-mnE" customClass="EmojiButton" customModule="tipTester" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpB-t4-mnE" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="😁"/>
@@ -846,7 +888,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-0b-B1p">
                                                 <rect key="frame" x="250.66666666666671" y="0.0" width="83.333333333333343" height="74"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVs-dN-0Xn" customClass="EmojiButton" customModule="tipTester" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVs-dN-0Xn" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <state key="normal" title="😜"/>
@@ -922,7 +964,7 @@
         <!--Quick Tipsies-->
         <scene sceneID="sog-j4-8oW">
             <objects>
-                <viewController id="mEN-PX-Q9F" customClass="QuickTipsViewController" customModule="tipTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mEN-PX-Q9F" customClass="QuickTipsViewController" customModule="tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iSP-zK-sgJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

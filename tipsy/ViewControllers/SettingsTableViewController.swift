@@ -35,7 +35,7 @@ class SettingsTableViewController: UITableViewController {
 		case 0:
 			return "Help & Feedback"
 		case 1:
-			return "Calculator"
+			return "Calculator & App Settings"
 		case 2:
 			return "Quick tip emojis"
 		default:
@@ -67,6 +67,7 @@ class SettingsTableViewController: UITableViewController {
 			contactCell.textLabel?.text = helpAndFeedbackArray[indexPath.row]
 			return contactCell
 		case 1:
+			
 			guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? RoundSettingTableViewCell else { return UITableViewCell() }
 			roundingCell.descLabel.text = "Round Totals Up To Nearest Dollar"
 			return roundingCell

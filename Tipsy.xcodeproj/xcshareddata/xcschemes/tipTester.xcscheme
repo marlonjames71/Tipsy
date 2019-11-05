@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "371D16B822A46B4800E1BD02"
-               BuildableName = "tipTester.app"
-               BlueprintName = "tipTester"
+               BuildableName = "tipsy.app"
+               BlueprintName = "tipsy"
                ReferencedContainer = "container:Tipsy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "371D16B822A46B4800E1BD02"
-            BuildableName = "tipTester.app"
-            BlueprintName = "tipTester"
+            BuildableName = "tipsy.app"
+            BlueprintName = "tipsy"
             ReferencedContainer = "container:Tipsy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "371D16B822A46B4800E1BD02"
-            BuildableName = "tipTester.app"
-            BlueprintName = "tipTester"
+            BuildableName = "tipsy.app"
+            BlueprintName = "tipsy"
             ReferencedContainer = "container:Tipsy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
