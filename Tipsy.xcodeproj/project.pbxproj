@@ -46,6 +46,9 @@
 		37DD59E4236C8FA100EA1082 /* Tipsy Icon-20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D4236C8FA100EA1082 /* Tipsy Icon-20@2x.png */; };
 		37DD59E5236C8FA100EA1082 /* Tipsy Icon-20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D5236C8FA100EA1082 /* Tipsy Icon-20@3x.png */; };
 		37DD59E6236C8FA100EA1082 /* Tipsy Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D6236C8FA100EA1082 /* Tipsy Icon-29.png */; };
+		37DD59E8236CAE7C00EA1082 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */; };
+		37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59E923711F9300EA1082 /* QuickTipsView.swift */; };
+		37DD59EC23711FB700EA1082 /* QuickTipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59EB23711FB700EA1082 /* QuickTipsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,9 @@
 		37DD59D4236C8FA100EA1082 /* Tipsy Icon-20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-20@2x.png"; sourceTree = "<group>"; };
 		37DD59D5236C8FA100EA1082 /* Tipsy Icon-20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-20@3x.png"; sourceTree = "<group>"; };
 		37DD59D6236C8FA100EA1082 /* Tipsy Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29.png"; sourceTree = "<group>"; };
+		37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		37DD59E923711F9300EA1082 /* QuickTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsView.swift; sourceTree = "<group>"; };
+		37DD59EB23711FB700EA1082 /* QuickTipsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickTipsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,9 @@
 				37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */,
 				37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */,
 				3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */,
+				37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */,
+				37DD59E923711F9300EA1082 /* QuickTipsView.swift */,
+				37DD59EB23711FB700EA1082 /* QuickTipsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +315,7 @@
 				37DD59DA236C8FA100EA1082 /* Tipsy Icon-29@2x.png in Resources */,
 				37DD59E5236C8FA100EA1082 /* Tipsy Icon-20@3x.png in Resources */,
 				37DD59E1236C8FA100EA1082 /* Contents.json in Resources */,
+				37DD59EC23711FB700EA1082 /* QuickTipsView.xib in Resources */,
 				37DD59E4236C8FA100EA1082 /* Tipsy Icon-20@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,12 +338,14 @@
 				37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */,
+				37DD59E8236CAE7C00EA1082 /* PhotoCollectionViewCell.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				373F92DE236A5F3D003F1B36 /* AlertTint+UIAlertController.swift in Sources */,
 				37DBD2EC235CECF50097C7FA /* RoundingKey.swift in Sources */,
 				3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
+				37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */,
 				37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */,
 				37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */,
 				370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */,

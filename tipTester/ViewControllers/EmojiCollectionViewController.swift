@@ -27,7 +27,7 @@ class EmojiCollectionViewController: UIViewController {
         super.viewDidLoad()
 		emojiCollectionView.delegate = self
 		emojiCollectionView.dataSource = self
-		isModalInPresentation = true
+		navigationController?.isModalInPresentation = true
 		let blurEffect = UIBlurEffect(style: .regular)
 		let blurEffectView = UIVisualEffectView(effect: blurEffect)
 		blurEffectView.frame = blurView.bounds
@@ -35,7 +35,9 @@ class EmojiCollectionViewController: UIViewController {
 		blurView.addSubview(blurEffectView)
 		emojiButtonSelected(emojiOne)
 		loadEmojis()
+		navigationController?.presentationController?.delegate = self
     }
+
 
 	private func loadEmojis() {
 		emojiOne.setTitle(DefaultsManager.emojiOne, for: .normal)
@@ -48,7 +50,11 @@ class EmojiCollectionViewController: UIViewController {
 		selectEmojiButton(sender)
 	}
 
-	@IBAction func saveEmojiSet(_ sender: UIBarButtonItem) {
+	@IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+		saveEmojiSet()
+	}
+
+	private func saveEmojiSet() {
 		DefaultsManager.emojiOne = emojiOne.currentTitle ?? DefaultsManager.emojiOne
 		DefaultsManager.emojiTwo = emojiTwo.currentTitle ?? DefaultsManager.emojiTwo
 		DefaultsManager.emojiThree = emojiThree.currentTitle ?? DefaultsManager.emojiThree
@@ -63,6 +69,22 @@ class EmojiCollectionViewController: UIViewController {
 
 	@IBAction func cancelTapped(_ sender: UIBarButtonItem) {
 		dismiss(animated: true, completion: nil)
+	}
+
+	private func dismissalActionSheet() {
+		let dismissActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+		let saveAction = UIAlertAction(title: "Save Emojis", style: .default) { _ in
+			self.saveEmojiSet()
+		}
+
+		let closeAction = UIAlertAction(title: "Close Emoji Picker", style: .default) { _ in
+			self.dismiss(animated: true, completion: nil)
+		}
+
+		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+		[saveAction, closeAction, cancelAction].forEach { dismissActionSheet.addAction($0) }
+		present(dismissActionSheet, animated: true, completion: nil)
 	}
 
 	private func selectEmojiButton(_ button: EmojiButton) {
@@ -108,5 +130,11 @@ extension EmojiCollectionViewController: UICollectionViewDelegate, UICollectionV
 				shouldMoveToNext = false
 			}
 		}
+	}
+}
+
+extension EmojiCollectionViewController: UIAdaptivePresentationControllerDelegate {
+	func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+		self.dismissalActionSheet()
 	}
 }

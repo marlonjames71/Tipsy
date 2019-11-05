@@ -97,6 +97,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		navigationController?.isNavigationBarHidden = false
+		totalBillTextField.resignFirstResponder()
+		tipTextField.resignFirstResponder()
+		showHideKeyboard(show: false)
 	}
 
 

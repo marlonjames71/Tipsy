@@ -212,7 +212,7 @@ class PlatterViewController: UIViewController {
         partyCountLabelContainer.layer.cornerCurve = .continuous
 		platterView.layer.cornerRadius = 12
         platterView.layer.cornerCurve = .continuous
-//		dismissButton.setTitleColor(.mako2, for: .normal)
+
 		guard let total = totalAmount else { return }
 		totalLabel.text = "\(total)"
 		stepper.value = 2
