@@ -96,7 +96,7 @@ class SettingsTableViewController: UITableViewController {
 				composeVC.mailComposeDelegate = self
 				composeVC.setToRecipients(["tipsysupport@august-light.com"])
 				composeVC.setSubject("Feedback for Tipsy")
-				composeVC.setMessageBody("Hey there, Tipsy! I have an idea for your app:\n\n", isHTML: false)
+				composeVC.setMessageBody("Hey there! I have some feedback for Tipsy:\n\n", isHTML: false)
 				present(composeVC, animated: true, completion: nil)
 			} else {
 				let mailAlert = UIAlertController(title: "Mail Services are not available", message: "Your mail app appears to not be configured", preferredStyle: .alert)
