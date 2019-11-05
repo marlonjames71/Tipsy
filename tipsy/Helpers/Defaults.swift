@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 fileprivate extension String {
 	static let defaultsVersion = "com.augustLight.defaultsVersion"
@@ -21,6 +21,11 @@ fileprivate extension String {
 
 enum DefaultsManager {
 	fileprivate static let defaults = UserDefaults.standard
+	static let lightFeedback = UIImpactFeedbackGenerator(style: .light)
+	static let mediumFeedback = UIImpactFeedbackGenerator(style: .medium)
+	static let heavyFeedback = UIImpactFeedbackGenerator(style: .heavy)
+	static let softFeedback = UIImpactFeedbackGenerator(style: .soft)
+	static let feedback = UISelectionFeedbackGenerator()
 
 	static var defaultsVersion: Int {
 		get {
@@ -73,6 +78,36 @@ enum DefaultsManager {
 		}
 		set {
 			defaults.set(newValue, forKey: .hapticFeedbackIsOnKey)
+		}
+	}
+
+	static func produceLightFeedback() {
+		if hapticFeedbackIsOn {
+			lightFeedback.impactOccurred()
+		}
+	}
+
+	static func produceMediumFeedback() {
+		if hapticFeedbackIsOn {
+			mediumFeedback.impactOccurred()
+		}
+	}
+
+	static func produceHeavyFeedback() {
+		if hapticFeedbackIsOn {
+			heavyFeedback.impactOccurred()
+		}
+	}
+
+	static func produceSoftFeedback() {
+		if hapticFeedbackIsOn {
+			softFeedback.impactOccurred()
+		}
+	}
+
+	static func produceSelectionFeedback() {
+		if hapticFeedbackIsOn {
+			feedback.selectionChanged()
 		}
 	}
 

@@ -711,7 +711,6 @@
                                                     <color key="onTintColor" name="tipsyAccentColor"/>
                                                     <connections>
                                                         <action selector="hapticPreferenceChanged:" destination="kRR-Yf-YfE" eventType="valueChanged" id="MdD-QK-6Nd"/>
-                                                        <action selector="roundingSwitched:" destination="kRR-Yf-YfE" eventType="valueChanged" id="lYg-a6-xyZ"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -725,10 +724,8 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <connections>
-                                    <outlet property="descLabel" destination="vzR-hN-28d" id="Vaa-00-i0p"/>
                                     <outlet property="hapticSwitch" destination="PSp-yf-JQp" id="0lW-OG-gTX"/>
                                     <outlet property="label" destination="vzR-hN-28d" id="F2Y-QY-rkb"/>
-                                    <outlet property="roundSwitch" destination="PSp-yf-JQp" id="j9P-g3-YBx"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" textLabel="JgW-Mc-QdD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="jaT-WX-kgR" customClass="NeverSelectedTableViewCell" customModule="tipsy" customModuleProvider="target">

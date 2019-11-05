@@ -52,7 +52,7 @@ class SettingsTableViewController: UITableViewController {
 		case 0:
 			return helpAndFeedbackArray.count
 		case 1:
-			return 1
+			return 2
 		case 2:
 			return 1
 		default:
@@ -63,23 +63,49 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		switch indexPath.section {
 		case 0:
-			let contactCell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
-			contactCell.textLabel?.text = helpAndFeedbackArray[indexPath.row]
-			return contactCell
+			return contactCell(tableView, cellForRowAt: indexPath)
 		case 1:
-			
-			guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? RoundSettingTableViewCell else { return UITableViewCell() }
-			roundingCell.descLabel.text = "Round Totals Up To Nearest Dollar"
-			return roundingCell
+			switch indexPath.row {
+			case 0:
+				return roundingCell(tableView, cellForRowAt: indexPath)
+			case 1:
+				return hapticCell(tableView, cellForRowAt: indexPath)
+			default:
+				break
+			}
 		case 2:
-			let emojiCell = tableView.dequeueReusableCell(withIdentifier: "ChooseEmojiCell", for: indexPath)
-			emojiCell.textLabel?.text = "Choose Quick Tip Emojis"
-			return emojiCell
+			return emojiCell(tableView, cellForRowAt: indexPath)
 		default:
 			break
 		}
 		return UITableViewCell()
     }
+
+	// MARK: - TableView Cells
+
+	private func contactCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let contactCell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
+		contactCell.textLabel?.text = helpAndFeedbackArray[indexPath.row]
+		return contactCell
+	}
+
+	private func roundingCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? RoundSettingTableViewCell else { return UITableViewCell() }
+		roundingCell.descLabel.text = "Round Totals Up To Nearest Dollar"
+		return roundingCell
+	}
+
+	private func hapticCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let hapticCell = tableView.dequeueReusableCell(withIdentifier: "HapticCell", for: indexPath) as? HapticTableViewCell else { return UITableViewCell() }
+		hapticCell.label.text = "Haptic Feedback"
+		return hapticCell
+	}
+
+	private func emojiCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let emojiCell = tableView.dequeueReusableCell(withIdentifier: "ChooseEmojiCell", for: indexPath)
+		emojiCell.textLabel?.text = "Choose Quick Tip Emojis"
+		return emojiCell
+	}
 
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

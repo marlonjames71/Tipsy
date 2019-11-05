@@ -16,7 +16,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	var previousTip: String?
 	let clearValue = "$0.00"
     let defaults = UserDefaults.standard
-	let feedback = UIImpactFeedbackGenerator(style: .light)
     var calculatedTipPercentage: String = "20" {
         didSet {
             tipTextField.text = calculatedTipPercentage
@@ -73,7 +72,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		totalBillTextField.becomeFirstResponder()
 		updateResetButtonEnabled()
 		screenEdgeGestureRecognizer.edges = .right
-		feedback.prepare()
+		DefaultsManager.lightFeedback.prepare()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -108,9 +107,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	// MARK: - IBActions
 
 	@IBAction func tipCalcButtonTapped(_ sender: Any) {
-		let generator = UIImpactFeedbackGenerator(style: .medium)
-		generator.prepare()
-		generator.impactOccurred()
 		resetButton.isEnabled = true
 		calculateTip()
 		totalBillTextField.resignFirstResponder()
@@ -121,28 +117,26 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	@IBAction func resetButtonTapped(_ sender: UIButton) {
 		clear()
-		let generator = UISelectionFeedbackGenerator()
-		generator.selectionChanged()
 		calculatedTipPercentage = "20"
 	}
 
 	@IBAction func firstEmojiTapped(_ sender: UIButton) {
-		feedback.impactOccurred()
+		DefaultsManager.produceLightFeedback()
 		calculatedTipPercentage = "2"
 	}
 
 	@IBAction func secondEmojiTapped(_ sender: UIButton) {
-		feedback.impactOccurred()
+		DefaultsManager.produceLightFeedback()
 		calculatedTipPercentage = "15"
 	}
 
 	@IBAction func thirdEmojiTapped(_ sender: UIButton) {
-		feedback.impactOccurred()
+		DefaultsManager.produceLightFeedback()
 		calculatedTipPercentage = "20"
 	}
 
 	@IBAction func fourthEmojiTapped(_ sender: UIButton) {
-		feedback.impactOccurred()
+		DefaultsManager.produceLightFeedback()
 		calculatedTipPercentage = "25"
 	}
 
@@ -247,11 +241,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		view.addSubview(platterViewController.view)
 		platterViewController.animateIn()
 		[leftSwipeGesture, rightSwipeGesture, downSwipeGesture].forEach { $0?.isEnabled = false }
-	}
-
-	private func resetTaptic() {
-		let generator = UISelectionFeedbackGenerator()
-		generator.selectionChanged()
 	}
 
 	private func showHideKeyboard(show: Bool) {
