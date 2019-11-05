@@ -977,7 +977,7 @@
                                 <rect key="frame" x="20" y="86" width="374" height="101.66666666666669"/>
                                 <string key="text">Since phones are bigger these days, here are some ways to navigate Tipsy. And by the way, and you can double-tap to dismiss this screen when you're done! </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="tipsySecondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1PE-25-hDx">
