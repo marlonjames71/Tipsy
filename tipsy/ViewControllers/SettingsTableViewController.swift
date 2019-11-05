@@ -35,7 +35,7 @@ class SettingsTableViewController: UITableViewController {
 		case 0:
 			return "Help & Feedback"
 		case 1:
-			return "Calculator & App Settings"
+			return "Calculator & Haptic Feedback"
 		case 2:
 			return "Quick tip emojis"
 		default:
