@@ -16,7 +16,7 @@ class SettingsTableViewController: UITableViewController {
 
 	fileprivate let helpAndFeedbackArray = ["Follow Tipsy on Twitter", "Send Feedback", "Contact Us", "Quick Tipsies"]
 	fileprivate let twitterUrl: URL = {
-		let baseURL = URL(string: "https://twitter.com/mredig")!
+		let baseURL = URL(string: "https://twitter.com/marlonjames71")!
 		return baseURL
 	}()
 
@@ -94,7 +94,7 @@ class SettingsTableViewController: UITableViewController {
 				let composeVC = MFMailComposeViewController()
 				composeVC.navigationBar.tintColor = .turquoiseTwo
 				composeVC.mailComposeDelegate = self
-				composeVC.setToRecipients(["subsformarlon@gmail.com"])
+				composeVC.setToRecipients(["tipsysupport@august-light.com"])
 				composeVC.setSubject("Feedback for Tipsy")
 				composeVC.setMessageBody("Hey there, Tipsy! I have an idea for your app:\n\n", isHTML: false)
 				present(composeVC, animated: true, completion: nil)
@@ -108,7 +108,7 @@ class SettingsTableViewController: UITableViewController {
 				let composeVC = MFMailComposeViewController()
 				composeVC.navigationBar.tintColor = .turquoiseTwo
 				composeVC.mailComposeDelegate = self
-				composeVC.setToRecipients(["subsformarlon@gmail.com"])
+				composeVC.setToRecipients(["tipsysupport@august-light.com"])
 				composeVC.setSubject("Tipsy Issue")
 				composeVC.setMessageBody("Hi, nice people at Tipsy. I'm having an issue I'd like help with: \n\n\n", isHTML: false)
 				present(composeVC, animated: true, completion: nil)
