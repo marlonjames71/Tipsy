@@ -16,7 +16,9 @@ fileprivate extension String {
 	static let emojiTwoKey = "emojiTwo"
 	static let emojiThreeKey = "emojiThree"
 	static let emojiFourKey = "emojiFour"
+	static let roundingKey = "toggleRounding"
 	static let hapticFeedbackIsOnKey = "hapticIsOn"
+	static let includeApplePayHint = "ApplePayHint"
 }
 
 enum DefaultsManager {
@@ -33,6 +35,15 @@ enum DefaultsManager {
 		}
 		set {
 			defaults.set(newValue, forKey: .defaultsVersion)
+		}
+	}
+
+	static var roundingIsEnabled: Bool {
+		get {
+			return defaults.bool(forKey: .roundingKey)
+		}
+		set {
+			defaults.set(newValue, forKey: .roundingKey)
 		}
 	}
 
@@ -78,6 +89,15 @@ enum DefaultsManager {
 		}
 		set {
 			defaults.set(newValue, forKey: .hapticFeedbackIsOnKey)
+		}
+	}
+
+	static var includeApplePayHint: Bool {
+		get {
+			return defaults.object(forKey: .includeApplePayHint) as? Bool ?? true
+		}
+		set {
+			defaults.set(newValue, forKey: .includeApplePayHint)
 		}
 	}
 

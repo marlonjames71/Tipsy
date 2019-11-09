@@ -20,6 +20,7 @@ class CalculatorLogic {
     var percentFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
+		formatter.maximumFractionDigits = 1
         formatter.percentSymbol = ""
         return formatter
     }()

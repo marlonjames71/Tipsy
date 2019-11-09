@@ -16,8 +16,10 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	var previousTip: String?
 	let clearValue = "$0.00"
     let defaults = UserDefaults.standard
+	private var editingTipPercentage = false
     var calculatedTipPercentage: String = "20" {
         didSet {
+			guard editingTipPercentage == false else { return }
             tipTextField.text = calculatedTipPercentage
             calculateTip()
         }
@@ -140,7 +142,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		calculatedTipPercentage = "25"
 	}
 
-	@IBAction func totalDidChange(_ sender: CustomTextField) {
+	@IBAction func totalDidChange(_ sender: UITextField) {
 		guard var totalString = sender.text else { return }
 		let legalChar = Set("0123456789")
 		totalString = totalString.filter { legalChar.contains($0) }
@@ -152,9 +154,11 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		updateResetButtonEnabled()
 	}
 
-	@IBAction func tipFieldDidChange(_ sender: CustomTextField) {
+	@IBAction func tipFieldDidChange(_ sender: UITextField) {
 		tipErrorLabel.isHidden = true
-        calculatedTipPercentage = sender.text ?? ""
+		editingTipPercentage = true
+		calculatedTipPercentage = sender.text ?? ""
+		editingTipPercentage = false
 	}
 
 	@IBAction func splitButtonTapped(_ sender: UIButton) {
@@ -208,7 +212,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 			return
 		}
         guard let logic = logic else { return }
-        let rounding = defaults.bool(forKey: .roundingKey)
+		let rounding = DefaultsManager.roundingIsEnabled
 
 		guard let valueInfo = logic.totalPerPerson(billTotalString: totalStrInput, tipPercentageString: calculatedTipPercentage, isRounded: rounding) else {
 			tipOutputLabel.text = "$0.00"

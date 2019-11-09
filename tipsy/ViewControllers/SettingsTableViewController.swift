@@ -35,9 +35,9 @@ class SettingsTableViewController: UITableViewController {
 		case 0:
 			return "Help & Feedback"
 		case 1:
-			return "Calculator & Haptic Feedback"
+			return "Calculator & App Settings"
 		case 2:
-			return "Quick tip emojis"
+			return "Messaging Prompts"
 		default:
 			return ""
 		}
@@ -52,11 +52,9 @@ class SettingsTableViewController: UITableViewController {
 		case 0:
 			return helpAndFeedbackArray.count
 		case 1:
-			return 2
-		case 2:
-			return 1
+			return 3
 		default:
-			return 0
+			return 1
 		}
     }
 
@@ -70,11 +68,13 @@ class SettingsTableViewController: UITableViewController {
 				return roundingCell(tableView, cellForRowAt: indexPath)
 			case 1:
 				return hapticCell(tableView, cellForRowAt: indexPath)
+			case 2:
+				return emojiCell(tableView, cellForRowAt: indexPath)
 			default:
 				break
 			}
 		case 2:
-			return emojiCell(tableView, cellForRowAt: indexPath)
+			return applePayCell(tableView, cellForRowAt: indexPath)
 		default:
 			break
 		}
@@ -90,9 +90,24 @@ class SettingsTableViewController: UITableViewController {
 	}
 
 	private func roundingCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? RoundSettingTableViewCell else { return UITableViewCell() }
-		roundingCell.descLabel.text = "Round Totals Up To Nearest Dollar"
+		guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
+		roundingCell.descText = "Round Totals Up To Nearest Dollar"
+		roundingCell.isOn = DefaultsManager.roundingIsEnabled
+		roundingCell.action = { sender in
+			DefaultsManager.roundingIsEnabled = sender.isOn
+		}
 		return roundingCell
+	}
+
+	private func applePayCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let applePayCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
+		applePayCell.descText = "Include Apple Pay Hint"
+		applePayCell.isOn = DefaultsManager.includeApplePayHint
+		applePayCell.subtitleText = "When using the Split Bill feature you can message your party members with their portion of the bill. Messages will include a hint that Apple Pay can be used. Toggle off if you prefer not to receive Apple Cash."
+		applePayCell.action = { sender in
+			DefaultsManager.includeApplePayHint = sender.isOn
+		}
+		return applePayCell
 	}
 
 	private func hapticCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

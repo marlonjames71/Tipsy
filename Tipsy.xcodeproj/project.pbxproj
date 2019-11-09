@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BFEE3231CB682009B7B25 /* PlatterViewController.swift */; };
-		370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370CE30322AF3B8800B66EDA /* PaddingTextField.swift */; };
 		371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BC22A46B4800E1BD02 /* AppDelegate.swift */; };
 		371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16BE22A46B4800E1BD02 /* TipViewController.swift */; };
 		371D16C222A46B4800E1BD02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371D16C022A46B4800E1BD02 /* Main.storyboard */; };
@@ -17,19 +16,18 @@
 		371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */; };
 		371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */; };
 		373F92DE236A5F3D003F1B36 /* AlertTint+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F92DD236A5F3D003F1B36 /* AlertTint+UIAlertController.swift */; };
-		373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB9072300FF97009EF31C /* CustomButtons.swift */; };
+		3766AB9823753340005829D8 /* tipsyPaymentRequest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB9723753340005829D8 /* tipsyPaymentRequest.png */; };
+		3766AB9A2375DBBE005829D8 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB992375DBBE005829D8 /* Contacts.storyboard */; };
 		3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3A8236AC874008442DA /* QuickTipsViewController.swift */; };
 		3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */; };
 		3782D3AD236BAE4D008442DA /* EmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3AC236BAE4D008442DA /* EmojiButton.swift */; };
 		37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */; };
 		37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */; };
 		37B7A9FB2371F6FA0061AE13 /* HapticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7A9FA2371F6FA0061AE13 /* HapticTableViewCell.swift */; };
-		37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36B22F4EE2500BB774B /* CustomTextField.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
 		37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040052368ABAF00476B15 /* SettingsTableViewController.swift */; };
-		37C040082368AEF200476B15 /* RoundSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */; };
+		37C040082368AEF200476B15 /* ToggleSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */; };
 		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
-		37DBD2EC235CECF50097C7FA /* RoundingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBD2EB235CECF50097C7FA /* RoundingKey.swift */; };
 		37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59C4236BB61800EA1082 /* Defaults.swift */; };
 		37DD59D7236C8FA100EA1082 /* Tipsy Icon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */; };
 		37DD59D8236C8FA100EA1082 /* Tipsy Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */; };
@@ -50,11 +48,11 @@
 		37DD59E8236CAE7C00EA1082 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */; };
 		37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59E923711F9300EA1082 /* QuickTipsView.swift */; };
 		37DD59EC23711FB700EA1082 /* QuickTipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59EB23711FB700EA1082 /* QuickTipsView.xib */; };
+		37E9B627237648F1000919A3 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB9072300FF97009EF31C /* CustomButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		370BFEE3231CB682009B7B25 /* PlatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatterViewController.swift; sourceTree = "<group>"; };
-		370CE30322AF3B8800B66EDA /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		371D16B922A46B4800E1BD02 /* tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D16BC22A46B4800E1BD02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		371D16BE22A46B4800E1BD02 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
@@ -66,18 +64,18 @@
 		371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		373F92DD236A5F3D003F1B36 /* AlertTint+UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlertTint+UIAlertController.swift"; sourceTree = "<group>"; };
 		373FB9072300FF97009EF31C /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		3766AB9723753340005829D8 /* tipsyPaymentRequest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipsyPaymentRequest.png; sourceTree = "<group>"; };
+		3766AB992375DBBE005829D8 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		3782D3A8236AC874008442DA /* QuickTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsViewController.swift; sourceTree = "<group>"; };
 		3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverSelectedTableViewCell.swift; sourceTree = "<group>"; };
 		3782D3AC236BAE4D008442DA /* EmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButton.swift; sourceTree = "<group>"; };
 		37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewController.swift; sourceTree = "<group>"; };
 		37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		37B7A9FA2371F6FA0061AE13 /* HapticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTableViewCell.swift; sourceTree = "<group>"; };
-		37B9A36B22F4EE2500BB774B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		37C040052368ABAF00476B15 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSettingTableViewCell.swift; sourceTree = "<group>"; };
+		37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		37DBD2EB235CECF50097C7FA /* RoundingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingKey.swift; sourceTree = "<group>"; };
 		37DD59C4236BB61800EA1082 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29@3x.png"; sourceTree = "<group>"; };
 		37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-60@2x.png"; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				371D16BC22A46B4800E1BD02 /* AppDelegate.swift */,
-				370CE30322AF3B8800B66EDA /* PaddingTextField.swift */,
 				37B9A36D22F52B9A00BB774B /* StoryBoards */,
 				37B9A36E22F52BA900BB774B /* Views */,
 				37F3D41C22ACD3F5006BA05D /* ViewControllers */,
@@ -159,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				371D16C022A46B4800E1BD02 /* Main.storyboard */,
+				3766AB992375DBBE005829D8 /* Contacts.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -168,8 +166,7 @@
 			children = (
 				3782D3AC236BAE4D008442DA /* EmojiButton.swift */,
 				373FB9072300FF97009EF31C /* CustomButtons.swift */,
-				37B9A36B22F4EE2500BB774B /* CustomTextField.swift */,
-				37C040072368AEF200476B15 /* RoundSettingTableViewCell.swift */,
+				37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */,
 				37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */,
 				3782D3AA236B61DD008442DA /* NeverSelectedTableViewCell.swift */,
 				37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */,
@@ -184,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				37B9A36F22F624F500BB774B /* Colors.swift */,
-				37DBD2EB235CECF50097C7FA /* RoundingKey.swift */,
+				3766AB9723753340005829D8 /* tipsyPaymentRequest.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -304,6 +301,8 @@
 				37DD59D8236C8FA100EA1082 /* Tipsy Icon-60@2x.png in Resources */,
 				37DD59D7236C8FA100EA1082 /* Tipsy Icon-29@3x.png in Resources */,
 				371D16C722A46B4800E1BD02 /* LaunchScreen.storyboard in Resources */,
+				3766AB9823753340005829D8 /* tipsyPaymentRequest.png in Resources */,
+				3766AB9A2375DBBE005829D8 /* Contacts.storyboard in Resources */,
 				371D16C422A46B4800E1BD02 /* Assets.xcassets in Resources */,
 				37DD59E0236C8FA100EA1082 /* Tipsy Icon-76@2x.png in Resources */,
 				37DD59DF236C8FA100EA1082 /* Tipsy Icon-40@2x.png in Resources */,
@@ -331,11 +330,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B7A9FB2371F6FA0061AE13 /* HapticTableViewCell.swift in Sources */,
-				37B9A36C22F4EE2500BB774B /* CustomTextField.swift in Sources */,
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
-				373FB9082300FF98009EF31C /* CustomButtons.swift in Sources */,
-				37C040082368AEF200476B15 /* RoundSettingTableViewCell.swift in Sources */,
-				370CE30422AF3B8800B66EDA /* PaddingTextField.swift in Sources */,
+				37C040082368AEF200476B15 /* ToggleSettingsTableViewCell.swift in Sources */,
 				3782D3AD236BAE4D008442DA /* EmojiButton.swift in Sources */,
 				37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */,
 				37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */,
@@ -344,9 +340,9 @@
 				3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */,
 				37DD59E8236CAE7C00EA1082 /* PhotoCollectionViewCell.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
+				37E9B627237648F1000919A3 /* CustomButtons.swift in Sources */,
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				373F92DE236A5F3D003F1B36 /* AlertTint+UIAlertController.swift in Sources */,
-				37DBD2EC235CECF50097C7FA /* RoundingKey.swift in Sources */,
 				3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
 				37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */,
@@ -499,6 +495,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COMPRESS_PNG_FILES = NO;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -518,6 +516,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COMPRESS_PNG_FILES = NO;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

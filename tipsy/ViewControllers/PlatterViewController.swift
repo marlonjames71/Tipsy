@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreMotion
+import MessageUI
+import Contacts
+import ContactsUI
 
 protocol PlatterViewControllerDelegate: AnyObject {
 	func didFinishShowing()
@@ -93,7 +96,7 @@ class PlatterViewController: UIViewController {
 
 	private func calculateSplit() {
 		guard let logic = logic else { return }
-		let rounding = defaults.bool(forKey: .roundingKey)
+		let rounding = DefaultsManager.roundingIsEnabled
 
 		if let totalValueString = originalTotal?.replacingOccurrences(of: "$", with: ""),
 			let tipPercentage = tipPercentage,
@@ -171,8 +174,37 @@ class PlatterViewController: UIViewController {
 		dismissView()
 	}
 
-	@IBAction func dismissTapped(_ sender: UIButton) {
-		dismissView()
+	@IBAction func requestMoneyTapped(_ sender: UIButton) {
+		if eachLabel.text == "$0.00" {
+			let alert = UIAlertController(title: "The dollar amount must be greater than $0.00", message: nil, preferredStyle: .alert)
+			let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+			alert.addAction(action)
+			present(alert, animated: true, completion: nil)
+		}
+
+		let contactsStore = CNContactStore()
+		contactsStore.requestAccess(for: .contacts) { (granted, error) in
+			if let error = error {
+				NSLog("Failed to request access: \(error)")
+			}
+
+			if granted {
+				if !MFMessageComposeViewController.canSendText() {
+					let messageAlert = UIAlertController(title: "Message Services are not available", message: "Your messaging services appears to not be available", preferredStyle: .alert)
+					messageAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+					self.present(messageAlert, animated: true, completion: nil)
+				} else {
+					let composeVC = MFMessageComposeViewController()
+					composeVC.messageComposeDelegate = self
+					if let amount = self.eachLabel.text {
+						composeVC.body = "Your portion of the bill is → \(amount)\n\nHint: If you have Apple Pay enabled, tap the above dollar amount!"
+					}
+					self.present(composeVC, animated: true, completion: nil)
+				}
+			} else {
+				NSLog("Access to contacts was denied")
+			}
+		}
 	}
 
 	func updateAccelerometerData() {
@@ -216,5 +248,25 @@ class PlatterViewController: UIViewController {
 		guard let total = totalAmount else { return }
 		totalLabel.text = "\(total)"
 		stepper.value = 2
+	}
+}
+
+extension PlatterViewController: MFMessageComposeViewControllerDelegate {
+	func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+		switch result {
+		case .sent:
+			controller.dismiss(animated: true, completion: nil)
+		case .cancelled:
+			controller.dismiss(animated: true, completion: nil)
+		case .failed:
+			let errorAlert = UIAlertController(title: "Uh Oh, Message failed to send", message: nil, preferredStyle: .alert)
+			errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			controller.dismiss(animated: true) {
+				self.present(errorAlert, animated: true, completion: nil)
+			}
+		@unknown default:
+			fatalError()
+
+		}
 	}
 }
