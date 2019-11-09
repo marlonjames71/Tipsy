@@ -1,6 +1,6 @@
 # Tipsy
 
-Simple and fun tip calculator with very clean UI. Has light and dark theme modes.
+Simple and fun tip calculator with very clean and simple UI.
 
 ### Technologies Used:
 - UIKit
@@ -15,6 +15,7 @@ Simple and fun tip calculator with very clean UI. Has light and dark theme modes
 - Round dollar amounts up to nearest dollar
 - Quick Tip Percentages
 - Choose your own emoji icons for Quick Tip Percentages
+- Supports iOS 13 Light & Dark modes
 
 <img src="light1.png" width="400"> <img src="light2split.png" width="400">
 <img src="dark1.png" width="400"> <img src="dark2split.png" width="400">
