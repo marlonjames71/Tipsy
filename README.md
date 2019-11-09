@@ -8,4 +8,6 @@ Features coming soon:
 - Ability to request the split amount via Apple Pay from whom you are splitting the bill with
 
 <img src="light1.png" width="400"> <img src="light2split.png" width="400">
-<img src="dark1.png" width="400"> <img src="dark2.png" width="400">
+<img src="dark1.png" width="400"> <img src="dark2split.png" width="400">
+<img src="light3.png" width="400"> <img src="darkTipsView.png" width="400">
+<img src="darkEmojiPicker.png" width="400"> <img src="dark3.png" width="400">
