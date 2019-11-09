@@ -1,6 +1,6 @@
 # Tipsy
 
-Simple and fun tip calculator with very clean and simple UI.
+Fun tip calculator with very clean and simple UI.
 
 ### Technologies Used:
 - UIKit
