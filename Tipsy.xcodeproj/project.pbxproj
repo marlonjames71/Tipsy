@@ -49,6 +49,7 @@
 		37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59E923711F9300EA1082 /* QuickTipsView.swift */; };
 		37DD59EC23711FB700EA1082 /* QuickTipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59EB23711FB700EA1082 /* QuickTipsView.xib */; };
 		37E9B627237648F1000919A3 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FB9072300FF97009EF31C /* CustomButtons.swift */; };
+		37E9B6292377D3B1000919A3 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B6282377D3B1000919A3 /* HapticFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		37DD59E923711F9300EA1082 /* QuickTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsView.swift; sourceTree = "<group>"; };
 		37DD59EB23711FB700EA1082 /* QuickTipsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickTipsView.xib; sourceTree = "<group>"; };
+		37E9B6282377D3B1000919A3 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				37B9A36F22F624F500BB774B /* Colors.swift */,
 				3766AB9723753340005829D8 /* tipsyPaymentRequest.png */,
+				37E9B6282377D3B1000919A3 /* HapticFeedback.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */,
 				37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
+				37E9B6292377D3B1000919A3 /* HapticFeedback.swift in Sources */,
 				3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */,
 				37DD59E8236CAE7C00EA1082 /* PhotoCollectionViewCell.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,
@@ -496,7 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -517,7 +521,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

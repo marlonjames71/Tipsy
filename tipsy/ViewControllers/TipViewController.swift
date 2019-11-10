@@ -74,7 +74,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		totalBillTextField.becomeFirstResponder()
 		updateResetButtonEnabled()
 		screenEdgeGestureRecognizer.edges = .right
-		DefaultsManager.lightFeedback.prepare()
+		HapticFeedback.lightFeedback.prepare()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -123,22 +123,22 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func firstEmojiTapped(_ sender: UIButton) {
-		DefaultsManager.produceLightFeedback()
+		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "2"
 	}
 
 	@IBAction func secondEmojiTapped(_ sender: UIButton) {
-		DefaultsManager.produceLightFeedback()
+		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "15"
 	}
 
 	@IBAction func thirdEmojiTapped(_ sender: UIButton) {
-		DefaultsManager.produceLightFeedback()
+		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "20"
 	}
 
 	@IBAction func fourthEmojiTapped(_ sender: UIButton) {
-		DefaultsManager.produceLightFeedback()
+		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "25"
 	}
 

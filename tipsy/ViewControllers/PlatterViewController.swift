@@ -62,6 +62,15 @@ class PlatterViewController: UIViewController {
 		return timer
 	}()
 
+	private var messagePrompt: String {
+		guard let amount = self.eachLabel.text else { return "" }
+		if DefaultsManager.includeApplePayHint {
+			return "Your portion of the bill is → \(amount)\n\nHint: If you have Apple Pay enabled, tap the above dollar amount!"
+		} else {
+			return "Your portion of the bill is → \(amount)"
+		}
+	}
+
 	weak var delegate: PlatterViewControllerDelegate?
 	
     override func viewDidLoad() {
@@ -72,7 +81,7 @@ class PlatterViewController: UIViewController {
 		stepper.minimumValue = 1
 		stepper.maximumValue = 10
 		calculateSplit()
-		DefaultsManager.lightFeedback.prepare()
+		HapticFeedback.lightFeedback.prepare()
 
 		platterView.layer.shadowColor = UIColor.black.cgColor
 		platterView.layer.shadowOpacity = 0.3
@@ -89,7 +98,7 @@ class PlatterViewController: UIViewController {
 	
 
 	@IBAction func stepperTapped(_ sender: UIStepper) {
-		DefaultsManager.produceLightFeedback()
+		HapticFeedback.produceLightFeedback()
 		partyCount = Int(sender.value)
 		calculateSplit()
 	}
@@ -140,7 +149,7 @@ class PlatterViewController: UIViewController {
 		UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 5.0, options: [.curveEaseInOut], animations: {
 			self.view.transform = .identity
 			self.view.alpha = 1
-			DefaultsManager.produceSoftFeedback()
+			HapticFeedback.produceSoftFeedback()
 		}, completion: nil)
 	}
 
@@ -180,6 +189,8 @@ class PlatterViewController: UIViewController {
 			let action = UIAlertAction(title: "OK", style: .default, handler: nil)
 			alert.addAction(action)
 			present(alert, animated: true, completion: nil)
+		} else {
+			
 		}
 
 		let contactsStore = CNContactStore()
@@ -196,9 +207,7 @@ class PlatterViewController: UIViewController {
 				} else {
 					let composeVC = MFMessageComposeViewController()
 					composeVC.messageComposeDelegate = self
-					if let amount = self.eachLabel.text {
-						composeVC.body = "Your portion of the bill is → \(amount)\n\nHint: If you have Apple Pay enabled, tap the above dollar amount!"
-					}
+					composeVC.body = self.messagePrompt
 					self.present(composeVC, animated: true, completion: nil)
 				}
 			} else {
