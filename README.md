@@ -1,11 +1,23 @@
 # Tipsy
 
-Simple and fun tip calculator with very clean UI. Has light and dark theme modes.
+Fun tip calculator with very clean and simple UI.
 
-Features coming soon:
-- User will be able to choose their own emojis
-- Rounded amounts for nice even numbers
-- Ability to request the split amount via Apple Pay from whom you are splitting the bill with
+### Technologies Used:
+- UIKit
+- Contacts
+- MessageUI
+- Social
 
-<img src="light1.png" width="400"> <img src="light2.png" width="400">
-<img src="dark1.png" width="400"> <img src="dark2.png" width="400">
+### Features:
+- Calculate Tip
+- Get split totals for sharing bill
+- Ability to message your party with their portion of the bill
+- Round dollar amounts up to nearest dollar
+- Quick Tip Percentages
+- Choose your own emoji icons for Quick Tip Percentages
+- Supports iOS 13 Light & Dark modes
+
+<img src="light1.png" width="400"> <img src="light2split.png" width="400">
+<img src="dark1.png" width="400"> <img src="dark2split.png" width="400">
+<img src="light3.png" width="400"> <img src="darkTipsView.png" width="400">
+<img src="darkEmojiPicker.png" width="400"> <img src="dark3.png" width="400">
