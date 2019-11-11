@@ -26,7 +26,6 @@
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
 		37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040052368ABAF00476B15 /* SettingsTableViewController.swift */; };
 		37C040082368AEF200476B15 /* ToggleSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */; };
-		37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85F2022F87E6C009FBE1E /* UserDefaults.swift */; };
 		37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59C4236BB61800EA1082 /* Defaults.swift */; };
 		37DD59D7236C8FA100EA1082 /* Tipsy Icon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */; };
 		37DD59D8236C8FA100EA1082 /* Tipsy Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */; };
@@ -74,7 +73,6 @@
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		37C040052368ABAF00476B15 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSettingsTableViewCell.swift; sourceTree = "<group>"; };
-		37C85F2022F87E6C009FBE1E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		37DD59C4236BB61800EA1082 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29@3x.png"; sourceTree = "<group>"; };
 		37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-60@2x.png"; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		37F3D41B22ACD3E2006BA05D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				37C85F2022F87E6C009FBE1E /* UserDefaults.swift */,
 				371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */,
 				371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */,
 			);
@@ -347,7 +344,6 @@
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
 				37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */,
 				37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */,
-				37C85F2122F87E6C009FBE1E /* UserDefaults.swift in Sources */,
 				370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,7 +492,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -517,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

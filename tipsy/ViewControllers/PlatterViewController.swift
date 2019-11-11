@@ -79,7 +79,7 @@ class PlatterViewController: UIViewController {
 		_ = motionChecker
 		setStandardUI()
 		stepper.minimumValue = 1
-		stepper.maximumValue = 10
+		stepper.maximumValue = 999
 		calculateSplit()
 		HapticFeedback.lightFeedback.prepare()
 
@@ -183,16 +183,7 @@ class PlatterViewController: UIViewController {
 		dismissView()
 	}
 
-	@IBAction func requestMoneyTapped(_ sender: UIButton) {
-		if eachLabel.text == "$0.00" {
-			let alert = UIAlertController(title: "The dollar amount must be greater than $0.00", message: nil, preferredStyle: .alert)
-			let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-			alert.addAction(action)
-			present(alert, animated: true, completion: nil)
-		} else {
-			
-		}
-
+	private func presentMessageController() {
 		let contactsStore = CNContactStore()
 		contactsStore.requestAccess(for: .contacts) { (granted, error) in
 			if let error = error {
@@ -212,6 +203,39 @@ class PlatterViewController: UIViewController {
 				}
 			} else {
 				NSLog("Access to contacts was denied")
+			}
+		}
+	}
+
+	@IBAction func requestMoneyTapped(_ sender: UIButton) {
+		if eachLabel.text == "$0.00" {
+			let alert = UIAlertController(title: "The dollar amount must be greater than $0.00", message: nil, preferredStyle: .alert)
+			let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+			alert.addAction(action)
+			present(alert, animated: true, completion: nil)
+		} else {
+			if !DefaultsManager.messageAlertWasSeen {
+				let message = """
+						Due to Apple's limitations with messaging, peer to peer Apple Pay functionality will not work in group messages.
+
+						Sending the following messages one by one allows your party members to reimburse you via Apple Cash.
+
+						Thank you for your patience as I continue to find a way to improve this feature.
+						"""
+				let messageAlert = UIAlertController(title: "About This Feature", message: message, preferredStyle: .alert)
+				let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+					self.presentMessageController()
+				}
+				let remindMeAction = UIAlertAction(title: "Please Remind Me Again", style: .cancel) { _ in
+					DefaultsManager.messageAlertWasSeen = false
+					self.presentMessageController()
+				}
+				[okAction, remindMeAction].forEach { messageAlert.addAction($0) }
+				present(messageAlert, animated: true) {
+					DefaultsManager.messageAlertWasSeen = true
+				}
+			} else {
+				presentMessageController()
 			}
 		}
 	}

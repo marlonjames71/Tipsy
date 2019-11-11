@@ -19,6 +19,7 @@ fileprivate extension String {
 	static let roundingKey = "toggleRounding"
 	static let hapticFeedbackIsOnKey = "hapticIsOn"
 	static let includeApplePayHint = "ApplePayHint"
+	static let messageAlertWasSeen = "MessageAlert"
 }
 
 enum DefaultsManager {
@@ -80,19 +81,28 @@ enum DefaultsManager {
 
 	static var hapticFeedbackIsOn: Bool {
 		get {
-			return defaults.object(forKey: .hapticFeedbackIsOnKey) as? Bool ?? true
+			return defaults[.hapticFeedbackIsOnKey] as? Bool ?? true
 		}
 		set {
-			defaults.set(newValue, forKey: .hapticFeedbackIsOnKey)
+			defaults[.hapticFeedbackIsOnKey] = newValue
 		}
 	}
 
 	static var includeApplePayHint: Bool {
 		get {
-			return defaults.object(forKey: .includeApplePayHint) as? Bool ?? true
+			return defaults[.includeApplePayHint] as? Bool ?? true
 		}
 		set {
-			defaults.set(newValue, forKey: .includeApplePayHint)
+			defaults[.includeApplePayHint] = newValue
+		}
+	}
+
+	static var messageAlertWasSeen: Bool {
+		get {
+			return defaults[bool: .messageAlertWasSeen]
+		}
+		set {
+			defaults[.messageAlertWasSeen] = newValue
 		}
 	}
 
@@ -102,6 +112,26 @@ enum DefaultsManager {
 	static func migrateDefaults() {
 		if defaultsVersion == 0 {
 			defaults.set(1, forKey: String.defaultsVersion)
+		}
+	}
+}
+
+extension UserDefaults {
+	subscript(key: String) -> Any? {
+		get {
+			return object(forKey: key)
+		}
+		set {
+			set(newValue, forKey: key)
+		}
+	}
+
+	subscript(bool key: String) -> Bool {
+		get {
+			return bool(forKey: key)
+		}
+		set {
+			set(newValue, forKey: key)
 		}
 	}
 }
