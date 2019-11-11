@@ -90,7 +90,7 @@ class SettingsTableViewController: UITableViewController {
 	}
 
 	private func roundingCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
+		guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
 		roundingCell.descText = "Round Totals Up To Nearest Dollar"
 		roundingCell.isOn = DefaultsManager.roundingIsEnabled
 		roundingCell.action = { sender in
@@ -100,7 +100,7 @@ class SettingsTableViewController: UITableViewController {
 	}
 
 	private func applePayCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let applePayCell = tableView.dequeueReusableCell(withIdentifier: "RoundingCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
+		guard let applePayCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
 		applePayCell.descText = "Include Apple Pay Hint"
 		applePayCell.isOn = DefaultsManager.includeApplePayHint
 		applePayCell.subtitleText = "When using the Split Bill feature you can message your party members with their portion of the bill. Messages will include a hint that Apple Pay can be used. Toggle off if you prefer not to receive Apple Cash."
@@ -111,8 +111,12 @@ class SettingsTableViewController: UITableViewController {
 	}
 
 	private func hapticCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let hapticCell = tableView.dequeueReusableCell(withIdentifier: "HapticCell", for: indexPath) as? HapticTableViewCell else { return UITableViewCell() }
-		hapticCell.label.text = "Haptic Feedback"
+		guard let hapticCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
+		hapticCell.descText = "Haptic Feedback"
+		hapticCell.isOn = DefaultsManager.hapticFeedbackIsOn
+		hapticCell.action = { sender in
+			DefaultsManager.hapticFeedbackIsOn = sender.isOn
+		}
 		return hapticCell
 	}
 
