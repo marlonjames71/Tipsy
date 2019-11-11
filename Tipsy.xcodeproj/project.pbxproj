@@ -23,7 +23,6 @@
 		3782D3AD236BAE4D008442DA /* EmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3AC236BAE4D008442DA /* EmojiButton.swift */; };
 		37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */; };
 		37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */; };
-		37B7A9FB2371F6FA0061AE13 /* HapticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7A9FA2371F6FA0061AE13 /* HapticTableViewCell.swift */; };
 		37B9A37022F624F500BB774B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A36F22F624F500BB774B /* Colors.swift */; };
 		37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040052368ABAF00476B15 /* SettingsTableViewController.swift */; };
 		37C040082368AEF200476B15 /* ToggleSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */; };
@@ -72,7 +71,6 @@
 		3782D3AC236BAE4D008442DA /* EmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButton.swift; sourceTree = "<group>"; };
 		37A2187E236A9BD0004BD9D6 /* EmojiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewController.swift; sourceTree = "<group>"; };
 		37A21880236AA768004BD9D6 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
-		37B7A9FA2371F6FA0061AE13 /* HapticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTableViewCell.swift; sourceTree = "<group>"; };
 		37B9A36F22F624F500BB774B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		37C040052368ABAF00476B15 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 				37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */,
 				37DD59E923711F9300EA1082 /* QuickTipsView.swift */,
 				37DD59EB23711FB700EA1082 /* QuickTipsView.xib */,
-				37B7A9FA2371F6FA0061AE13 /* HapticTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,7 +329,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37B7A9FB2371F6FA0061AE13 /* HapticTableViewCell.swift in Sources */,
 				371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */,
 				37C040082368AEF200476B15 /* ToggleSettingsTableViewCell.swift in Sources */,
 				3782D3AD236BAE4D008442DA /* EmojiButton.swift in Sources */,

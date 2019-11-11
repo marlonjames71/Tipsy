@@ -635,7 +635,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="tipsyBackgroundColor"/>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yCb-00-Qtj">
-                            <rect key="frame" x="0.0" y="307" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="242" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -713,47 +713,8 @@
                                     <outlet property="toggle" destination="sVh-rQ-QMP" id="xTJ-KV-DWo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HapticCell" rowHeight="65" id="kRR-Yf-YfE" customClass="ToggleSettingsTableViewCell" customModule="tipsy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="164" width="374" height="65"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kRR-Yf-YfE" id="9Ag-fj-UOc">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mS1-t4-vGv">
-                                            <rect key="frame" x="20" y="17" width="334" height="31"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vzR-hN-28d">
-                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="31"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-yf-JQp">
-                                                    <rect key="frame" x="285" y="0.0" width="51" height="31"/>
-                                                    <color key="tintColor" name="tipsyAccentColor"/>
-                                                    <color key="onTintColor" name="tipsyAccentColor"/>
-                                                    <connections>
-                                                        <action selector="hapticPreferenceChanged:" destination="kRR-Yf-YfE" eventType="valueChanged" id="MdD-QK-6Nd"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="mS1-t4-vGv" secondAttribute="trailing" id="HQH-Vg-sKf"/>
-                                        <constraint firstItem="mS1-t4-vGv" firstAttribute="leading" secondItem="9Ag-fj-UOc" secondAttribute="leadingMargin" id="iNK-AG-2bS"/>
-                                        <constraint firstItem="mS1-t4-vGv" firstAttribute="centerY" secondItem="9Ag-fj-UOc" secondAttribute="centerY" id="s1P-8z-vz8"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
-                                <connections>
-                                    <outlet property="hapticSwitch" destination="PSp-yf-JQp" id="0lW-OG-gTX"/>
-                                    <outlet property="label" destination="vzR-hN-28d" id="F2Y-QY-rkb"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" textLabel="JgW-Mc-QdD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="jaT-WX-kgR" customClass="NeverSelectedTableViewCell" customModule="tipsy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="229" width="374" height="60"/>
+                                <rect key="frame" x="20" y="164" width="374" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaT-WX-kgR" id="q4p-1x-w0G">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
