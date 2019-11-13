@@ -57,7 +57,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var resetButton: UIButton!
 	@IBOutlet weak var splitButton: UIButton!
 	@IBOutlet weak var activateKeyboardButton: UIButton!
-	@IBOutlet weak var hideKeyboardButton: UIButton!
+//	@IBOutlet weak var hideKeyboardButton: UIButton!
 	@IBOutlet weak var leftSwipeGesture: UISwipeGestureRecognizer!
 	@IBOutlet weak var rightSwipeGesture: UISwipeGestureRecognizer!
 	@IBOutlet weak var downSwipeGesture: UISwipeGestureRecognizer!
@@ -75,18 +75,24 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		updateResetButtonEnabled()
 		screenEdgeGestureRecognizer.edges = .right
 		HapticFeedback.lightFeedback.prepare()
+
+		let toolbar: UIToolbar = UIToolbar(frame: .zero)
+		toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+		toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+		toolbar.backgroundColor = .clear
+		let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+		let hideKeyboardButton = UIBarButtonItem(image: UIImage(systemName: "keyboard.chevron.compact.down"), style: .done, target: self, action: #selector(hideKeyboardAction))
+		hideKeyboardButton.tintColor = .darkTurquoise
+		toolbar.setItems([flexSpace, hideKeyboardButton], animated: false)
+		toolbar.sizeToFit()
+		[totalBillTextField, tipTextField].forEach { $0?.inputAccessoryView = toolbar }
+
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.navigationController?.isNavigationBarHidden = true
 		setUI()
-		if UIScreen.main.bounds.height < 667 {
-			view.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-		} else if UIScreen.main.bounds.height == 667 {
-			view.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-		}
-		hideKeyboardButton.alpha = 0
 		tipTextField.text = calculatedTipPercentage
 		calculateTip()
 		loadEmojis()
@@ -102,6 +108,11 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		navigationController?.isNavigationBarHidden = false
 		totalBillTextField.resignFirstResponder()
 		tipTextField.resignFirstResponder()
+		showHideKeyboard(show: false)
+	}
+
+	@objc func hideKeyboardAction() {
+		self.view.endEditing(true)
 		showHideKeyboard(show: false)
 	}
 
@@ -249,16 +260,10 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	private func showHideKeyboard(show: Bool) {
 		if show {
-			UIView.animate(withDuration: 0.4) {
-				self.hideKeyboardButton.alpha = 1
-			}
 			UIView.animate(withDuration: 0.6) {
 				self.activateKeyboardButton.alpha = 0
 			}
 		} else {
-			UIView.animate(withDuration: 0.3) {
-				self.hideKeyboardButton.alpha = 0
-			}
 			UIView.animate(withDuration: 0.8) {
 				self.activateKeyboardButton.alpha = 1
 			}
@@ -335,4 +340,14 @@ extension TipViewController: PlatterViewControllerDelegate {
 	func didFinishShowing() {
 		[leftSwipeGesture, rightSwipeGesture, downSwipeGesture].forEach { $0?.isEnabled = true }
 	}
+}
+
+extension UIView {
+    func allSubviews() -> Set<UIView> {
+        var childSubviews = Set(subviews)
+        for subview in subviews {
+            childSubviews = childSubviews.union(subview.allSubviews())
+        }
+        return childSubviews
+    }
 }

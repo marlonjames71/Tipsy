@@ -92,6 +92,7 @@ class SettingsTableViewController: UITableViewController {
 	private func roundingCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
 		roundingCell.descText = "Round Totals Up To Nearest Dollar"
+		roundingCell.subtitleText = "This setting will round up the total bill as well as the split total for each person. This setting exists to eliminate any change in the total amount each person would have to pay"
 		roundingCell.isOn = DefaultsManager.roundingIsEnabled
 		roundingCell.action = { sender in
 			DefaultsManager.roundingIsEnabled = sender.isOn
@@ -103,7 +104,7 @@ class SettingsTableViewController: UITableViewController {
 		guard let applePayCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
 		applePayCell.descText = "Include Apple Pay Hint"
 		applePayCell.isOn = DefaultsManager.includeApplePayHint
-		applePayCell.subtitleText = "When using the Split Bill feature you can message your party members with their portion of the bill. Messages will include a hint that Apple Pay can be used. Toggle off if you prefer not to receive Apple Cash."
+		applePayCell.subtitleText = "When using the Split Bill feature you can message your party members with their portion of the bill. Messages will include a hint that Apple Pay can be used. Toggle off if you prefer not to receive Apple Cash"
 		applePayCell.action = { sender in
 			DefaultsManager.includeApplePayHint = sender.isOn
 		}

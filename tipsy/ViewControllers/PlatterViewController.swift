@@ -37,7 +37,9 @@ class PlatterViewController: UIViewController {
 	@IBOutlet weak var stepper: UIStepper!
 	@IBOutlet weak var tipLabel: UILabel!
 	@IBOutlet weak var tipDescLabel: UILabel!
-
+	@IBOutlet weak var xSymbol: UIImageView!
+	@IBOutlet weak var tapToDismissLabel: UILabel!
+	
 	let motionManager = CMMotionManager()
     let defaults = UserDefaults.standard
     var tipPercentage: String?
@@ -274,13 +276,23 @@ class PlatterViewController: UIViewController {
 		dismissButton.layer.cornerRadius = dismissButton.frame.height / 2
 		partyCountLabel.text = "2"
 		partyCountLabelContainer.layer.cornerRadius = partyCountLabelContainer.frame.height / 2
-        partyCountLabelContainer.layer.cornerCurve = .continuous
+		partyCountLabelContainer.layer.cornerCurve = .continuous
 		platterView.layer.cornerRadius = 12
-        platterView.layer.cornerCurve = .continuous
+		platterView.layer.cornerCurve = .continuous
 
 		guard let total = totalAmount else { return }
 		totalLabel.text = "\(total)"
 		stepper.value = 2
+
+
+
+		if UIScreen.main.bounds.height < platterView.frame.height + 205 {
+			xSymbol.isHidden = true
+			tapToDismissLabel.isHidden = false
+		} else {
+			xSymbol.isHidden = false
+			tapToDismissLabel.isHidden = true
+		}
 	}
 }
 
