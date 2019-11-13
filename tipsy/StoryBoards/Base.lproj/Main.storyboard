@@ -435,6 +435,7 @@
                         <outlet property="firstEmoji" destination="v9Z-fV-Crm" id="K5C-VY-L1i"/>
                         <outlet property="fourthEmoji" destination="gJo-1F-hEA" id="PwC-Vu-ZCx"/>
                         <outlet property="leftSwipeGesture" destination="syC-aH-hvb" id="zC9-ZD-pku"/>
+                        <outlet property="mainStackView" destination="LSG-xE-jer" id="qwI-Mz-fLR"/>
                         <outlet property="percentSymbol" destination="ErJ-xl-eUN" id="ieN-lP-ZLa"/>
                         <outlet property="quickTipLabel" destination="jGN-gX-IR4" id="Q91-Ql-S4E"/>
                         <outlet property="resetButton" destination="hQ4-Zf-sIJ" id="tei-f4-dcc"/>
@@ -443,6 +444,7 @@
                         <outlet property="secondEmoji" destination="uXc-NR-yI2" id="qIE-0o-Las"/>
                         <outlet property="settingsButton" destination="lSi-09-Ace" id="K7q-E1-8ZI"/>
                         <outlet property="splitButton" destination="i2E-4d-mgh" id="LcG-xy-5dU"/>
+                        <outlet property="subMainStackView" destination="4Ju-nY-mJH" id="xXp-as-4pH"/>
                         <outlet property="thirdEmoji" destination="7C1-rN-L3N" id="URj-ia-roT"/>
                         <outlet property="tipAmountLabel" destination="wV6-35-Ffh" id="nle-24-8xf"/>
                         <outlet property="tipErrorLabel" destination="iwc-l2-a5f" id="QX9-Qw-xdK"/>

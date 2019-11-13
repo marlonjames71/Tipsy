@@ -57,11 +57,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var resetButton: UIButton!
 	@IBOutlet weak var splitButton: UIButton!
 	@IBOutlet weak var activateKeyboardButton: UIButton!
-//	@IBOutlet weak var hideKeyboardButton: UIButton!
 	@IBOutlet weak var leftSwipeGesture: UISwipeGestureRecognizer!
 	@IBOutlet weak var rightSwipeGesture: UISwipeGestureRecognizer!
 	@IBOutlet weak var downSwipeGesture: UISwipeGestureRecognizer!
 	@IBOutlet weak var screenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer!
+	@IBOutlet weak var mainStackView: UIStackView!
+	@IBOutlet weak var subMainStackView: UIStackView!
 
 	// MARK: - Lifecycle
 
@@ -75,6 +76,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		updateResetButtonEnabled()
 		screenEdgeGestureRecognizer.edges = .right
 		HapticFeedback.lightFeedback.prepare()
+
+		if UIScreen.main.bounds.height <= 667 {
+			subMainStackView.spacing = 30
+		} else {
+			subMainStackView.spacing = 50
+		}
 
 		let toolbar: UIToolbar = UIToolbar(frame: .zero)
 		toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
