@@ -16,6 +16,7 @@
 		371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16CE22A47C6F00E1BD02 /* StringFormatter.swift */; };
 		371D16D122A4A52700E1BD02 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */; };
 		373F92DE236A5F3D003F1B36 /* AlertTint+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F92DD236A5F3D003F1B36 /* AlertTint+UIAlertController.swift */; };
+		37532B07238BFF53007B2886 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37532B06238BFF53007B2886 /* Alerts.swift */; };
 		3766AB9823753340005829D8 /* tipsyPaymentRequest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB9723753340005829D8 /* tipsyPaymentRequest.png */; };
 		3766AB9A2375DBBE005829D8 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB992375DBBE005829D8 /* Contacts.storyboard */; };
 		3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3A8236AC874008442DA /* QuickTipsViewController.swift */; };
@@ -63,6 +64,7 @@
 		371D16D022A4A52700E1BD02 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		373F92DD236A5F3D003F1B36 /* AlertTint+UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlertTint+UIAlertController.swift"; sourceTree = "<group>"; };
 		373FB9072300FF97009EF31C /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		37532B06238BFF53007B2886 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		3766AB9723753340005829D8 /* tipsyPaymentRequest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipsyPaymentRequest.png; sourceTree = "<group>"; };
 		3766AB992375DBBE005829D8 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		3782D3A8236AC874008442DA /* QuickTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				37DD59C4236BB61800EA1082 /* Defaults.swift */,
+				37532B06238BFF53007B2886 /* Alerts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				37A21881236AA768004BD9D6 /* EmojiCollectionViewCell.swift in Sources */,
 				37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */,
 				37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */,
+				37532B07238BFF53007B2886 /* Alerts.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				37E9B6292377D3B1000919A3 /* HapticFeedback.swift in Sources */,
 				3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */,

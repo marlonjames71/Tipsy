@@ -14,7 +14,7 @@ class SettingsTableViewController: UITableViewController {
 
 	@IBOutlet weak var buildVersionLabel: UILabel!
 
-	fileprivate let helpAndFeedbackArray = ["Rate Tipsy on the App Store", "Follow Tipsy on Twitter", "Send Feedback", "Contact Us", "Quick Tipsies"]
+	fileprivate let helpAndFeedbackArray = ["Rate Tipsy on the App Store", "Follow Tipsy on Twitter", "Share Tipsy", "Contact Us", "Quick Tipsies"]
 	fileprivate let twitterUrl: URL = {
 		let baseURL = URL(string: "https://twitter.com/iOSTipsyApp")!
 		return baseURL
@@ -25,6 +25,14 @@ class SettingsTableViewController: UITableViewController {
 		guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else { return }
         guard let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") else { return }
         buildVersionLabel.text = "Version: \(version) ⌇ Build: \(buildNumber)"
+	}
+
+	// MARK: - Helper Methods
+	func navigateToComposeAppStoreRating() {
+		let appID = "1486290417"
+		let urlStr = "https://itunes.apple.com/app/id\(appID)?action=write-review"
+		guard let appStoreURL = URL(string: urlStr), UIApplication.shared.canOpenURL(appStoreURL)  else { return }
+		UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
 	}
 
 
@@ -132,38 +140,21 @@ class SettingsTableViewController: UITableViewController {
 		guard indexPath.section == 0 else { return }
 		switch indexPath.row {
 		case 0:
-			let appID = "1486290417"
-			let urlStr = "https://itunes.apple.com/app/id\(appID)?action=write-review"
-			guard let appStoreURL = URL(string: urlStr), UIApplication.shared.canOpenURL(appStoreURL)  else { return }
-			UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
+			navigateToComposeAppStoreRating()
 		case 1:
 			if UIApplication.shared.canOpenURL(twitterUrl) {
 				UIApplication.shared.open(twitterUrl, options: [:], completionHandler: nil)
 			}
 			break
 		case 2:
-			if MFMailComposeViewController.canSendMail() {
-				let composeVC = MFMailComposeViewController()
-				composeVC.navigationBar.tintColor = .turquoiseTwo
-				composeVC.mailComposeDelegate = self
-				composeVC.setToRecipients(["tipsysupport@august-light.com"])
-				composeVC.setSubject("Feedback for Tipsy")
-				composeVC.setMessageBody("Hey there! I have some feedback for Tipsy:\n\n", isHTML: false)
-				present(composeVC, animated: true, completion: nil)
-			} else {
-				let mailAlert = UIAlertController(title: "Mail Services are not available", message: "Your mail app appears to not be configured", preferredStyle: .alert)
-				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-				present(mailAlert, animated: true, completion: nil)
-			}
+			let appID = "1486290417"
+			let urlStr = "https://itunes.apple.com/app/id\(appID)"
+			let items = [URL(string: urlStr)!]
+			let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+			present(ac, animated: true)
 		case 3:
 			if MFMailComposeViewController.canSendMail() {
-				let composeVC = MFMailComposeViewController()
-				composeVC.navigationBar.tintColor = .turquoiseTwo
-				composeVC.mailComposeDelegate = self
-				composeVC.setToRecipients(["tipsysupport@august-light.com"])
-				composeVC.setSubject("Tipsy Issue")
-				composeVC.setMessageBody("Hi, nice people at Tipsy. I'm having an issue I'd like help with: \n\n\n", isHTML: false)
-				present(composeVC, animated: true, completion: nil)
+				Alerts.showBasicContactAlert(on: self)
 			} else {
 				let mailAlert = UIAlertController(title: "Mail services are not available", message: "Your mail app appears to not be configured", preferredStyle: .alert)
 				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
