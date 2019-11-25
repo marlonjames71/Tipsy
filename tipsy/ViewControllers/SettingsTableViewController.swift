@@ -14,7 +14,7 @@ class SettingsTableViewController: UITableViewController {
 
 	@IBOutlet weak var buildVersionLabel: UILabel!
 
-	fileprivate let helpAndFeedbackArray = ["Follow Tipsy on Twitter", "Send Feedback", "Contact Us", "Quick Tipsies"]
+	fileprivate let helpAndFeedbackArray = ["Rate Tipsy on the App Store", "Follow Tipsy on Twitter", "Send Feedback", "Contact Us", "Quick Tipsies"]
 	fileprivate let twitterUrl: URL = {
 		let baseURL = URL(string: "https://twitter.com/iOSTipsyApp")!
 		return baseURL
@@ -132,11 +132,16 @@ class SettingsTableViewController: UITableViewController {
 		guard indexPath.section == 0 else { return }
 		switch indexPath.row {
 		case 0:
+			let appID = "1486290417"
+			let urlStr = "https://itunes.apple.com/app/id\(appID)?action=write-review"
+			guard let appStoreURL = URL(string: urlStr), UIApplication.shared.canOpenURL(appStoreURL)  else { return }
+			UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
+		case 1:
 			if UIApplication.shared.canOpenURL(twitterUrl) {
 				UIApplication.shared.open(twitterUrl, options: [:], completionHandler: nil)
 			}
 			break
-		case 1:
+		case 2:
 			if MFMailComposeViewController.canSendMail() {
 				let composeVC = MFMailComposeViewController()
 				composeVC.navigationBar.tintColor = .turquoiseTwo
@@ -150,7 +155,7 @@ class SettingsTableViewController: UITableViewController {
 				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 				present(mailAlert, animated: true, completion: nil)
 			}
-		case 2:
+		case 3:
 			if MFMailComposeViewController.canSendMail() {
 				let composeVC = MFMailComposeViewController()
 				composeVC.navigationBar.tintColor = .turquoiseTwo
@@ -164,7 +169,7 @@ class SettingsTableViewController: UITableViewController {
 				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 				present(mailAlert, animated: true, completion: nil)
 			}
-		case 3:
+		case 4:
 			performSegue(withIdentifier: "QuickTipsModalSegue", sender: self)
 		default:
 			break
