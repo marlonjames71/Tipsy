@@ -33,11 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
 			window?.rootViewController?.present(ac, animated: true)
 		case "Marlon-Raskin.tipsy.openSettingsAction":
+			let icon = UIApplicationShortcutIcon(systemImageName: "gear")
 			let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 			let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsTableViewController")
 			if let navController = window?.rootViewController as? UINavigationController {
-				var navArray = navController.viewControllers
-				navArray.removeLast()
+				for vc in navController.viewControllers where vc is SettingsTableViewController {
+					return
+				}
 				navController.pushViewController(settingsVC, animated: true)
 			}
 		default:
