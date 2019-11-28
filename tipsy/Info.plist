@@ -46,14 +46,6 @@
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>Share Tipsy With Everyone!</string>
 		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Open Tipsy Settings</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Marlon-Raskin.tipsy.openSettingsAction</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeTask</string>
-		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

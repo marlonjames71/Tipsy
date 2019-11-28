@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		DefaultsManager.migrateDefaults()
+		addShortcuts(application: application)
 		return true
 	}
 
@@ -33,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
 			window?.rootViewController?.present(ac, animated: true)
 		case "Marlon-Raskin.tipsy.openSettingsAction":
-			let icon = UIApplicationShortcutIcon(systemImageName: "gear")
 			let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 			let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsTableViewController")
 			if let navController = window?.rootViewController as? UINavigationController {
@@ -45,6 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		default:
 			break
 		}
+	}
+
+	func addShortcuts(application: UIApplication) {
+		let icon = UIApplicationShortcutIcon(systemImageName: "gear")
+		let settingsShortcut = UIMutableApplicationShortcutItem(type: "Marlon-Raskin.tipsy.openSettingsAction", localizedTitle: "Open Settings", localizedSubtitle: nil, icon: icon, userInfo: nil)
+		application.shortcutItems = [settingsShortcut]
+
 	}
 
 	func applicationWillResignActive(_ application: UIApplication) {
