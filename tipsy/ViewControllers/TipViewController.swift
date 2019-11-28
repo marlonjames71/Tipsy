@@ -63,6 +63,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var screenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer!
 	@IBOutlet weak var mainStackView: UIStackView!
 	@IBOutlet weak var subMainStackView: UIStackView!
+	@IBOutlet weak var titleFieldsAndEmojisStackView: UIStackView!
+	@IBOutlet weak var mainSTackViewLeadingConstraint: NSLayoutConstraint!
+	@IBOutlet weak var mainStackViewTrailingConstraint: NSLayoutConstraint!
 
 	// MARK: - Lifecycle
 
@@ -77,16 +80,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		screenEdgeGestureRecognizer.edges = .right
 		HapticFeedback.lightFeedback.prepare()
 
-		if UIScreen.main.bounds.height <= 667 {
-			subMainStackView.spacing = 30
-		} else {
-			subMainStackView.spacing = 50
-		}
 
 		let toolbar: UIToolbar = UIToolbar(frame: .zero)
-		toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
-		toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-		toolbar.backgroundColor = .clear
+
 		let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 		let hideKeyboardButton = UIBarButtonItem(image: UIImage(systemName: "keyboard.chevron.compact.down"), style: .done, target: self, action: #selector(hideKeyboardAction))
 		hideKeyboardButton.tintColor = .darkTurquoise
@@ -94,6 +90,21 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		toolbar.sizeToFit()
 		[totalBillTextField, tipTextField].forEach { $0?.inputAccessoryView = toolbar }
 
+		if UIScreen.main.bounds.height <= 667 {
+			subMainStackView.spacing = 16
+			titleFieldsAndEmojisStackView.spacing = 12
+			calcButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+			mainSTackViewLeadingConstraint.constant = 25
+			mainStackViewTrailingConstraint.constant = 25
+			calcButton.setTitle("Calculate", for: .normal)
+			mainStackView.spacing = 20
+			toolbar.barTintColor = .systemBackground
+		} else {
+			toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+			toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+			toolbar.backgroundColor = .clear
+			subMainStackView.spacing = 50
+		}
 	}
 
 	override func viewWillAppear(_ animated: Bool) {

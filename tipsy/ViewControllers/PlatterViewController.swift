@@ -289,6 +289,9 @@ class PlatterViewController: UIViewController {
 		if UIScreen.main.bounds.height < platterView.frame.height + 205 {
 			xSymbol.isHidden = true
 			tapToDismissLabel.isHidden = false
+			platterView.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+			trailingAnchor.constant = 20
+			leadingAnchor.constant = 20
 		} else {
 			xSymbol.isHidden = false
 			tapToDismissLabel.isHidden = true

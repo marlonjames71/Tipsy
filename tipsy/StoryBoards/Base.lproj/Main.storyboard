@@ -21,12 +21,12 @@
                                 <rect key="frame" x="40" y="60" width="334" height="782"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-nY-mJH">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="564"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="554"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HiO-m2-76Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="320"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Tipsy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsc-sw-MXh">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Tipsy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsc-sw-MXh">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                                         <nil key="textColor"/>
@@ -315,13 +315,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QZK-RV-eY1">
-                                                <rect key="frame" x="0.0" y="450.33333333333331" width="334" height="60"/>
+                                                <rect key="frame" x="0.0" y="450.33333333333331" width="334" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj" customClass="CustomButton" customModule="tipsy" customModuleProvider="target">
-                                                        <rect key="frame" x="40" y="0.0" width="254" height="60"/>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-gb-Vwj" customClass="CustomButton" customModule="tipsy" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="0.0" width="254" height="50"/>
                                                         <color key="backgroundColor" name="darkerAccents"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                                        <inset key="contentEdgeInsets" minX="50" minY="15" maxX="50" maxY="15"/>
+                                                        <inset key="contentEdgeInsets" minX="50" minY="10" maxX="50" maxY="10"/>
                                                         <state key="normal" title="Calculate Tip">
                                                             <color key="titleColor" name="reverseTipsyLabelColor"/>
                                                         </state>
@@ -332,7 +332,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sRU-vM-S9R">
-                                                <rect key="frame" x="0.0" y="540.33333333333337" width="334" height="23.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="530.33333333333337" width="334" height="23.666666666666629"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ4-Zf-sIJ">
                                                         <rect key="frame" x="145" y="0.0" width="44.333333333333343" height="23.666666666666668"/>
@@ -350,7 +350,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="On1-Ba-cPh">
-                                        <rect key="frame" x="0.0" y="594" width="334" height="120"/>
+                                        <rect key="frame" x="0.0" y="584" width="334" height="130"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="o5C-4P-Tdi">
@@ -435,7 +435,9 @@
                         <outlet property="firstEmoji" destination="v9Z-fV-Crm" id="K5C-VY-L1i"/>
                         <outlet property="fourthEmoji" destination="gJo-1F-hEA" id="PwC-Vu-ZCx"/>
                         <outlet property="leftSwipeGesture" destination="syC-aH-hvb" id="zC9-ZD-pku"/>
+                        <outlet property="mainSTackViewLeadingConstraint" destination="vce-DD-DAm" id="mFi-6B-IW8"/>
                         <outlet property="mainStackView" destination="LSG-xE-jer" id="qwI-Mz-fLR"/>
+                        <outlet property="mainStackViewTrailingConstraint" destination="KmR-03-AzU" id="ngY-oH-bgv"/>
                         <outlet property="percentSymbol" destination="ErJ-xl-eUN" id="ieN-lP-ZLa"/>
                         <outlet property="quickTipLabel" destination="jGN-gX-IR4" id="Q91-Ql-S4E"/>
                         <outlet property="resetButton" destination="hQ4-Zf-sIJ" id="tei-f4-dcc"/>
@@ -453,6 +455,7 @@
                         <outlet property="tipPercentLabel" destination="QxC-bl-Iqa" id="7aa-VS-szm"/>
                         <outlet property="tipTextField" destination="FcE-VM-bLN" id="tTa-Pu-7bL"/>
                         <outlet property="tipsyTitleLabel" destination="tsc-sw-MXh" id="wcB-rE-r6j"/>
+                        <outlet property="titleFieldsAndEmojisStackView" destination="HiO-m2-76Z" id="uJg-a8-Jl1"/>
                         <outlet property="totalBillErrorLabel" destination="vuZ-Co-MLv" id="3S2-nq-5Qs"/>
                         <outlet property="totalBillTextField" destination="nnV-hv-mPW" id="YS8-1k-Sdl"/>
                         <outlet property="totalInputView" destination="iaR-4w-sLh" id="jgA-Xc-xxR"/>
@@ -1069,6 +1072,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="pageControl" destination="1PE-25-hDx" id="Jsk-h4-WKT"/>
+                        <outlet property="pageIndicatorBottomAnchor" destination="EtC-oN-cvm" id="5XL-Wp-L1g"/>
                         <outlet property="scrollView" destination="kr7-HY-ate" id="yHt-0r-qyQ"/>
                         <outlet property="tapGesture" destination="5RS-hw-k9h" id="7f9-NF-501"/>
                     </connections>

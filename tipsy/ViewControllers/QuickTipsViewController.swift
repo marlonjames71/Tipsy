@@ -11,9 +11,10 @@ import UIKit
 class QuickTipsViewController: UIViewController {
 
 
-	@IBOutlet weak var scrollView: UIScrollView!
-	@IBOutlet weak var pageControl: UIPageControl!
-	@IBOutlet var tapGesture: UITapGestureRecognizer!
+	@IBOutlet private weak var scrollView: UIScrollView!
+	@IBOutlet private weak var pageControl: UIPageControl!
+	@IBOutlet private var tapGesture: UITapGestureRecognizer!
+	@IBOutlet private weak var pageIndicatorBottomAnchor: NSLayoutConstraint!
 
 	let pages: [QuickTipsView] = {
 		let pageOne: QuickTipsView = Bundle.main.loadNibNamed("QuickTipsView", owner: self, options: nil)?.first as! QuickTipsView
@@ -41,6 +42,10 @@ class QuickTipsViewController: UIViewController {
 		pageControl.numberOfPages = pages.count
 		pageControl.currentPage = 0
 		tapGesture.numberOfTapsRequired = 2
+
+		if UIScreen.main.bounds.height <= 667 {
+			pageIndicatorBottomAnchor.constant = -3
+		}
     }
 
 	@IBAction func doneTapped(_ sender: UIBarButtonItem) {

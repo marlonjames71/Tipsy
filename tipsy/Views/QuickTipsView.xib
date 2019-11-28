@@ -2,12 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuickTipsView" customModule="tipsy" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuickTipsView" customModule="tipsy" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -17,7 +17,7 @@
                     <rect key="frame" x="32" y="194" width="350" height="350"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="350" id="V0o-ta-zsf"/>
-                        <constraint firstAttribute="width" constant="350" id="pVf-bl-OZD"/>
+                        <constraint firstAttribute="width" secondItem="Wot-lC-559" secondAttribute="height" multiplier="1:1" id="a3Q-ec-eYi"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZK-bX-41F">
@@ -35,9 +35,11 @@
                 <constraint firstItem="Wot-lC-559" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="150" id="rAa-d0-iJm"/>
                 <constraint firstItem="9ZK-bX-41F" firstAttribute="trailing" secondItem="Wot-lC-559" secondAttribute="trailing" constant="-20" id="raW-YD-5MG"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="imageView" destination="Wot-lC-559" id="7yq-xP-GQC"/>
+                <outlet property="imageViewHeightAnchor" destination="V0o-ta-zsf" id="Fpk-hl-VyJ"/>
                 <outlet property="label" destination="9ZK-bX-41F" id="BTo-TR-ohj"/>
             </connections>
             <point key="canvasLocation" x="132" y="154"/>
