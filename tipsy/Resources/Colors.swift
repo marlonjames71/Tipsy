@@ -22,4 +22,6 @@ extension UIColor {
 	static let darkJungleGreen = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
 	static let canCan = UIColor(red: 0.83, green: 0.52, blue: 0.61, alpha: 1.00)
 	static let canCanTwo = UIColor(red: 0.73, green: 0.42, blue: 0.61, alpha: 1.00)
+	static let tipsyDarkerAccents = UIColor(named: "darkerAccents")!
+	static let tipsySecondaryLabelColor = UIColor(named: "tipsySecondaryLabelColor")!
 }

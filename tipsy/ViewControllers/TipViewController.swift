@@ -25,6 +25,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+	lazy var emojiButtons = [firstEmoji, secondEmoji, thirdEmoji, fourthEmoji].compactMap { $0 }
+	lazy var percentLabels = [twoPercentLabel, fifteenPercentLabel, twentyPercentLabel, twentyFivePercentLabel].compactMap { $0 }
+
 	// MARK: - Outlets (In order on screen)
 
 	@IBOutlet weak var tipsyTitleLabel: UILabel!
@@ -79,6 +82,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		updateResetButtonEnabled()
 		screenEdgeGestureRecognizer.edges = .right
 		HapticFeedback.lightFeedback.prepare()
+		resetHighlightTipPercentLabels()
 
 
 		let toolbar: UIToolbar = UIToolbar(frame: .zero)
@@ -149,26 +153,31 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBAction func resetButtonTapped(_ sender: UIButton) {
 		clear()
 		calculatedTipPercentage = "20"
+		resetHighlightTipPercentLabels()
 	}
 
 	@IBAction func firstEmojiTapped(_ sender: UIButton) {
 		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "2"
+		highlightLabelForButton(button: sender)
 	}
 
 	@IBAction func secondEmojiTapped(_ sender: UIButton) {
 		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "15"
+		highlightLabelForButton(button: sender)
 	}
 
 	@IBAction func thirdEmojiTapped(_ sender: UIButton) {
 		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "20"
+		highlightLabelForButton(button: sender)
 	}
 
 	@IBAction func fourthEmojiTapped(_ sender: UIButton) {
 		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "25"
+		highlightLabelForButton(button: sender)
 	}
 
 	@IBAction func totalDidChange(_ sender: UITextField) {
@@ -184,6 +193,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func tipFieldDidChange(_ sender: UITextField) {
+		percentLabels.forEach { $0.textColor = .tipsySecondaryLabelColor }
 		tipErrorLabel.isHidden = true
 		editingTipPercentage = true
 		calculatedTipPercentage = sender.text ?? ""
@@ -259,6 +269,27 @@ class TipViewController: UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "Heck yeah, I'm awesome!", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
+	}
+
+	private func highlightLabelForButton(button: UIButton) {
+		guard let buttonIndex = emojiButtons.firstIndex(of: button) else { return }
+		let label = percentLabels[buttonIndex]
+		highlightPercentLabel(label: label)
+	}
+
+	private func highlightPercentLabel(label: UILabel) {
+		percentLabels.forEach { $0.textColor = .tipsySecondaryLabelColor }
+		label.textColor = .tipsyDarkerAccents
+	}
+
+	private func resetHighlightTipPercentLabels() {
+		for label in percentLabels {
+			if label != twentyPercentLabel {
+				label.textColor = .tipsySecondaryLabelColor
+			} else {
+				label.textColor = .tipsyDarkerAccents
+			}
+		}
 	}
 
 	private func showSplitPlatter() {
