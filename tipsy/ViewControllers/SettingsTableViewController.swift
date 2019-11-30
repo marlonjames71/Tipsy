@@ -94,6 +94,10 @@ class SettingsTableViewController: UITableViewController {
 	private func contactCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let contactCell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath) as? BasicSettingsTableViewCell else { return UITableViewCell() }
 		let setting = settingsHelper.helpAndFeedbackArray[indexPath.row]
+		contactCell.iconImageView.contentMode = .scaleAspectFit
+		if setting.title.contains("Twitter") {
+			contactCell.iconImageView.contentMode = .center
+		}
 		contactCell.descLabel.text = setting.title
 		contactCell.iconImageView.image = setting.icon
 		contactCell.iconImageView.tintColor = .tipsyDarkerAccents

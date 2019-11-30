@@ -113,7 +113,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		self.navigationController?.isNavigationBarHidden = true
+//		self.navigationController?.isNavigationBarHidden = true
+		navigationController?.setNavigationBarHidden(true, animated: true)
 		setUI()
 		tipTextField.text = calculatedTipPercentage
 		calculateTip()
@@ -127,7 +128,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-		navigationController?.isNavigationBarHidden = false
+//		navigationController?.isNavigationBarHidden = true
+		navigationController?.setNavigationBarHidden(false, animated: true)
 		totalBillTextField.resignFirstResponder()
 		tipTextField.resignFirstResponder()
 		showHideKeyboard(show: false)
