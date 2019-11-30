@@ -394,8 +394,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="tintColor" name="darkerAccents"/>
-                                <state key="normal" image="gear" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                <state key="normal" image="line.horizontal.3" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="light"/>
                                 </state>
                                 <connections>
                                     <segue destination="KKA-Vg-A1t" kind="show" identifier="ShowSettingsSegue" id="Qja-hj-fS8"/>
@@ -1202,8 +1202,8 @@
         <image name="Search Icon" width="28.5" height="28"/>
         <image name="arrow.counterclockwise.circle" catalog="system" width="64" height="60"/>
         <image name="dollarsign.circle" catalog="system" width="64" height="60"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="keyboard" catalog="system" width="64" height="34"/>
+        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="person.2" catalog="system" width="64" height="40"/>
         <image name="smiley" catalog="system" width="64" height="60"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
