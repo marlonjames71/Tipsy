@@ -113,8 +113,13 @@ class SettingsTableViewController: UITableViewController {
 			roundingCell.subtitleText = text
 		}
 		roundingCell.iconImageView.image = settingsHelper.roundTotals.icon
-		roundingCell.iconImageView.tintColor = .roundTotalsColor
+		roundingCell.color = .roundTotalsColor
 		roundingCell.isOn = DefaultsManager.roundingIsEnabled
+		if DefaultsManager.roundingIsEnabled {
+			roundingCell.iconImageView.tintColor = .roundTotalsColor
+		} else {
+			roundingCell.iconImageView.tintColor = .systemGray3
+		}
 		roundingCell.action = { sender in
 			DefaultsManager.roundingIsEnabled = sender.isOn
 		}
@@ -125,11 +130,16 @@ class SettingsTableViewController: UITableViewController {
 		guard let applePayCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
 		applePayCell.descText = settingsHelper.applePayHint.title
 		applePayCell.isOn = DefaultsManager.includeApplePayHint
+		if DefaultsManager.includeApplePayHint {
+			applePayCell.iconImageView.tintColor = .systemYellow
+		} else {
+			applePayCell.iconImageView.tintColor = .systemGray3
+		}
 		if let text = settingsHelper.applePayHint.subtitleText {
 			applePayCell.subtitleText = text
 		}
 		applePayCell.iconImageView.image = settingsHelper.applePayHint.icon
-		applePayCell.iconImageView.tintColor = .systemYellow
+		applePayCell.color = .systemYellow
 		applePayCell.action = { sender in
 			DefaultsManager.includeApplePayHint = sender.isOn
 		}
@@ -140,11 +150,16 @@ class SettingsTableViewController: UITableViewController {
 		guard let hapticCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
 		hapticCell.descText = settingsHelper.hapticFeedback.title
 		hapticCell.iconImageView.image = settingsHelper.hapticFeedback.icon
-		hapticCell.iconImageView.tintColor = .systemPink
+		hapticCell.color = .systemPink
 		if let text = settingsHelper.hapticFeedback.subtitleText {
 			hapticCell.subtitleText = text
 		}
 		hapticCell.isOn = DefaultsManager.hapticFeedbackIsOn
+		if DefaultsManager.hapticFeedbackIsOn {
+			hapticCell.iconImageView.tintColor = .systemPink
+		} else {
+			hapticCell.iconImageView.tintColor = .systemGray3
+		}
 		hapticCell.action = { sender in
 			DefaultsManager.hapticFeedbackIsOn = sender.isOn
 		}

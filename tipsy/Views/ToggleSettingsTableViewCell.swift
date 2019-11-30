@@ -19,6 +19,8 @@ class ToggleSettingsTableViewCell: UITableViewCell {
 	typealias ToggleTableViewCellAction = (UISwitch) -> Void
 	var action: ToggleTableViewCellAction?
 
+	var color: UIColor?
+
 	var isOn: Bool {
 		get {
 			toggle.isOn
@@ -57,5 +59,12 @@ class ToggleSettingsTableViewCell: UITableViewCell {
 	// MARK: - Save & Check Preferences For Rounding
 	@IBAction func switchToggled(_ sender: UISwitch) {
 		action?(sender)
+		if let color = color {
+			if sender.isOn {
+				iconImageView.tintColor = color
+			} else {
+				iconImageView.tintColor = .systemGray3
+			}
+		}
 	}
 }

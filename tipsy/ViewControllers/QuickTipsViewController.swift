@@ -36,6 +36,7 @@ class QuickTipsViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.roundedFont(ofSize: 20, weight: .medium)]
 		scrollView.delegate = self
 		scrollView.alwaysBounceVertical = false
 		setupScrollView(pages: pages)
