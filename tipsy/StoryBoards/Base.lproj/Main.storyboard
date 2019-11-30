@@ -1082,10 +1082,10 @@
                                 </connections>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2O-Mg-eUq">
-                                <rect key="frame" x="20" y="86" width="374" height="101.66666666666669"/>
-                                <string key="text">Since phones are bigger these days, here are some ways to navigate Tipsy. And by the way, and you can double-tap to dismiss this screen when you're done! </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="tipsySecondaryLabelColor"/>
+                                <rect key="frame" x="20" y="86" width="374" height="107.66666666666669"/>
+                                <string key="text">Since phones are bigger these days, here are some ways to navigate Tipsy. By the way, you can double-tap to dismiss this screen when you're done! </string>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                <color key="textColor" name="tipsyLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1PE-25-hDx">
