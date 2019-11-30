@@ -710,33 +710,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="tipsyBackgroundColor"/>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yCb-00-Qtj">
-                            <rect key="frame" x="0.0" y="242" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="231.66666412353516" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" textLabel="iYs-P8-qzc" style="IBUITableViewCellStyleDefault" id="eKc-pz-zpu" customClass="NeverSelectedTableViewCell" customModule="tipsy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BasicCell" focusStyle="custom" id="eKc-pz-zpu" customClass="BasicSettingsTableViewCell" customModule="tipsy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="47.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKc-pz-zpu" id="ZcK-fK-WGQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="47.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iYs-P8-qzc">
-                                            <rect key="frame" x="20" y="0.0" width="315" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bh9-Ht-OjB">
+                                            <rect key="frame" x="20" y="10.999999999999998" width="315" height="25.333333333333329"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CEb-1p-1Fq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25.333333333333332" height="25.333333333333332"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="CEb-1p-1Fq" secondAttribute="height" id="hWs-Ya-qje"/>
+                                                        <constraint firstAttribute="height" constant="25" id="rGm-qT-n1c"/>
+                                                    </constraints>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCS-sg-HIg">
+                                                    <rect key="frame" x="33.333333333333343" y="0.0" width="281.66666666666663" height="25.333333333333332"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bh9-Ht-OjB" secondAttribute="bottom" id="AbV-a9-RfH"/>
+                                        <constraint firstItem="bh9-Ht-OjB" firstAttribute="leading" secondItem="ZcK-fK-WGQ" secondAttribute="leadingMargin" id="glI-bJ-3n8"/>
+                                        <constraint firstItem="bh9-Ht-OjB" firstAttribute="top" secondItem="ZcK-fK-WGQ" secondAttribute="topMargin" id="rVy-Xn-SNG"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bh9-Ht-OjB" secondAttribute="trailing" id="vO0-FG-1Bx"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
+                                <connections>
+                                    <outlet property="descLabel" destination="VCS-sg-HIg" id="pLY-lN-nyI"/>
+                                    <outlet property="iconImageView" destination="CEb-1p-1Fq" id="6B8-2r-WL7"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ToggleCell" rowHeight="65" id="8gY-lu-4pK" customClass="ToggleSettingsTableViewCell" customModule="tipsy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="99" width="374" height="65"/>
+                                <rect key="frame" x="20" y="102.66666412353516" width="374" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8gY-lu-4pK" id="eEa-P0-Gqe">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
@@ -746,16 +768,23 @@
                                             <rect key="frame" x="20" y="11" width="334" height="43"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bNV-h9-5b9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="25"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2F-xE-c7S">
+                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="O2F-xE-c7S" secondAttribute="height" id="xAp-66-Bp5"/>
+                                                                <constraint firstAttribute="height" constant="25" id="xkK-si-Hc8"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UP9-Vf-2Ob">
-                                                            <rect key="frame" x="0.0" y="0.0" width="277" height="31"/>
+                                                            <rect key="frame" x="33" y="0.0" width="244" height="25"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVh-rQ-QMP">
-                                                            <rect key="frame" x="285" y="0.0" width="51" height="31"/>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVh-rQ-QMP">
+                                                            <rect key="frame" x="285" y="0.0" width="51" height="25"/>
                                                             <color key="tintColor" name="tipsyAccentColor"/>
                                                             <color key="onTintColor" name="tipsyAccentColor"/>
                                                             <connections>
@@ -765,7 +794,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zA-gE-qQ7">
-                                                    <rect key="frame" x="0.0" y="39" width="334" height="4"/>
+                                                    <rect key="frame" x="0.0" y="33" width="334" height="10"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <color key="textColor" name="tipsySecondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
@@ -784,30 +813,48 @@
                                 <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <connections>
                                     <outlet property="descLabel" destination="UP9-Vf-2Ob" id="rqz-4q-uUs"/>
+                                    <outlet property="iconImageView" destination="O2F-xE-c7S" id="Us7-1x-hf8"/>
                                     <outlet property="subtitleLabel" destination="0zA-gE-qQ7" id="ZmL-2I-Tdo"/>
                                     <outlet property="toggle" destination="sVh-rQ-QMP" id="xTJ-KV-DWo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" textLabel="JgW-Mc-QdD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="jaT-WX-kgR" customClass="NeverSelectedTableViewCell" customModule="tipsy" customModuleProvider="target">
-                                <rect key="frame" x="20" y="164" width="374" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChooseEmojiCell" rowHeight="46" id="jaT-WX-kgR" customClass="NeverSelectedTableViewCell" customModule="tipsy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="167.66666412353516" width="374" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaT-WX-kgR" id="q4p-1x-w0G">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="46"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JgW-Mc-QdD">
-                                            <rect key="frame" x="20" y="0.0" width="315" height="60"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <gestureRecognizers/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KrR-2M-9Va">
+                                            <rect key="frame" x="20" y="11" width="315" height="24"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-Zv-GFZ">
+                                                    <rect key="frame" x="0.0" y="0.99999999999999822" width="24" height="22.666666666666664"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="HCG-JV-STW"/>
+                                                        <constraint firstAttribute="width" secondItem="XnN-Zv-GFZ" secondAttribute="height" id="cxC-Mq-ev7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Quick Tip Emojis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLN-UP-wbC">
+                                                    <rect key="frame" x="32" y="0.0" width="283" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KrR-2M-9Va" secondAttribute="trailing" id="03a-jx-SH9"/>
+                                        <constraint firstItem="KrR-2M-9Va" firstAttribute="leading" secondItem="q4p-1x-w0G" secondAttribute="leadingMargin" id="1fP-sN-6Vm"/>
+                                        <constraint firstItem="KrR-2M-9Va" firstAttribute="top" secondItem="q4p-1x-w0G" secondAttribute="topMargin" id="3rX-CW-aEc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KrR-2M-9Va" secondAttribute="bottom" id="AZS-DQ-EsC"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                 <connections>
-                                    <segue destination="o2y-tR-Vmd" kind="presentation" id="B39-u0-vP2"/>
+                                    <segue destination="o2y-tR-Vmd" kind="presentation" id="Asv-pg-GOq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -825,7 +872,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPj-BR-0nt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809" y="139"/>
+            <point key="canvasLocation" x="2808.6956521739135" y="138.61607142857142"/>
         </scene>
         <!--Choose Emojis-->
         <scene sceneID="Nww-HM-ha4">
@@ -1158,6 +1205,7 @@
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="keyboard" catalog="system" width="64" height="34"/>
         <image name="person.2" catalog="system" width="64" height="40"/>
+        <image name="smiley" catalog="system" width="64" height="60"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
         <namedColor name="darkerAccents">
             <color red="0.0" green="0.65100002288818359" blue="0.60500001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1172,7 +1220,7 @@
             <color red="0.95999997854232788" green="0.95999997854232788" blue="0.95999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="tipsyErrorLabel">
-            <color red="0.73000001907348633" green="0.41999998688697815" blue="0.61000001430511475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.73000001907348633" green="0.5" blue="0.61000001430511475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="tipsyLabelColor">
             <color red="0.17000000178813934" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

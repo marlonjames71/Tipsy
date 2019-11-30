@@ -13,8 +13,8 @@ import Social
 class SettingsTableViewController: UITableViewController {
 
 	@IBOutlet weak var buildVersionLabel: UILabel!
-
-	fileprivate let helpAndFeedbackArray = ["Rate Tipsy on the App Store", "Follow Tipsy on Twitter", "Share Tipsy", "Contact Us", "Quick Tipsies"]
+	let settingsHelper = SettingsHelper()
+	
 	fileprivate let twitterUrl: URL = {
 		let baseURL = URL(string: "https://twitter.com/iOSTipsyApp")!
 		return baseURL
@@ -58,7 +58,7 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		switch section {
 		case 0:
-			return helpAndFeedbackArray.count
+			return settingsHelper.helpAndFeedbackArray.count
 		case 1:
 			return 3
 		default:
@@ -92,15 +92,22 @@ class SettingsTableViewController: UITableViewController {
 	// MARK: - TableView Cells
 
 	private func contactCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let contactCell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
-		contactCell.textLabel?.text = helpAndFeedbackArray[indexPath.row]
+		guard let contactCell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath) as? BasicSettingsTableViewCell else { return UITableViewCell() }
+		let setting = settingsHelper.helpAndFeedbackArray[indexPath.row]
+		contactCell.descLabel.text = setting.title
+		contactCell.iconImageView.image = setting.icon
+		contactCell.iconImageView.tintColor = .tipsyDarkerAccents
 		return contactCell
 	}
 
 	private func roundingCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
-		roundingCell.descText = "Round Totals Up To Nearest Dollar"
-		roundingCell.subtitleText = "This setting will round up the total bill as well as the split total for each person. This setting exists to eliminate any change in the total amount each person would have to pay"
+		roundingCell.descText = settingsHelper.roundTotals.title
+		if let text = settingsHelper.roundTotals.subtitleText {
+			roundingCell.subtitleText = text
+		}
+		roundingCell.iconImageView.image = settingsHelper.roundTotals.icon
+		roundingCell.iconImageView.tintColor = .roundTotalsColor
 		roundingCell.isOn = DefaultsManager.roundingIsEnabled
 		roundingCell.action = { sender in
 			DefaultsManager.roundingIsEnabled = sender.isOn
@@ -110,9 +117,13 @@ class SettingsTableViewController: UITableViewController {
 
 	private func applePayCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let applePayCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
-		applePayCell.descText = "Include Apple Pay Hint"
+		applePayCell.descText = settingsHelper.applePayHint.title
 		applePayCell.isOn = DefaultsManager.includeApplePayHint
-		applePayCell.subtitleText = "When using the Split Bill feature you can message your party members with their portion of the bill. Messages will include a hint that Apple Pay can be used. Toggle off if you prefer not to receive Apple Cash"
+		if let text = settingsHelper.applePayHint.subtitleText {
+			applePayCell.subtitleText = text
+		}
+		applePayCell.iconImageView.image = settingsHelper.applePayHint.icon
+		applePayCell.iconImageView.tintColor = .systemYellow
 		applePayCell.action = { sender in
 			DefaultsManager.includeApplePayHint = sender.isOn
 		}
@@ -121,7 +132,12 @@ class SettingsTableViewController: UITableViewController {
 
 	private func hapticCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let hapticCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
-		hapticCell.descText = "Haptic Feedback"
+		hapticCell.descText = settingsHelper.hapticFeedback.title
+		hapticCell.iconImageView.image = settingsHelper.hapticFeedback.icon
+		hapticCell.iconImageView.tintColor = .systemPink
+		if let text = settingsHelper.hapticFeedback.subtitleText {
+			hapticCell.subtitleText = text
+		}
 		hapticCell.isOn = DefaultsManager.hapticFeedbackIsOn
 		hapticCell.action = { sender in
 			DefaultsManager.hapticFeedbackIsOn = sender.isOn
@@ -130,8 +146,7 @@ class SettingsTableViewController: UITableViewController {
 	}
 
 	private func emojiCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let emojiCell = tableView.dequeueReusableCell(withIdentifier: "ChooseEmojiCell", for: indexPath)
-		emojiCell.textLabel?.text = "Choose Quick Tip Emojis"
+		guard let emojiCell = tableView.dequeueReusableCell(withIdentifier: "ChooseEmojiCell", for: indexPath) as? NeverSelectedTableViewCell else { return UITableViewCell() }
 		return emojiCell
 	}
 

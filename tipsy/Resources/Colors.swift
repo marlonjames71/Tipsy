@@ -24,4 +24,6 @@ extension UIColor {
 	static let canCanTwo = UIColor(red: 0.73, green: 0.42, blue: 0.61, alpha: 1.00)
 	static let tipsyDarkerAccents = UIColor(named: "darkerAccents")!
 	static let tipsySecondaryLabelColor = UIColor(named: "tipsySecondaryLabelColor")!
+	static let errorLabelColor = UIColor(named: "tipsyErrorLabel")!
+	static let roundTotalsColor = UIColor(named: "Round Totals Color")!
 }

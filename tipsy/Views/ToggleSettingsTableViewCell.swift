@@ -14,6 +14,7 @@ class ToggleSettingsTableViewCell: UITableViewCell {
 	@IBOutlet private weak var descLabel: UILabel!
 	@IBOutlet private weak var toggle: UISwitch!
 	@IBOutlet private weak var subtitleLabel: UILabel!
+	@IBOutlet weak var iconImageView: UIImageView!
 
 	typealias ToggleTableViewCellAction = (UISwitch) -> Void
 	var action: ToggleTableViewCellAction?
