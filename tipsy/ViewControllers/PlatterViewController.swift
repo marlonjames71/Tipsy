@@ -84,6 +84,10 @@ class PlatterViewController: UIViewController {
 		stepper.maximumValue = 999
 		calculateSplit()
 		HapticFeedback.lightFeedback.prepare()
+		[totalLabel, tipLabel].forEach { $0?.font = .roundedFont(ofSize: 23, weight: .bold) }
+		eachLabel.font = .roundedFont(ofSize: 30, weight: .bold)
+		[eachLabel, totalLabel, tipLabel].forEach { $0?.minimumScaleFactor = 0.50 }
+		dismissButton.titleLabel?.font = .roundedFont(ofSize: 16, weight: .medium)
 
 		platterView.layer.shadowColor = UIColor.black.cgColor
 		platterView.layer.shadowOpacity = 0.3
@@ -151,7 +155,7 @@ class PlatterViewController: UIViewController {
 		UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 5.0, options: [.curveEaseInOut], animations: {
 			self.view.transform = .identity
 			self.view.alpha = 1
-			HapticFeedback.produceSoftFeedback()
+			HapticFeedback.produceLightFeedback()
 		}, completion: nil)
 	}
 

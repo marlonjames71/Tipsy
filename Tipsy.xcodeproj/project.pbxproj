@@ -19,6 +19,7 @@
 		37532B07238BFF53007B2886 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37532B06238BFF53007B2886 /* Alerts.swift */; };
 		375CBF2B23920A2800C3D50A /* SettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF2A23920A2800C3D50A /* SettingsHelper.swift */; };
 		375CBF2D23921B8600C3D50A /* BasicSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF2C23921B8600C3D50A /* BasicSettingsTableViewCell.swift */; };
+		375CBF312392703C00C3D50A /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF302392703C00C3D50A /* FontHelper.swift */; };
 		3766AB9823753340005829D8 /* tipsyPaymentRequest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB9723753340005829D8 /* tipsyPaymentRequest.png */; };
 		3766AB9A2375DBBE005829D8 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB992375DBBE005829D8 /* Contacts.storyboard */; };
 		3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3A8236AC874008442DA /* QuickTipsViewController.swift */; };
@@ -69,6 +70,7 @@
 		37532B06238BFF53007B2886 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		375CBF2A23920A2800C3D50A /* SettingsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHelper.swift; sourceTree = "<group>"; };
 		375CBF2C23921B8600C3D50A /* BasicSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		375CBF302392703C00C3D50A /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		3766AB9723753340005829D8 /* tipsyPaymentRequest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipsyPaymentRequest.png; sourceTree = "<group>"; };
 		3766AB992375DBBE005829D8 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		3782D3A8236AC874008442DA /* QuickTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				37DD59C4236BB61800EA1082 /* Defaults.swift */,
 				37532B06238BFF53007B2886 /* Alerts.swift */,
+				375CBF302392703C00C3D50A /* FontHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				37532B07238BFF53007B2886 /* Alerts.swift in Sources */,
 				371D16CF22A47C6F00E1BD02 /* StringFormatter.swift in Sources */,
 				37E9B6292377D3B1000919A3 /* HapticFeedback.swift in Sources */,
+				375CBF312392703C00C3D50A /* FontHelper.swift in Sources */,
 				3782D3AB236B61DD008442DA /* NeverSelectedTableViewCell.swift in Sources */,
 				37DD59E8236CAE7C00EA1082 /* PhotoCollectionViewCell.swift in Sources */,
 				371D16BF22A46B4800E1BD02 /* TipViewController.swift in Sources */,

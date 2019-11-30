@@ -22,6 +22,8 @@ class SettingsTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.roundedFont(ofSize: 35, weight: .bold)]
+		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.roundedFont(ofSize: 20, weight: .medium)]
 		guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else { return }
         guard let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") else { return }
         buildVersionLabel.text = "Version: \(version) ⌇ Build: \(buildNumber)"

@@ -113,7 +113,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-//		self.navigationController?.isNavigationBarHidden = true
 		navigationController?.setNavigationBarHidden(true, animated: true)
 		setUI()
 		tipTextField.text = calculatedTipPercentage
@@ -359,8 +358,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	func setUI() {
 		let traitCollection = UITraitCollection()
+		tipsyTitleLabel.font = .roundedFont(ofSize: 40, weight: .heavy)
+		calcButton.titleLabel?.font = .roundedFont(ofSize: 25, weight: .bold)
+		[tipOutputLabel, totalOutputLabel].forEach { $0?.font = .roundedFont(ofSize: 40, weight: .heavy) }
+		[tipOutputLabel, totalOutputLabel].forEach { $0?.minimumScaleFactor = 0.50 }
+		splitButton.titleLabel?.font = .roundedFont(ofSize: 18, weight: .regular)
 		calcButton.layer.cornerRadius = calcButton.frame.height / 2
-//		calcButton.setTitleColor(.mako2, for: .normal)
 		splitButton.layer.cornerRadius = splitButton.frame.height / 2
         splitButton.layer.cornerCurve = .continuous
 		[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )

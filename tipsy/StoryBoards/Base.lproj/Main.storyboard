@@ -357,17 +357,17 @@
                                         <rect key="frame" x="0.0" y="744" width="334" height="38"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2E-4d-mgh">
-                                                <rect key="frame" x="116" y="0.0" width="102" height="38"/>
+                                                <rect key="frame" x="115.66666666666666" y="0.0" width="102.66666666666666" height="38"/>
                                                 <color key="backgroundColor" name="tipsySecondaryBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="R2d-ZF-tEl"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="tintColor" name="darkerAccents"/>
                                                 <inset key="contentEdgeInsets" minX="20" minY="8" maxX="20" maxY="8"/>
-                                                <state key="normal" title="Split" image="person.2" catalog="system">
+                                                <state key="normal" title="Split" image="person.2.fill" catalog="system">
                                                     <color key="titleColor" name="darkerAccents"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="medium" weight="light"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="medium" weight="regular"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="splitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pMu-KG-luz"/>
@@ -603,10 +603,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="FnA-wF-uS4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <color key="tintColor" name="reverseTipsyLabelColor"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
-                                        <state key="normal" title="Request" image="dollarsign.circle" catalog="system">
+                                        <state key="normal" title="Request" image="dollarsign.circle.fill" catalog="system">
                                             <color key="titleColor" name="reverseTipsyLabelColor"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="18" scale="medium" weight="light"/>
                                         </state>
@@ -1201,10 +1201,10 @@
     <resources>
         <image name="Search Icon" width="28.5" height="28"/>
         <image name="arrow.counterclockwise.circle" catalog="system" width="64" height="60"/>
-        <image name="dollarsign.circle" catalog="system" width="64" height="60"/>
+        <image name="dollarsign.circle.fill" catalog="system" width="64" height="60"/>
         <image name="keyboard" catalog="system" width="64" height="34"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
-        <image name="person.2" catalog="system" width="64" height="40"/>
+        <image name="person.2.fill" catalog="system" width="64" height="40"/>
         <image name="smiley" catalog="system" width="64" height="60"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
         <namedColor name="darkerAccents">
