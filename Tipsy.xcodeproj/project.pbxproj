@@ -20,6 +20,9 @@
 		375CBF2B23920A2800C3D50A /* SettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF2A23920A2800C3D50A /* SettingsHelper.swift */; };
 		375CBF2D23921B8600C3D50A /* BasicSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF2C23921B8600C3D50A /* BasicSettingsTableViewCell.swift */; };
 		375CBF312392703C00C3D50A /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF302392703C00C3D50A /* FontHelper.swift */; };
+		375CBF352393747700C3D50A /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 375CBF342393747700C3D50A /* Cartfile */; };
+		375CBF382393774200C3D50A /* FaveButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375CBF372393774200C3D50A /* FaveButton.framework */; };
+		375CBF3B23937F2E00C3D50A /* CustomFaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF3A23937F2E00C3D50A /* CustomFaveButton.swift */; };
 		3766AB9823753340005829D8 /* tipsyPaymentRequest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB9723753340005829D8 /* tipsyPaymentRequest.png */; };
 		3766AB9A2375DBBE005829D8 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB992375DBBE005829D8 /* Contacts.storyboard */; };
 		3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3A8236AC874008442DA /* QuickTipsViewController.swift */; };
@@ -31,22 +34,6 @@
 		37C040062368ABAF00476B15 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040052368ABAF00476B15 /* SettingsTableViewController.swift */; };
 		37C040082368AEF200476B15 /* ToggleSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */; };
 		37DD59C5236BB61800EA1082 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59C4236BB61800EA1082 /* Defaults.swift */; };
-		37DD59D7236C8FA100EA1082 /* Tipsy Icon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */; };
-		37DD59D8236C8FA100EA1082 /* Tipsy Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */; };
-		37DD59D9236C8FA100EA1082 /* Tipsy Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59C9236C8FA100EA1082 /* Tipsy Icon-60@3x.png */; };
-		37DD59DA236C8FA100EA1082 /* Tipsy Icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CA236C8FA100EA1082 /* Tipsy Icon-29@2x.png */; };
-		37DD59DB236C8FA100EA1082 /* Tipsy Icon-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CB236C8FA100EA1082 /* Tipsy Icon-20.png */; };
-		37DD59DC236C8FA100EA1082 /* Tipsy Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CC236C8FA100EA1082 /* Tipsy Icon-40@3x.png */; };
-		37DD59DD236C8FA100EA1082 /* Tipsy Icon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CD236C8FA100EA1082 /* Tipsy Icon-1024.png */; };
-		37DD59DE236C8FA100EA1082 /* Tipsy Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CE236C8FA100EA1082 /* Tipsy Icon-40.png */; };
-		37DD59DF236C8FA100EA1082 /* Tipsy Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59CF236C8FA100EA1082 /* Tipsy Icon-40@2x.png */; };
-		37DD59E0236C8FA100EA1082 /* Tipsy Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D0236C8FA100EA1082 /* Tipsy Icon-76@2x.png */; };
-		37DD59E1236C8FA100EA1082 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D1236C8FA100EA1082 /* Contents.json */; };
-		37DD59E2236C8FA100EA1082 /* Tipsy Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D2236C8FA100EA1082 /* Tipsy Icon-76.png */; };
-		37DD59E3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png */; };
-		37DD59E4236C8FA100EA1082 /* Tipsy Icon-20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D4236C8FA100EA1082 /* Tipsy Icon-20@2x.png */; };
-		37DD59E5236C8FA100EA1082 /* Tipsy Icon-20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D5236C8FA100EA1082 /* Tipsy Icon-20@3x.png */; };
-		37DD59E6236C8FA100EA1082 /* Tipsy Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59D6236C8FA100EA1082 /* Tipsy Icon-29.png */; };
 		37DD59E8236CAE7C00EA1082 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */; };
 		37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD59E923711F9300EA1082 /* QuickTipsView.swift */; };
 		37DD59EC23711FB700EA1082 /* QuickTipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37DD59EB23711FB700EA1082 /* QuickTipsView.xib */; };
@@ -71,6 +58,9 @@
 		375CBF2A23920A2800C3D50A /* SettingsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHelper.swift; sourceTree = "<group>"; };
 		375CBF2C23921B8600C3D50A /* BasicSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		375CBF302392703C00C3D50A /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		375CBF342393747700C3D50A /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		375CBF372393774200C3D50A /* FaveButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FaveButton.framework; path = Carthage/Build/iOS/FaveButton.framework; sourceTree = "<group>"; };
+		375CBF3A23937F2E00C3D50A /* CustomFaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFaveButton.swift; sourceTree = "<group>"; };
 		3766AB9723753340005829D8 /* tipsyPaymentRequest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipsyPaymentRequest.png; sourceTree = "<group>"; };
 		3766AB992375DBBE005829D8 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		3782D3A8236AC874008442DA /* QuickTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsViewController.swift; sourceTree = "<group>"; };
@@ -82,22 +72,6 @@
 		37C040052368ABAF00476B15 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		37C040072368AEF200476B15 /* ToggleSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		37DD59C4236BB61800EA1082 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29@3x.png"; sourceTree = "<group>"; };
-		37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-60@2x.png"; sourceTree = "<group>"; };
-		37DD59C9236C8FA100EA1082 /* Tipsy Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-60@3x.png"; sourceTree = "<group>"; };
-		37DD59CA236C8FA100EA1082 /* Tipsy Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29@2x.png"; sourceTree = "<group>"; };
-		37DD59CB236C8FA100EA1082 /* Tipsy Icon-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-20.png"; sourceTree = "<group>"; };
-		37DD59CC236C8FA100EA1082 /* Tipsy Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-40@3x.png"; sourceTree = "<group>"; };
-		37DD59CD236C8FA100EA1082 /* Tipsy Icon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-1024.png"; sourceTree = "<group>"; };
-		37DD59CE236C8FA100EA1082 /* Tipsy Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-40.png"; sourceTree = "<group>"; };
-		37DD59CF236C8FA100EA1082 /* Tipsy Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-40@2x.png"; sourceTree = "<group>"; };
-		37DD59D0236C8FA100EA1082 /* Tipsy Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-76@2x.png"; sourceTree = "<group>"; };
-		37DD59D1236C8FA100EA1082 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		37DD59D2236C8FA100EA1082 /* Tipsy Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-76.png"; sourceTree = "<group>"; };
-		37DD59D3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-83.5@2x.png"; sourceTree = "<group>"; };
-		37DD59D4236C8FA100EA1082 /* Tipsy Icon-20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-20@2x.png"; sourceTree = "<group>"; };
-		37DD59D5236C8FA100EA1082 /* Tipsy Icon-20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-20@3x.png"; sourceTree = "<group>"; };
-		37DD59D6236C8FA100EA1082 /* Tipsy Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tipsy Icon-29.png"; sourceTree = "<group>"; };
 		37DD59E7236CAE7C00EA1082 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		37DD59E923711F9300EA1082 /* QuickTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsView.swift; sourceTree = "<group>"; };
 		37DD59EB23711FB700EA1082 /* QuickTipsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickTipsView.xib; sourceTree = "<group>"; };
@@ -109,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375CBF382393774200C3D50A /* FaveButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,8 +93,10 @@
 		371D16B022A46B4800E1BD02 = {
 			isa = PBXGroup;
 			children = (
+				375CBF342393747700C3D50A /* Cartfile */,
 				371D16BB22A46B4800E1BD02 /* tipsy */,
 				371D16BA22A46B4800E1BD02 /* Products */,
+				375CBF362393772600C3D50A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,7 +120,6 @@
 				37DD59C3236BB60000EA1082 /* Helpers */,
 				37B9A37122F624FD00BB774B /* Resources */,
 				371D16C322A46B4800E1BD02 /* Assets.xcassets */,
-				37DD59C6236C8FA100EA1082 /* AppIcon.appiconset */,
 				371D16C522A46B4800E1BD02 /* LaunchScreen.storyboard */,
 				371D16C822A46B4800E1BD02 /* Info.plist */,
 			);
@@ -156,6 +132,14 @@
 				373F92DD236A5F3D003F1B36 /* AlertTint+UIAlertController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		375CBF362393772600C3D50A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				375CBF372393774200C3D50A /* FaveButton.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		37B9A36D22F52B9A00BB774B /* StoryBoards */ = {
@@ -199,31 +183,9 @@
 				37DD59C4236BB61800EA1082 /* Defaults.swift */,
 				37532B06238BFF53007B2886 /* Alerts.swift */,
 				375CBF302392703C00C3D50A /* FontHelper.swift */,
+				375CBF3A23937F2E00C3D50A /* CustomFaveButton.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		37DD59C6236C8FA100EA1082 /* AppIcon.appiconset */ = {
-			isa = PBXGroup;
-			children = (
-				37DD59C7236C8FA100EA1082 /* Tipsy Icon-29@3x.png */,
-				37DD59C8236C8FA100EA1082 /* Tipsy Icon-60@2x.png */,
-				37DD59C9236C8FA100EA1082 /* Tipsy Icon-60@3x.png */,
-				37DD59CA236C8FA100EA1082 /* Tipsy Icon-29@2x.png */,
-				37DD59CB236C8FA100EA1082 /* Tipsy Icon-20.png */,
-				37DD59CC236C8FA100EA1082 /* Tipsy Icon-40@3x.png */,
-				37DD59CD236C8FA100EA1082 /* Tipsy Icon-1024.png */,
-				37DD59CE236C8FA100EA1082 /* Tipsy Icon-40.png */,
-				37DD59CF236C8FA100EA1082 /* Tipsy Icon-40@2x.png */,
-				37DD59D0236C8FA100EA1082 /* Tipsy Icon-76@2x.png */,
-				37DD59D1236C8FA100EA1082 /* Contents.json */,
-				37DD59D2236C8FA100EA1082 /* Tipsy Icon-76.png */,
-				37DD59D3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png */,
-				37DD59D4236C8FA100EA1082 /* Tipsy Icon-20@2x.png */,
-				37DD59D5236C8FA100EA1082 /* Tipsy Icon-20@3x.png */,
-				37DD59D6236C8FA100EA1082 /* Tipsy Icon-29.png */,
-			);
-			path = AppIcon.appiconset;
 			sourceTree = "<group>";
 		};
 		37F3D41B22ACD3E2006BA05D /* Model */ = {
@@ -258,6 +220,7 @@
 				371D16B522A46B4800E1BD02 /* Sources */,
 				371D16B622A46B4800E1BD02 /* Frameworks */,
 				371D16B722A46B4800E1BD02 /* Resources */,
+				375CBF392393775D00C3D50A /* Run Script - Carthage */,
 			);
 			buildRules = (
 			);
@@ -306,32 +269,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37DD59E3236C8FA100EA1082 /* Tipsy Icon-83.5@2x.png in Resources */,
-				37DD59D8236C8FA100EA1082 /* Tipsy Icon-60@2x.png in Resources */,
-				37DD59D7236C8FA100EA1082 /* Tipsy Icon-29@3x.png in Resources */,
 				371D16C722A46B4800E1BD02 /* LaunchScreen.storyboard in Resources */,
 				3766AB9823753340005829D8 /* tipsyPaymentRequest.png in Resources */,
 				3766AB9A2375DBBE005829D8 /* Contacts.storyboard in Resources */,
+				375CBF352393747700C3D50A /* Cartfile in Resources */,
 				371D16C422A46B4800E1BD02 /* Assets.xcassets in Resources */,
-				37DD59E0236C8FA100EA1082 /* Tipsy Icon-76@2x.png in Resources */,
-				37DD59DF236C8FA100EA1082 /* Tipsy Icon-40@2x.png in Resources */,
 				371D16C222A46B4800E1BD02 /* Main.storyboard in Resources */,
-				37DD59DB236C8FA100EA1082 /* Tipsy Icon-20.png in Resources */,
-				37DD59DE236C8FA100EA1082 /* Tipsy Icon-40.png in Resources */,
-				37DD59D9236C8FA100EA1082 /* Tipsy Icon-60@3x.png in Resources */,
-				37DD59DC236C8FA100EA1082 /* Tipsy Icon-40@3x.png in Resources */,
-				37DD59E2236C8FA100EA1082 /* Tipsy Icon-76.png in Resources */,
-				37DD59E6236C8FA100EA1082 /* Tipsy Icon-29.png in Resources */,
-				37DD59DD236C8FA100EA1082 /* Tipsy Icon-1024.png in Resources */,
-				37DD59DA236C8FA100EA1082 /* Tipsy Icon-29@2x.png in Resources */,
-				37DD59E5236C8FA100EA1082 /* Tipsy Icon-20@3x.png in Resources */,
-				37DD59E1236C8FA100EA1082 /* Contents.json in Resources */,
 				37DD59EC23711FB700EA1082 /* QuickTipsView.xib in Resources */,
-				37DD59E4236C8FA100EA1082 /* Tipsy Icon-20@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		375CBF392393775D00C3D50A /* Run Script - Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/FaveButton.framework",
+			);
+			name = "Run Script - Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FaveButton.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		371D16B522A46B4800E1BD02 /* Sources */ = {
@@ -356,6 +327,7 @@
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				373F92DE236A5F3D003F1B36 /* AlertTint+UIAlertController.swift in Sources */,
 				3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */,
+				375CBF3B23937F2E00C3D50A /* CustomFaveButton.swift in Sources */,
 				375CBF2B23920A2800C3D50A /* SettingsHelper.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
 				37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */,
@@ -510,6 +482,10 @@
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = D6VB3396MT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -532,6 +508,10 @@
 				COMPRESS_PNG_FILES = NO;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = D6VB3396MT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/tipsy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
