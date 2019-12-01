@@ -25,6 +25,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+	lazy var emojiButtons = [firstEmoji, secondEmoji, thirdEmoji, fourthEmoji].compactMap { $0 }
+	lazy var percentLabels = [twoPercentLabel, fifteenPercentLabel, twentyPercentLabel, twentyFivePercentLabel].compactMap { $0 }
+
 	// MARK: - Outlets (In order on screen)
 
 	@IBOutlet weak var tipsyTitleLabel: UILabel!
@@ -63,6 +66,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var screenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer!
 	@IBOutlet weak var mainStackView: UIStackView!
 	@IBOutlet weak var subMainStackView: UIStackView!
+	@IBOutlet weak var titleFieldsAndEmojisStackView: UIStackView!
+	@IBOutlet weak var mainSTackViewLeadingConstraint: NSLayoutConstraint!
+	@IBOutlet weak var mainStackViewTrailingConstraint: NSLayoutConstraint!
 
 	// MARK: - Lifecycle
 
@@ -76,17 +82,11 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		updateResetButtonEnabled()
 		screenEdgeGestureRecognizer.edges = .right
 		HapticFeedback.lightFeedback.prepare()
+		resetHighlightTipPercentLabels()
 
-		if UIScreen.main.bounds.height <= 667 {
-			subMainStackView.spacing = 30
-		} else {
-			subMainStackView.spacing = 50
-		}
 
 		let toolbar: UIToolbar = UIToolbar(frame: .zero)
-		toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
-		toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-		toolbar.backgroundColor = .clear
+
 		let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 		let hideKeyboardButton = UIBarButtonItem(image: UIImage(systemName: "keyboard.chevron.compact.down"), style: .done, target: self, action: #selector(hideKeyboardAction))
 		hideKeyboardButton.tintColor = .darkTurquoise
@@ -94,11 +94,26 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 		toolbar.sizeToFit()
 		[totalBillTextField, tipTextField].forEach { $0?.inputAccessoryView = toolbar }
 
+		if UIScreen.main.bounds.height <= 667 {
+			subMainStackView.spacing = 16
+			titleFieldsAndEmojisStackView.spacing = 12
+			calcButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+			mainSTackViewLeadingConstraint.constant = 25
+			mainStackViewTrailingConstraint.constant = 25
+			calcButton.setTitle("Calculate", for: .normal)
+			mainStackView.spacing = 20
+			toolbar.barTintColor = .systemBackground
+		} else {
+			toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+			toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+			toolbar.backgroundColor = .clear
+			subMainStackView.spacing = 50
+		}
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		self.navigationController?.isNavigationBarHidden = true
+		navigationController?.setNavigationBarHidden(true, animated: true)
 		setUI()
 		tipTextField.text = calculatedTipPercentage
 		calculateTip()
@@ -112,7 +127,8 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-		navigationController?.isNavigationBarHidden = false
+//		navigationController?.isNavigationBarHidden = true
+		navigationController?.setNavigationBarHidden(false, animated: true)
 		totalBillTextField.resignFirstResponder()
 		tipTextField.resignFirstResponder()
 		showHideKeyboard(show: false)
@@ -138,26 +154,31 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	@IBAction func resetButtonTapped(_ sender: UIButton) {
 		clear()
 		calculatedTipPercentage = "20"
+		resetHighlightTipPercentLabels()
 	}
 
 	@IBAction func firstEmojiTapped(_ sender: UIButton) {
 		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "2"
+		highlightLabelForButton(button: sender)
 	}
 
 	@IBAction func secondEmojiTapped(_ sender: UIButton) {
 		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "15"
+		highlightLabelForButton(button: sender)
 	}
 
 	@IBAction func thirdEmojiTapped(_ sender: UIButton) {
 		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "20"
+		highlightLabelForButton(button: sender)
 	}
 
 	@IBAction func fourthEmojiTapped(_ sender: UIButton) {
 		HapticFeedback.produceLightFeedback()
 		calculatedTipPercentage = "25"
+		highlightLabelForButton(button: sender)
 	}
 
 	@IBAction func totalDidChange(_ sender: UITextField) {
@@ -173,6 +194,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func tipFieldDidChange(_ sender: UITextField) {
+		percentLabels.forEach { $0.textColor = .tipsySecondaryLabelColor }
 		tipErrorLabel.isHidden = true
 		editingTipPercentage = true
 		calculatedTipPercentage = sender.text ?? ""
@@ -250,6 +272,27 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         }
 	}
 
+	private func highlightLabelForButton(button: UIButton) {
+		guard let buttonIndex = emojiButtons.firstIndex(of: button) else { return }
+		let label = percentLabels[buttonIndex]
+		highlightPercentLabel(label: label)
+	}
+
+	private func highlightPercentLabel(label: UILabel) {
+		percentLabels.forEach { $0.textColor = .tipsySecondaryLabelColor }
+		label.textColor = .tipsyDarkerAccents
+	}
+
+	private func resetHighlightTipPercentLabels() {
+		for label in percentLabels {
+			if label != twentyPercentLabel {
+				label.textColor = .tipsySecondaryLabelColor
+			} else {
+				label.textColor = .tipsyDarkerAccents
+			}
+		}
+	}
+
 	private func showSplitPlatter() {
 		guard let platterViewController = storyboard?.instantiateViewController(withIdentifier: "PlatterViewController") as? PlatterViewController,
 			let total = totalOutputLabel.text,
@@ -315,8 +358,12 @@ class TipViewController: UIViewController, UITextFieldDelegate {
 
 	func setUI() {
 		let traitCollection = UITraitCollection()
+		tipsyTitleLabel.font = .roundedFont(ofSize: 40, weight: .heavy)
+		calcButton.titleLabel?.font = .roundedFont(ofSize: 25, weight: .bold)
+		[tipOutputLabel, totalOutputLabel].forEach { $0?.font = .roundedFont(ofSize: 40, weight: .heavy) }
+		[tipOutputLabel, totalOutputLabel].forEach { $0?.minimumScaleFactor = 0.50 }
+		splitButton.titleLabel?.font = .roundedFont(ofSize: 18, weight: .regular)
 		calcButton.layer.cornerRadius = calcButton.frame.height / 2
-//		calcButton.setTitleColor(.mako2, for: .normal)
 		splitButton.layer.cornerRadius = splitButton.frame.height / 2
         splitButton.layer.cornerCurve = .continuous
 		[totalBillErrorLabel, tipErrorLabel].forEach( { $0?.isHidden = true} )

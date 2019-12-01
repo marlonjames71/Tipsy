@@ -27,12 +27,24 @@
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeTask</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Open Tipsy</string>
+			<string>Rate &amp; Review Tipsy</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>Marlon-Raskin.tipTester.open</string>
+			<string>Marlon-Raskin.tipsy.reviewAction</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeLove</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Help us out with a review!</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Share Tipsy</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Marlon-Raskin.tipsy.shareAction</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeShare</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Share Tipsy With Everyone!</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>

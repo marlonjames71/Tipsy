@@ -12,6 +12,7 @@ class QuickTipsView: UIView {
 
 	@IBOutlet private weak var imageView: UIImageView!
 	@IBOutlet private weak var label: UILabel!
+	@IBOutlet private weak var imageViewHeightAnchor: NSLayoutConstraint!
 
 	var text: String {
 		get {
@@ -34,5 +35,9 @@ class QuickTipsView: UIView {
     override func draw(_ rect: CGRect) {
 		imageView.layer.cornerRadius = 12
 		imageView.layer.cornerCurve = .continuous
+
+		if UIScreen.main.bounds.height <= 667 {
+			imageViewHeightAnchor.constant = 300
+		}
     }
 }

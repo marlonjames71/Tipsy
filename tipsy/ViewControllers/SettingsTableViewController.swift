@@ -13,8 +13,8 @@ import Social
 class SettingsTableViewController: UITableViewController {
 
 	@IBOutlet weak var buildVersionLabel: UILabel!
-
-	fileprivate let helpAndFeedbackArray = ["Follow Tipsy on Twitter", "Send Feedback", "Contact Us", "Quick Tipsies"]
+	let settingsHelper = SettingsHelper()
+	
 	fileprivate let twitterUrl: URL = {
 		let baseURL = URL(string: "https://twitter.com/iOSTipsyApp")!
 		return baseURL
@@ -22,9 +22,19 @@ class SettingsTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.roundedFont(ofSize: 35, weight: .bold)]
+		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.roundedFont(ofSize: 20, weight: .medium)]
 		guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else { return }
         guard let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") else { return }
         buildVersionLabel.text = "Version: \(version) ⌇ Build: \(buildNumber)"
+	}
+
+	// MARK: - Helper Methods
+	func navigateToComposeAppStoreRating() {
+		let appID = "1486290417"
+		let urlStr = "https://itunes.apple.com/app/id\(appID)?action=write-review"
+		guard let appStoreURL = URL(string: urlStr), UIApplication.shared.canOpenURL(appStoreURL)  else { return }
+		UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
 	}
 
 
@@ -50,7 +60,7 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		switch section {
 		case 0:
-			return helpAndFeedbackArray.count
+			return settingsHelper.helpAndFeedbackArray.count
 		case 1:
 			return 3
 		default:
@@ -84,16 +94,32 @@ class SettingsTableViewController: UITableViewController {
 	// MARK: - TableView Cells
 
 	private func contactCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let contactCell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
-		contactCell.textLabel?.text = helpAndFeedbackArray[indexPath.row]
+		guard let contactCell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath) as? BasicSettingsTableViewCell else { return UITableViewCell() }
+		let setting = settingsHelper.helpAndFeedbackArray[indexPath.row]
+		contactCell.iconImageView.contentMode = .scaleAspectFit
+		if setting.title.contains("Twitter") {
+			contactCell.iconImageView.contentMode = .center
+		}
+		contactCell.descLabel.text = setting.title
+		contactCell.iconImageView.image = setting.icon
+		contactCell.iconImageView.tintColor = .tipsyDarkerAccents
 		return contactCell
 	}
 
 	private func roundingCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let roundingCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
-		roundingCell.descText = "Round Totals Up To Nearest Dollar"
-		roundingCell.subtitleText = "This setting will round up the total bill as well as the split total for each person. This setting exists to eliminate any change in the total amount each person would have to pay"
+		roundingCell.descText = settingsHelper.roundTotals.title
+		if let text = settingsHelper.roundTotals.subtitleText {
+			roundingCell.subtitleText = text
+		}
+		roundingCell.iconImageView.image = settingsHelper.roundTotals.icon
+		roundingCell.color = .roundTotalsColor
 		roundingCell.isOn = DefaultsManager.roundingIsEnabled
+		if DefaultsManager.roundingIsEnabled {
+			roundingCell.iconImageView.tintColor = .roundTotalsColor
+		} else {
+			roundingCell.iconImageView.tintColor = .systemGray3
+		}
 		roundingCell.action = { sender in
 			DefaultsManager.roundingIsEnabled = sender.isOn
 		}
@@ -102,9 +128,18 @@ class SettingsTableViewController: UITableViewController {
 
 	private func applePayCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let applePayCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
-		applePayCell.descText = "Include Apple Pay Hint"
+		applePayCell.descText = settingsHelper.applePayHint.title
 		applePayCell.isOn = DefaultsManager.includeApplePayHint
-		applePayCell.subtitleText = "When using the Split Bill feature you can message your party members with their portion of the bill. Messages will include a hint that Apple Pay can be used. Toggle off if you prefer not to receive Apple Cash"
+		if DefaultsManager.includeApplePayHint {
+			applePayCell.iconImageView.tintColor = .systemYellow
+		} else {
+			applePayCell.iconImageView.tintColor = .systemGray3
+		}
+		if let text = settingsHelper.applePayHint.subtitleText {
+			applePayCell.subtitleText = text
+		}
+		applePayCell.iconImageView.image = settingsHelper.applePayHint.icon
+		applePayCell.color = .systemYellow
 		applePayCell.action = { sender in
 			DefaultsManager.includeApplePayHint = sender.isOn
 		}
@@ -113,8 +148,18 @@ class SettingsTableViewController: UITableViewController {
 
 	private func hapticCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let hapticCell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell", for: indexPath) as? ToggleSettingsTableViewCell else { return UITableViewCell() }
-		hapticCell.descText = "Haptic Feedback"
+		hapticCell.descText = settingsHelper.hapticFeedback.title
+		hapticCell.iconImageView.image = settingsHelper.hapticFeedback.icon
+		hapticCell.color = .systemPink
+		if let text = settingsHelper.hapticFeedback.subtitleText {
+			hapticCell.subtitleText = text
+		}
 		hapticCell.isOn = DefaultsManager.hapticFeedbackIsOn
+		if DefaultsManager.hapticFeedbackIsOn {
+			hapticCell.iconImageView.tintColor = .systemPink
+		} else {
+			hapticCell.iconImageView.tintColor = .systemGray3
+		}
 		hapticCell.action = { sender in
 			DefaultsManager.hapticFeedbackIsOn = sender.isOn
 		}
@@ -122,8 +167,7 @@ class SettingsTableViewController: UITableViewController {
 	}
 
 	private func emojiCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let emojiCell = tableView.dequeueReusableCell(withIdentifier: "ChooseEmojiCell", for: indexPath)
-		emojiCell.textLabel?.text = "Choose Quick Tip Emojis"
+		guard let emojiCell = tableView.dequeueReusableCell(withIdentifier: "ChooseEmojiCell", for: indexPath) as? NeverSelectedTableViewCell else { return UITableViewCell() }
 		return emojiCell
 	}
 
@@ -132,39 +176,27 @@ class SettingsTableViewController: UITableViewController {
 		guard indexPath.section == 0 else { return }
 		switch indexPath.row {
 		case 0:
+			navigateToComposeAppStoreRating()
+		case 1:
 			if UIApplication.shared.canOpenURL(twitterUrl) {
 				UIApplication.shared.open(twitterUrl, options: [:], completionHandler: nil)
 			}
 			break
-		case 1:
-			if MFMailComposeViewController.canSendMail() {
-				let composeVC = MFMailComposeViewController()
-				composeVC.navigationBar.tintColor = .turquoiseTwo
-				composeVC.mailComposeDelegate = self
-				composeVC.setToRecipients(["tipsysupport@august-light.com"])
-				composeVC.setSubject("Feedback for Tipsy")
-				composeVC.setMessageBody("Hey there! I have some feedback for Tipsy:\n\n", isHTML: false)
-				present(composeVC, animated: true, completion: nil)
-			} else {
-				let mailAlert = UIAlertController(title: "Mail Services are not available", message: "Your mail app appears to not be configured", preferredStyle: .alert)
-				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-				present(mailAlert, animated: true, completion: nil)
-			}
 		case 2:
+			let appID = "1486290417"
+			let urlStr = "https://itunes.apple.com/app/id\(appID)"
+			let items = [URL(string: urlStr)!]
+			let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+			present(ac, animated: true)
+		case 3:
 			if MFMailComposeViewController.canSendMail() {
-				let composeVC = MFMailComposeViewController()
-				composeVC.navigationBar.tintColor = .turquoiseTwo
-				composeVC.mailComposeDelegate = self
-				composeVC.setToRecipients(["tipsysupport@august-light.com"])
-				composeVC.setSubject("Tipsy Issue")
-				composeVC.setMessageBody("Hi, nice people at Tipsy. I'm having an issue I'd like help with: \n\n\n", isHTML: false)
-				present(composeVC, animated: true, completion: nil)
+				Alerts.showBasicContactAlert(on: self)
 			} else {
 				let mailAlert = UIAlertController(title: "Mail services are not available", message: "Your mail app appears to not be configured", preferredStyle: .alert)
 				mailAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 				present(mailAlert, animated: true, completion: nil)
 			}
-		case 3:
+		case 4:
 			performSegue(withIdentifier: "QuickTipsModalSegue", sender: self)
 		default:
 			break
