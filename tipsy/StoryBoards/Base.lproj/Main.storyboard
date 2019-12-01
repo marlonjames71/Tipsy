@@ -87,6 +87,7 @@
                                                                                             </label>
                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-hv-mPW">
                                                                                                 <rect key="frame" x="13.666666666666671" y="0.0" width="196.33333333333331" height="50"/>
+                                                                                                <color key="tintColor" name="darkerAccents"/>
                                                                                                 <color key="textColor" name="tipsyLabelColor"/>
                                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -122,6 +123,7 @@
                                                                                         <subviews>
                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-VM-bLN">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="50"/>
+                                                                                                <color key="tintColor" name="darkerAccents"/>
                                                                                                 <color key="textColor" name="tipsyLabelColor"/>
                                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -387,7 +389,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSi-09-Ace">
-                                <rect key="frame" x="349" y="64" width="30" height="30"/>
+                                <rect key="frame" x="364" y="64" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lSi-09-Ace" secondAttribute="height" multiplier="1:1" id="mGO-Nh-dsh"/>
                                     <constraint firstAttribute="height" constant="30" id="z3S-Cv-OMs"/>
@@ -405,7 +407,7 @@
                         <color key="backgroundColor" name="tipsyBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lSi-09-Ace" secondAttribute="trailing" constant="35" id="53q-JZ-OMS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lSi-09-Ace" secondAttribute="trailing" constant="20" id="53q-JZ-OMS"/>
                             <constraint firstItem="lSi-09-Ace" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="GAW-9H-mYu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MjM-dr-dKR" secondAttribute="trailing" constant="40" id="H6A-qU-z6L"/>
                             <constraint firstItem="MjM-dr-dKR" firstAttribute="centerY" secondItem="i2E-4d-mgh" secondAttribute="centerY" id="KXF-y1-Ny2"/>
