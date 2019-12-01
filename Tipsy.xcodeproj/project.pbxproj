@@ -21,7 +21,7 @@
 		375CBF2D23921B8600C3D50A /* BasicSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF2C23921B8600C3D50A /* BasicSettingsTableViewCell.swift */; };
 		375CBF312392703C00C3D50A /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF302392703C00C3D50A /* FontHelper.swift */; };
 		375CBF352393747700C3D50A /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 375CBF342393747700C3D50A /* Cartfile */; };
-		375CBF3B23937F2E00C3D50A /* CustomFaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF3A23937F2E00C3D50A /* CustomFaveButton.swift */; };
+		375CBF3D23938E6C00C3D50A /* String+ToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CBF3C23938E6C00C3D50A /* String+ToImage.swift */; };
 		3766AB9823753340005829D8 /* tipsyPaymentRequest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB9723753340005829D8 /* tipsyPaymentRequest.png */; };
 		3766AB9A2375DBBE005829D8 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3766AB992375DBBE005829D8 /* Contacts.storyboard */; };
 		3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782D3A8236AC874008442DA /* QuickTipsViewController.swift */; };
@@ -58,7 +58,7 @@
 		375CBF2C23921B8600C3D50A /* BasicSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		375CBF302392703C00C3D50A /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		375CBF342393747700C3D50A /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		375CBF3A23937F2E00C3D50A /* CustomFaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFaveButton.swift; sourceTree = "<group>"; };
+		375CBF3C23938E6C00C3D50A /* String+ToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToImage.swift"; sourceTree = "<group>"; };
 		3766AB9723753340005829D8 /* tipsyPaymentRequest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipsyPaymentRequest.png; sourceTree = "<group>"; };
 		3766AB992375DBBE005829D8 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		3782D3A8236AC874008442DA /* QuickTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTipsViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 				37DD59C4236BB61800EA1082 /* Defaults.swift */,
 				37532B06238BFF53007B2886 /* Alerts.swift */,
 				375CBF302392703C00C3D50A /* FontHelper.swift */,
-				375CBF3A23937F2E00C3D50A /* CustomFaveButton.swift */,
+				375CBF3C23938E6C00C3D50A /* String+ToImage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -321,10 +321,10 @@
 				371D16BD22A46B4800E1BD02 /* AppDelegate.swift in Sources */,
 				373F92DE236A5F3D003F1B36 /* AlertTint+UIAlertController.swift in Sources */,
 				3782D3A9236AC874008442DA /* QuickTipsViewController.swift in Sources */,
-				375CBF3B23937F2E00C3D50A /* CustomFaveButton.swift in Sources */,
 				375CBF2B23920A2800C3D50A /* SettingsHelper.swift in Sources */,
 				37B9A37022F624F500BB774B /* Colors.swift in Sources */,
 				37DD59EA23711F9300EA1082 /* QuickTipsView.swift in Sources */,
+				375CBF3D23938E6C00C3D50A /* String+ToImage.swift in Sources */,
 				37A2187F236A9BD0004BD9D6 /* EmojiCollectionViewController.swift in Sources */,
 				370BFEE4231CB682009B7B25 /* PlatterViewController.swift in Sources */,
 			);
