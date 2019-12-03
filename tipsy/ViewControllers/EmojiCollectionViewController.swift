@@ -27,6 +27,7 @@ class EmojiCollectionViewController: UIViewController {
 		emojiCollectionView.delegate = self
 		emojiCollectionView.dataSource = self
 		navigationController?.isModalInPresentation = true
+		emojiButtonSelected(emojiOne)
 		loadEmojis()
 		navigationController?.presentationController?.delegate = self
 		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.roundedFont(ofSize: 20, weight: .medium)]
