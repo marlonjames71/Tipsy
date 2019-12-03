@@ -921,124 +921,128 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1R-qM-yxg">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7l-D2-2ow">
                                 <rect key="frame" x="0.0" y="56" width="414" height="90"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J3i-nk-b7W">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X21-ac-W7b">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="2"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="tIW-Is-jGS">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="2"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="g5P-YO-ej3"/>
-                                    <constraint firstAttribute="height" constant="90" id="jby-c6-XuC"/>
+                                    <constraint firstAttribute="height" constant="90" id="jwr-6T-8jd"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCy-Am-oRe">
-                                <rect key="frame" x="0.0" y="56" width="414" height="90"/>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rzT-2r-vJJ">
+                                <rect key="frame" x="40" y="64" width="334" height="74"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rzT-2r-vJJ">
-                                        <rect key="frame" x="40" y="8" width="334" height="74"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-jz-EZc">
+                                        <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="74"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-jz-EZc">
-                                                <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="74"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-9e-65T" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <state key="normal" title="🤬"/>
-                                                        <connections>
-                                                            <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="5bg-oC-QfL"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtJ-WO-pAn">
-                                                        <rect key="frame" x="0.0" y="57" width="83.666666666666671" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Z2a-9v-e1G">
-                                                <rect key="frame" x="83.666666666666686" y="0.0" width="83.333333333333314" height="74"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-Su-PKH" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="55"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <state key="normal" title="😐"/>
-                                                        <connections>
-                                                            <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="Brk-eY-yYt"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjq-xr-VMH">
-                                                        <rect key="frame" x="0.0" y="57" width="83.333333333333329" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="OD4-fU-dIa">
-                                                <rect key="frame" x="167" y="0.0" width="83.666666666666686" height="74"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpB-t4-mnE" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <state key="normal" title="😁"/>
-                                                        <connections>
-                                                            <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="SbK-gm-FhT"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-jm-smC">
-                                                        <rect key="frame" x="0.0" y="57" width="83.666666666666671" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-0b-B1p">
-                                                <rect key="frame" x="250.66666666666671" y="0.0" width="83.333333333333343" height="74"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVs-dN-0Xn" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="55"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <state key="normal" title="😜"/>
-                                                        <connections>
-                                                            <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="arx-qu-SDp"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-nn-016">
-                                                        <rect key="frame" x="0.0" y="57" width="83.333333333333329" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-9e-65T" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="🤬"/>
+                                                <connections>
+                                                    <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="5bg-oC-QfL"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtJ-WO-pAn">
+                                                <rect key="frame" x="0.0" y="57" width="83.666666666666671" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="zVx-Su-PKH" firstAttribute="height" secondItem="ODS-9e-65T" secondAttribute="height" id="cPC-XJ-Hnd"/>
-                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Z2a-9v-e1G">
+                                        <rect key="frame" x="83.666666666666686" y="0.0" width="83.333333333333314" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-Su-PKH" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="😐"/>
+                                                <connections>
+                                                    <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="Brk-eY-yYt"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjq-xr-VMH">
+                                                <rect key="frame" x="0.0" y="57" width="83.333333333333329" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="OD4-fU-dIa">
+                                        <rect key="frame" x="167" y="0.0" width="83.666666666666686" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpB-t4-mnE" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="😁"/>
+                                                <connections>
+                                                    <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="SbK-gm-FhT"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-jm-smC">
+                                                <rect key="frame" x="0.0" y="57" width="83.666666666666671" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-0b-B1p">
+                                        <rect key="frame" x="250.66666666666671" y="0.0" width="83.333333333333343" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVs-dN-0Xn" customClass="EmojiButton" customModule="tipsy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="😜"/>
+                                                <connections>
+                                                    <action selector="emojiButtonSelected:" destination="6UP-Dm-9dY" eventType="touchUpInside" id="arx-qu-SDp"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-nn-016">
+                                                <rect key="frame" x="0.0" y="57" width="83.333333333333329" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="9fP-n3-45I"/>
-                                    <constraint firstItem="rzT-2r-vJJ" firstAttribute="leading" secondItem="OCy-Am-oRe" secondAttribute="leading" constant="40" id="PDz-ue-biz"/>
-                                    <constraint firstAttribute="trailing" secondItem="rzT-2r-vJJ" secondAttribute="trailing" constant="40" id="nAm-5U-y2r"/>
-                                    <constraint firstItem="rzT-2r-vJJ" firstAttribute="top" secondItem="OCy-Am-oRe" secondAttribute="top" constant="8" id="oiF-Hr-ioE"/>
-                                    <constraint firstAttribute="bottom" secondItem="rzT-2r-vJJ" secondAttribute="bottom" constant="8" id="qfb-A1-8Gf"/>
+                                    <constraint firstItem="zVx-Su-PKH" firstAttribute="height" secondItem="ODS-9e-65T" secondAttribute="height" id="cPC-XJ-Hnd"/>
+                                    <constraint firstAttribute="height" constant="74" id="ti0-3B-zyn"/>
                                 </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="lWR-6A-beZ" firstAttribute="trailing" secondItem="o4W-jz-h6a" secondAttribute="trailing" constant="40" id="1SQ-yF-NjI"/>
-                            <constraint firstItem="lWR-6A-beZ" firstAttribute="trailing" secondItem="OCy-Am-oRe" secondAttribute="trailing" id="Bb4-Ej-qgf"/>
+                            <constraint firstItem="lWR-6A-beZ" firstAttribute="trailing" secondItem="rzT-2r-vJJ" secondAttribute="trailing" constant="40" id="3Us-Vv-lIy"/>
                             <constraint firstItem="o4W-jz-h6a" firstAttribute="bottom" secondItem="lWR-6A-beZ" secondAttribute="bottom" id="GDs-XM-qVT"/>
                             <constraint firstItem="o4W-jz-h6a" firstAttribute="top" secondItem="lWR-6A-beZ" secondAttribute="top" id="I80-Vb-Nyo"/>
-                            <constraint firstItem="N1R-qM-yxg" firstAttribute="leading" secondItem="lWR-6A-beZ" secondAttribute="leading" id="LgW-Km-E8u"/>
-                            <constraint firstItem="OCy-Am-oRe" firstAttribute="leading" secondItem="lWR-6A-beZ" secondAttribute="leading" id="TXf-zI-QQ0"/>
+                            <constraint firstItem="rzT-2r-vJJ" firstAttribute="leading" secondItem="lWR-6A-beZ" secondAttribute="leading" constant="40" id="XX9-OY-QpR"/>
+                            <constraint firstItem="M7l-D2-2ow" firstAttribute="top" secondItem="lWR-6A-beZ" secondAttribute="top" id="j6a-ZV-Z4l"/>
+                            <constraint firstItem="rzT-2r-vJJ" firstAttribute="top" secondItem="lWR-6A-beZ" secondAttribute="top" constant="8" id="jMT-op-Mva"/>
                             <constraint firstItem="o4W-jz-h6a" firstAttribute="leading" secondItem="lWR-6A-beZ" secondAttribute="leading" constant="40" id="jfu-xc-Yiq"/>
-                            <constraint firstItem="OCy-Am-oRe" firstAttribute="top" secondItem="o4W-jz-h6a" secondAttribute="top" id="m4X-aX-rg7"/>
-                            <constraint firstItem="N1R-qM-yxg" firstAttribute="top" secondItem="lWR-6A-beZ" secondAttribute="top" id="xic-Lf-O9O"/>
-                            <constraint firstItem="N1R-qM-yxg" firstAttribute="trailing" secondItem="lWR-6A-beZ" secondAttribute="trailing" id="yHv-S6-nIA"/>
+                            <constraint firstItem="M7l-D2-2ow" firstAttribute="leading" secondItem="lWR-6A-beZ" secondAttribute="leading" id="ksb-kJ-w5w"/>
+                            <constraint firstItem="lWR-6A-beZ" firstAttribute="trailing" secondItem="M7l-D2-2ow" secondAttribute="trailing" id="tfq-lG-uFL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lWR-6A-beZ"/>
                     </view>
@@ -1055,18 +1059,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="blurView" destination="N1R-qM-yxg" id="soV-b2-PLy"/>
-                        <outlet property="containerView" destination="OCy-Am-oRe" id="fKE-G4-HuC"/>
                         <outlet property="emojiCollectionView" destination="o4W-jz-h6a" id="78b-QL-g3b"/>
                         <outlet property="emojiFour" destination="qVs-dN-0Xn" id="cHl-9W-Doc"/>
                         <outlet property="emojiOne" destination="ODS-9e-65T" id="TfX-T3-wTE"/>
                         <outlet property="emojiThree" destination="LpB-t4-mnE" id="NXk-9t-1lj"/>
                         <outlet property="emojiTwo" destination="zVx-Su-PKH" id="2GE-kk-Ip9"/>
+                        <outlet property="visualFXView" destination="M7l-D2-2ow" id="nVc-Rc-nVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuC-Lp-flC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4375" y="861"/>
+            <point key="canvasLocation" x="4373.913043478261" y="860.49107142857144"/>
         </scene>
         <!--Quick Tipsies-->
         <scene sceneID="sog-j4-8oW">

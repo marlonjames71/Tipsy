@@ -11,9 +11,8 @@ import UIKit
 class EmojiCollectionViewController: UIViewController {
 
 	@IBOutlet private weak var emojiCollectionView: UICollectionView!
-	@IBOutlet weak var containerView: UIView!
-	@IBOutlet weak var blurView: UIView!
 
+	@IBOutlet weak var visualFXView: UIVisualEffectView!
 	@IBOutlet weak var emojiOne: EmojiButton!
 	@IBOutlet weak var emojiTwo: EmojiButton!
 	@IBOutlet weak var emojiThree: EmojiButton!
@@ -28,12 +27,6 @@ class EmojiCollectionViewController: UIViewController {
 		emojiCollectionView.delegate = self
 		emojiCollectionView.dataSource = self
 		navigationController?.isModalInPresentation = true
-		let blurEffect = UIBlurEffect(style: .regular)
-		let blurEffectView = UIVisualEffectView(effect: blurEffect)
-		blurEffectView.frame = blurView.bounds
-		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		blurView.addSubview(blurEffectView)
-		emojiButtonSelected(emojiOne)
 		loadEmojis()
 		navigationController?.presentationController?.delegate = self
 		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.roundedFont(ofSize: 20, weight: .medium)]
@@ -104,9 +97,33 @@ class EmojiCollectionViewController: UIViewController {
 		✳️❎💯🚫❌🆘🛑❗️❕❓❔‼️⁉️🎶🎵☑️✔️📢📣🏁🏳️
 		""").map { String($0) }
 
+	private func startShadow() {
+		let shadowSize: CGFloat = 10
+		let contactRect = CGRect(x: -shadowSize, y: visualFXView.frame.height - (shadowSize * 0.4), width: visualFXView.frame.width + shadowSize * 2, height: shadowSize)
+		visualFXView.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
+		visualFXView.layer.shadowRadius = 7
+		visualFXView.layer.shadowOpacity = 0.4
+	}
+
+	private func endShadow() {
+		visualFXView.layer.shadowOpacity = 0.0
+	}
+
 }
 
-extension EmojiCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension EmojiCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		UIView.animate(withDuration: 0.3) {
+			self.startShadow()
+		}
+
+		if scrollView.contentOffset.y == 0 {
+			UIView.animate(withDuration: 0.2) {
+				self.endShadow()
+			}
+		}
+	}
+
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return emojiArray.count
 	}
