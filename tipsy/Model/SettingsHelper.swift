@@ -22,11 +22,11 @@ class SettingsHelper {
 	}
 
 	// MARK: - Help & Feedback
-	let rateTipsy = Settings(title: "Rate Tipsy on the App Store", icon: UIImage(systemName: "star")!, subtitleText: nil)
-	let followTipsy = Settings(title: "Follow Tipsy on Twitter", icon: UIImage(named: "twitter")!, subtitleText: nil)
-	let shareTipsy = Settings(title: "Share Tipsy", icon: UIImage(systemName: "square.and.arrow.up")!, subtitleText: nil)
-	let contactTipsy = Settings(title: "Contact Us", icon: UIImage(systemName: "paperplane")!, subtitleText: nil)
-	let quickTips = Settings(title: "Quick Tipsies", icon: UIImage(systemName: "checkmark.seal")!, subtitleText: nil)
+	let rateTipsy = Settings(title: "Rate Tipsy on the App Store", icon: UIImage(systemName: "star.fill")!, subtitleText: nil)
+	let followTipsy = Settings(title: "Follow Tipsy on Twitter", icon: UIImage(named: "twitterfill")!, subtitleText: nil)
+	let shareTipsy = Settings(title: "Share Tipsy", icon: UIImage(systemName: "square.and.arrow.up.fill")!, subtitleText: nil)
+	let contactTipsy = Settings(title: "Contact Us", icon: UIImage(systemName: "paperplane.fill")!, subtitleText: nil)
+	let quickTips = Settings(title: "Quick Tipsies", icon: UIImage(systemName: "checkmark.seal.fill")!, subtitleText: nil)
 
 	let helpAndFeedbackArray: [Settings]
 

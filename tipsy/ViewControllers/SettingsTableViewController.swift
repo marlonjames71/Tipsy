@@ -97,9 +97,9 @@ class SettingsTableViewController: UITableViewController {
 		guard let contactCell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath) as? BasicSettingsTableViewCell else { return UITableViewCell() }
 		let setting = settingsHelper.helpAndFeedbackArray[indexPath.row]
 		contactCell.iconImageView.contentMode = .scaleAspectFit
-		if setting.title.contains("Twitter") {
-			contactCell.iconImageView.contentMode = .center
-		}
+//		if setting.title.contains("Twitter") {
+//			contactCell.iconImageView.contentMode = .center
+//		}
 		contactCell.descLabel.text = setting.title
 		contactCell.iconImageView.image = setting.icon
 		contactCell.iconImageView.tintColor = .tipsyDarkerAccents
