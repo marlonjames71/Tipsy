@@ -71,12 +71,18 @@ class EmojiCollectionViewController: UIViewController {
 		let saveAction = UIAlertAction(title: "Save Emojis", style: .default) { _ in
 			self.saveEmojiSet()
 		}
+		let checkmarkImage = UIImage(systemName: "checkmark.circle.fill")
+		saveAction.setValue(checkmarkImage, forKey: "image")
+		saveAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
 
-		let closeAction = UIAlertAction(title: "Close Emoji Picker", style: .default) { _ in
+		let closeAction = UIAlertAction(title: "Discard Changes", style: .default) { _ in
 			self.dismiss(animated: true, completion: nil)
 		}
+		let xmarkImage = UIImage(systemName: "xmark.circle.fill")
+		closeAction.setValue(xmarkImage, forKey: "image")
+		closeAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
 
-		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+		let cancelAction = UIAlertAction(title: "Keep Editing", style: .cancel, handler: nil)
 
 		[saveAction, closeAction, cancelAction].forEach { dismissActionSheet.addAction($0) }
 		present(dismissActionSheet, animated: true, completion: nil)
