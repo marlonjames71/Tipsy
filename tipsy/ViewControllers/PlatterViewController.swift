@@ -241,7 +241,9 @@ class PlatterViewController: UIViewController {
 					DefaultsManager.messageAlertWasSeen = true
 				}
 			} else {
-				presentMessageController()
+				DispatchQueue.main.async { [weak self] in
+					self?.presentMessageController()
+				}
 			}
 		}
 	}
