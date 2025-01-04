@@ -2,6 +2,9 @@
 
 Fun tip calculator with very clean and simple UI.
 
+<a href="https://apps.apple.com/us/app/tipsy-fun-tip-calculator/id1486290417?itscg=30200&itsct=apps_box_badge&mttnsubad=1486290417" style="display: inline-block;"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1573862400" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit:contain;"/></a>
+    
+
 ### Technologies Used:
 - UIKit
 - Contacts
